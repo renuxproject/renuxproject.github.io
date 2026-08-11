@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<!--
+    SPDX-License-Identifier: BSD-2-Clause
+    Copyright (c) 2026 The Renux Project.  All rights reserved.
+    See LICENSE for full license text.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="description" content="Live Renux development commits from the GitHub API.">
+<title>Development | Renux</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/components.css">
+</head>
+<body id="top">
+
+<header id="header">
+  <div class="header-inner">
+    <div class="brand">
+      <h1><a href="index.html">Renux</a></h1>
+    </div>
+    <div class="tagline">The Power of BSD, Reimagined</div>
+  </div>
+</header>
+
+<nav id="nav">
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="get.html">Get Renux</a></li>
+    <li><a href="features.html">Features</a></li>
+    <li><a href="documentation.html">Documentation</a></li>
+    <li><a href="community.html">Community</a></li>
+    <li><a href="support.html">Support</a></li>
+    <li><a href="news.html">News</a></li>
+    <li><a href="development.html" class="active">Development</a></li>
+  </ul>
+</nav>
+
+<div id="content">
+
+  <main id="main">
+
+    <section>
+      <h2>Development</h2>
+      <p>The latest commits to the Renux source tree, fetched live from the GitHub API
+      (<code>github.com/renuxproject/src</code>). Results are cached for a few minutes to
+      respect the API rate limit.</p>
+    </section>
+
+    <section>
+      <h2>Latest Commits</h2>
+      <p id="commit-status" class="commit-status">Loading commits&hellip;</p>
+      <ul id="commit-list" class="commit-list"></ul>
+    </section>
+
+    <section>
+      <h2>Repositories</h2>
+      <ul>
+        <li><a href="https://github.com/renuxproject/src">renuxproject/src</a> &mdash; the operating system source tree.</li>
+        <li><a href="https://github.com/renuxproject/renuxproject.github.io">renuxproject.github.io</a> &mdash; this website.</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <aside class="sidebar">
+    <div class="box">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="get.html">Get Renux</a></li>
+        <li><a href="documentation.html">Documentation</a></li>
+        <li><a href="community.html">Get involved</a></li>
+        <li><a href="https://github.com/renuxproject/src/issues">Issue tracker</a></li>
+      </ul>
+    </div>
+    <div class="box">
+      <h3>Source</h3>
+      <p>Clone it and build it yourself:</p>
+      <p><code>git clone https://github.com/renuxproject/src.git</code></p>
+    </div>
+  </aside>
+
+</div>
+
+<footer id="footer">
+  <div class="footer-inner">
+    <div>Copyright &copy; 2026 The Renux Project. All rights reserved.</div>
+    <div class="footer-links">
+      <a href="#top">Back to top</a><span>|</span>
+      <a href="LICENSE">License</a><span>|</span>
+      <a href="https://github.com/renuxproject/src">Source on GitHub</a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/commits.js"></script>
+</body>
+</html>

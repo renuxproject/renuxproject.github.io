@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<!--
+    SPDX-License-Identifier: BSD-2-Clause
+    Copyright (c) 2026 The Renux Project.  All rights reserved.
+    See LICENSE for full license text.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="description" content="Get support for Renux.">
+<title>Support | Renux</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/components.css">
+</head>
+<body id="top">
+
+<header id="header">
+  <div class="header-inner">
+    <div class="brand">
+      <h1><a href="index.html">Renux</a></h1>
+    </div>
+    <div class="tagline">The Power of BSD, Reimagined</div>
+  </div>
+</header>
+
+<nav id="nav">
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="get.html">Get Renux</a></li>
+    <li><a href="features.html">Features</a></li>
+    <li><a href="documentation.html">Documentation</a></li>
+    <li><a href="community.html">Community</a></li>
+    <li><a href="support.html" class="active">Support</a></li>
+    <li><a href="news.html">News</a></li>
+    <li><a href="development.html">Development</a></li>
+  </ul>
+</nav>
+
+<div id="content">
+
+  <main id="main">
+
+    <section>
+      <h2>Support</h2>
+      <p>Before asking for help, check the documentation shipped with the tree and the
+      <a href="https://github.com/renuxproject/src/blob/main/UPDATING">UPDATING</a> file for
+      known issues. When in doubt, show the exact commands you ran and the output of
+      <code>./build.sh show-params</code> &mdash; it makes diagnosing build problems much
+      faster.</p>
+    </section>
+
+    <section>
+      <h2>Diagnostic Commands</h2>
+      <pre><code># Dry-run: show the commands a target would run
+$ ./build.sh -n kernel=GENERIC
+
+# List supported architectures
+$ ./build.sh list-arch
+
+# Show current build parameters
+$ ./build.sh show-params</code></pre>
+    </section>
+
+    <section>
+      <h2>Reporting Bugs</h2>
+      <ol>
+        <li>Search the <a href="https://github.com/renuxproject/src/issues">issue tracker</a>
+        for an existing report.</li>
+        <li>Include the exact commands you ran and their output.</li>
+        <li>Include <code>./build.sh show-params</code> output and kernel configuration.</li>
+        <li>For build problems, note your host OS and compiler version.</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>Security Information</h2>
+      <p>Security advisories follow the classic BSD model and will be published on the
+      <a href="news.html">news</a> page as they are released.</p>
+    </section>
+
+  </main>
+
+  <aside class="sidebar">
+    <div class="box">
+      <h3>Resources</h3>
+      <ul>
+        <li><a href="https://github.com/renuxproject/src/issues">Issue tracker</a></li>
+        <li><a href="https://github.com/renuxproject/src/blob/main/UPDATING">UPDATING</a></li>
+        <li><a href="https://github.com/renuxproject/src/blob/main/RELNOTES">Release notes</a></li>
+        <li><a href="documentation.html">Documentation</a></li>
+        <li><a href="community.html">Community</a></li>
+      </ul>
+    </div>
+    <div class="box">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="get.html">Get Renux</a></li>
+        <li><a href="features.html">Features</a></li>
+        <li><a href="news.html">News</a></li>
+      </ul>
+    </div>
+  </aside>
+
+</div>
+
+<footer id="footer">
+  <div class="footer-inner">
+    <div>Copyright &copy; 2026 The Renux Project. All rights reserved.</div>
+    <div class="footer-links">
+      <a href="#top">Back to top</a><span>|</span>
+      <a href="LICENSE">License</a><span>|</span>
+      <a href="https://github.com/renuxproject/src">Source on GitHub</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

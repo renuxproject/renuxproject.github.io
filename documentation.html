@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<!--
+    SPDX-License-Identifier: BSD-2-Clause
+    Copyright (c) 2026 The Renux Project.  All rights reserved.
+    See LICENSE for full license text.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="description" content="Renux operating system documentation.">
+<title>Documentation | Renux</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/components.css">
+</head>
+<body id="top">
+
+<header id="header">
+  <div class="header-inner">
+    <div class="brand">
+      <h1><a href="index.html">Renux</a></h1>
+    </div>
+    <div class="tagline">The Power of BSD, Reimagined</div>
+  </div>
+</header>
+
+<nav id="nav">
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="get.html">Get Renux</a></li>
+    <li><a href="features.html">Features</a></li>
+    <li><a href="documentation.html" class="active">Documentation</a></li>
+    <li><a href="community.html">Community</a></li>
+    <li><a href="support.html">Support</a></li>
+    <li><a href="news.html">News</a></li>
+    <li><a href="development.html">Development</a></li>
+  </ul>
+</nav>
+
+<div id="content">
+
+  <main id="main">
+
+    <section>
+      <h2>Documentation</h2>
+      <p>The documentation ships with the source tree. Start with the files below, then explore
+      the roadmap to find the subsystem you are interested in.</p>
+      <table>
+        <thead>
+          <tr><th>Document</th><th>Description</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><a href="https://github.com/renuxproject/src/blob/main/README.md">README</a></td><td>Top-level overview and source roadmap.</td></tr>
+          <tr><td><a href="https://github.com/renuxproject/src/blob/main/build.sh">build.sh</a></td><td>The portable build entry point.</td></tr>
+          <tr><td><a href="https://github.com/renuxproject/src/blob/main/UPDATING">UPDATING</a></td><td>Notes for people updating the tree.</td></tr>
+          <tr><td><a href="https://github.com/renuxproject/src/blob/main/RELNOTES">RELNOTES</a></td><td>Release notes.</td></tr>
+          <tr><td><a href="https://github.com/renuxproject/src/blob/main/COPYRIGHT">COPYRIGHT</a></td><td>Licensing information.</td></tr>
+          <tr><td><code>build(7)</code>, <code>config(8)</code></td><td>Building the tree and configuring kernels.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Where Things Live</h2>
+      <ul>
+        <li><strong>Release machinery</strong> &mdash; <code>release/</code></li>
+        <li><strong>Boot loader sources</strong> &mdash; <code>stand/</code></li>
+        <li><strong>Kernel sources</strong> &mdash; <code>sys/</code></li>
+        <li><strong>Test suite (Kyua)</strong> &mdash; <code>tests/</code></li>
+        <li><strong>Ancillary tools</strong> &mdash; <code>tools/</code></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Manual Pages</h2>
+      <p>Manual pages for the kernel and userland are built from the tree. Key references
+      include <code>build(7)</code>, <code>config(8)</code>, and the <code>sched_renux</code>
+      and <code>malloc(9)</code> pages for the kernel internals.</p>
+    </section>
+
+  </main>
+
+  <aside class="sidebar">
+    <div class="box">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="about.html">About</a></li>
+        <li><a href="features.html">Features</a></li>
+        <li><a href="get.html">Get Renux</a></li>
+        <li><a href="support.html">Support</a></li>
+      </ul>
+    </div>
+    <div class="box">
+      <h3>Source on GitHub</h3>
+      <ul>
+        <li><a href="https://github.com/renuxproject/src">Repository</a></li>
+        <li><a href="https://github.com/renuxproject/src/releases">Releases</a></li>
+        <li><a href="development.html">Live commits</a></li>
+      </ul>
+    </div>
+  </aside>
+
+</div>
+
+<footer id="footer">
+  <div class="footer-inner">
+    <div>Copyright &copy; 2026 The Renux Project. All rights reserved.</div>
+    <div class="footer-links">
+      <a href="#top">Back to top</a><span>|</span>
+      <a href="LICENSE">License</a><span>|</span>
+      <a href="https://github.com/renuxproject/src">Source on GitHub</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

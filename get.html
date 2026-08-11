@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<!--
+    SPDX-License-Identifier: BSD-2-Clause
+    Copyright (c) 2026 The Renux Project.  All rights reserved.
+    See LICENSE for full license text.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="description" content="Download and build Renux.">
+<title>Get Renux | Renux</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/components.css">
+</head>
+<body id="top">
+
+<header id="header">
+  <div class="header-inner">
+    <div class="brand">
+      <h1><a href="index.html">Renux</a></h1>
+    </div>
+    <div class="tagline">The Power of BSD, Reimagined</div>
+  </div>
+</header>
+
+<nav id="nav">
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="get.html" class="active">Get Renux</a></li>
+    <li><a href="features.html">Features</a></li>
+    <li><a href="documentation.html">Documentation</a></li>
+    <li><a href="community.html">Community</a></li>
+    <li><a href="support.html">Support</a></li>
+    <li><a href="news.html">News</a></li>
+    <li><a href="development.html">Development</a></li>
+  </ul>
+</nav>
+
+<div id="content">
+
+  <main id="main">
+
+    <section>
+      <h2>Get the Source</h2>
+      <p>The source tree is hosted on GitHub. No preinstalled FreeBSD host or toolchain is
+      required &mdash; Renux will bootstrap everything it needs.</p>
+      <pre><code>$ git clone https://github.com/renuxproject/src.git /usr/src/renux
+$ cd /usr/src/renux</code></pre>
+    </section>
+
+    <section>
+      <h2>Build with build.sh</h2>
+      <p>Renux brings the classic NetBSD <code>build.sh</code> entry point to a modern
+      Berkeley-heritage system. The script is self-contained and portable, automatically
+      provisioning any missing host tools into <code>obj/host-shims</code>.</p>
+      <pre><code># Build world (userland) and the kernel
+$ ./build.sh build
+
+# Build only the kernel (no buildworld needed)
+$ ./build.sh kernel=GENERIC
+$ ./build.sh kernel.gdb=GENERIC        # GDB-debuggable kernel
+$ ./build.sh kernels                   # build all kernels
+
+# Bootable images (kernel + loader, no userland)
+$ ./build.sh bootimage                 # UEFI disk + BIOS ISO
+$ ./build.sh iso                       # UEFI ISO + BIOS ISO
+$ ./build.sh qemu                      # boot the UEFI image in QEMU
+$ ./build.sh -L bios qemu              # boot the BIOS ISO in QEMU
+
+# Other useful operations
+$ ./build.sh world                     # buildworld only
+$ ./build.sh distribution              # build distribution
+$ ./build.sh release                   # build a release
+$ ./build.sh update                    # git pull --ff-only</code></pre>
+    </section>
+
+    <section>
+      <h2>Options</h2>
+      <pre><code>$ ./build.sh -m amd64 -a amd64 kernel=GENERIC  # explicit target
+$ ./build.sh -j 8                 build          # parallel make
+$ ./build.sh -n kernel=GENERIC    # dry-run
+$ ./build.sh -K                   iso            # kernel-only image
+$ ./build.sh -I /out/dir          bootimage      # output directory
+$ ./build.sh -D /dest             world          # set DESTDIR
+$ ./build.sh -U                   world          # unprivileged (NO_ROOT)</code></pre>
+    </section>
+
+    <section>
+      <h2>Supported Architectures</h2>
+      <table>
+        <thead>
+          <tr><th>Architecture</th><th>Directory</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>amd64 (x86-64, baseline x86-64-v2)</td><td><code>amd64</code></td></tr>
+          <tr><td>ARM (32-bit)</td><td><code>arm</code></td></tr>
+          <tr><td>ARM64</td><td><code>arm64</code></td></tr>
+          <tr><td>i386</td><td><code>i386</code></td></tr>
+          <tr><td>PowerPC</td><td><code>powerpc</code></td></tr>
+          <tr><td>RISC-V</td><td><code>riscv</code></td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>System Requirements</h2>
+      <ul>
+        <li>A modern amd64 (x86-64-v2) machine for the default target.</li>
+        <li>Any Unix host to build: FreeBSD, Linux, NetBSD, OpenBSD, DragonFly or macOS.</li>
+        <li>For the bootable images: UEFI firmware (GPT/FAT32 ESP) or BIOS (El Torito ISO).</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <aside class="sidebar">
+    <div class="box">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="https://github.com/renuxproject/src">GitHub repository</a></li>
+        <li><a href="https://github.com/renuxproject/src/releases">Releases</a></li>
+        <li><a href="development.html">Live commits</a></li>
+        <li><a href="news.html">Release notes</a></li>
+        <li><a href="documentation.html">Documentation</a></li>
+      </ul>
+    </div>
+    <div class="box">
+      <h3>Need help?</h3>
+      <p>Check the <a href="support.html">support</a> page before asking &mdash; the
+      <code>UPDATING</code> file and <code>./build.sh show-params</code> solve most issues.</p>
+    </div>
+  </aside>
+
+</div>
+
+<footer id="footer">
+  <div class="footer-inner">
+    <div>Copyright &copy; 2026 The Renux Project. All rights reserved.</div>
+    <div class="footer-links">
+      <a href="#top">Back to top</a><span>|</span>
+      <a href="LICENSE">License</a><span>|</span>
+      <a href="https://github.com/renuxproject/src">Source on GitHub</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

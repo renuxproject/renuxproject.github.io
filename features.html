@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<!--
+    SPDX-License-Identifier: BSD-2-Clause
+    Copyright (c) 2026 The Renux Project.  All rights reserved.
+    See LICENSE for full license text.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="description" content="Renux operating system features.">
+<title>Features | Renux</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/components.css">
+</head>
+<body id="top">
+
+<header id="header">
+  <div class="header-inner">
+    <div class="brand">
+      <h1><a href="index.html">Renux</a></h1>
+    </div>
+    <div class="tagline">The Power of BSD, Reimagined</div>
+  </div>
+</header>
+
+<nav id="nav">
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="get.html">Get Renux</a></li>
+    <li><a href="features.html" class="active">Features</a></li>
+    <li><a href="documentation.html">Documentation</a></li>
+    <li><a href="community.html">Community</a></li>
+    <li><a href="support.html">Support</a></li>
+    <li><a href="news.html">News</a></li>
+    <li><a href="development.html">Development</a></li>
+  </ul>
+</nav>
+
+<div id="content">
+
+  <main id="main">
+
+    <section>
+      <h2>Features</h2>
+      <div class="features">
+        <div class="feature">
+          <h3>sched_renux</h3>
+          <p>An ULE-derived scheduler with aggressive optimization, now the default. Tuned for
+          CPU-bound throughput with more aggressive balancing, tighter latency and preemptive
+          work stealing.</p>
+        </div>
+        <div class="feature">
+          <h3>RENUX_MALLOC</h3>
+          <p>A drop-in <code>kern_malloc</code> fork with lock-free statistics and deep per-CPU
+          bucket caches. Enabled by default in the GENERIC kernel.</p>
+        </div>
+        <div class="feature">
+          <h3>Aggressive VFS defaults</h3>
+          <p><code>renux_vfs_cluster</code> and <code>renux_vfs_subr</code> deliver aggressive
+          I/O clustering defaults tuned for storage throughput out of the box.</p>
+        </div>
+        <div class="feature">
+          <h3>Full preemption</h3>
+          <p><code>FULL_PREEMPTION</code> is enabled by default in GENERIC, reducing dispatch
+          latency throughout the kernel.</p>
+        </div>
+        <div class="feature">
+          <h3>NetBSD-style build.sh</h3>
+          <p>One script to rule them all: <code>./build.sh build</code> for world and kernel,
+          plus <code>iso</code>, <code>bootimage</code>, <code>qemu</code>,
+          <code>release</code> and more.</p>
+        </div>
+        <div class="feature">
+          <h3>Portable cross-build</h3>
+          <p>Self-contained and portable: runs on any Unix host, bootstraps <code>bmake</code>
+          and infers the clang/lld cross toolchain automatically.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Bootable Images</h2>
+      <p>The <code>iso</code> and <code>bootimage</code> operations build the EFI loader from
+      <code>stand/</code> with the same cross toolchain and produce a kernel-only boot medium:
+      <code>EFI/BOOT/BOOTX64.EFI</code> plus <code>/boot/kernel/kernel</code> on a FAT32 ESP,
+      wrapped in a GPT disk (<code>renux.img</code>) or an El Torito ISO (<code>renux.iso</code>).
+      These boot straight into the kernel; a full system requires <code>world</code>/
+      <code>distribution</code>.</p>
+    </section>
+
+    <section>
+      <h2>Host Compatibility</h2>
+      <p>The build script tolerates a host compiler newer than the one officially supported
+      (kernel builds go out with <code>-Werror</code> disabled for portability) and treats
+      Renux as a native FreeBSD host. Supported build hosts:</p>
+      <ul>
+        <li>FreeBSD</li>
+        <li>Linux</li>
+        <li>NetBSD</li>
+        <li>OpenBSD</li>
+        <li>DragonFly BSD</li>
+        <li>macOS</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <aside class="sidebar">
+    <div class="box">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="about.html">About</a></li>
+        <li><a href="get.html">Get Renux</a></li>
+        <li><a href="documentation.html">Documentation</a></li>
+        <li><a href="development.html">Development</a></li>
+      </ul>
+    </div>
+    <div class="box">
+      <h3>Keep up to date</h3>
+      <p>Follow the <a href="news.html">news</a> page and the <a href="development.html">live
+      commits</a> feed to see features land.</p>
+    </div>
+  </aside>
+
+</div>
+
+<footer id="footer">
+  <div class="footer-inner">
+    <div>Copyright &copy; 2026 The Renux Project. All rights reserved.</div>
+    <div class="footer-links">
+      <a href="#top">Back to top</a><span>|</span>
+      <a href="LICENSE">License</a><span>|</span>
+      <a href="https://github.com/renuxproject/src">Source on GitHub</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

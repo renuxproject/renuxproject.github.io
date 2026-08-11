@@ -20,7 +20,7 @@
 <header id="header">
   <div class="header-inner">
     <div class="brand">
-      <h1><a href="#top">Renux</a></h1>
+      <h1><a href="index.html">Renux</a></h1>
     </div>
     <div class="tagline">The Power of BSD, Reimagined</div>
   </div>
@@ -28,12 +28,15 @@
 
 <nav id="nav">
   <ul>
-    <li><a href="#about">About</a></li>
-    <li><a href="#get">Get Renux</a></li>
-    <li><a href="#features">Features</a></li>
-    <li><a href="#docs">Documentation</a></li>
-    <li><a href="#community">Community</a></li>
-    <li><a href="#support">Support</a></li>
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="get.html">Get Renux</a></li>
+    <li><a href="features.html">Features</a></li>
+    <li><a href="documentation.html">Documentation</a></li>
+    <li><a href="community.html">Community</a></li>
+    <li><a href="support.html">Support</a></li>
+    <li><a href="news.html">News</a></li>
+    <li><a href="development.html">Development</a></li>
   </ul>
 </nav>
 
@@ -49,141 +52,67 @@
       script on any Unix host.</p>
       <p>From a finely-tuned ULE-derived scheduler to a lock-free per-CPU memory allocator,
       Renux is engineered around aggressive defaults that favor throughput without giving up
-      the clean, comprehensible structure that makes a BSD system a pleasure to work with.</p>
+      the clean, comprehensible structure that makes a BSD system a pleasure to work with.
+      <a href="about.html">Learn more &rsaquo;</a></p>
     </section>
 
-    <section id="about" class="anchor">
-      <h2>About the Project</h2>
-      <p>Renux is a source tree you can actually understand. The kernel lives under
-      <code>sys/</code>, userland under <code>bin/</code>, <code>sbin/</code>,
-      <code>usr.bin/</code> and <code>usr.sbin/</code>, with libraries in <code>lib/</code>,
-      and third-party code cleanly separated in <code>contrib/</code>, <code>gnu/</code> and
-      <code>crypto/</code>. Every component builds with the same cross toolchain, and the
-      whole thing is orchestrated by a single, self-contained build script.</p>
-      <p>The project targets broad portability: the tree cross-builds from FreeBSD, Linux,
-      NetBSD, OpenBSD, DragonFly or macOS, automatically provisioning any missing host tools
-      and tolerating newer host compilers. The result is a system that is equally at home on a
-      developer laptop, a server, or an embedded board.</p>
-    </section>
-
-    <section id="features" class="anchor">
+    <section id="features">
       <h2>Features</h2>
       <div class="features">
         <div class="feature">
           <h3>sched_renux</h3>
-          <p>An ULE-derived scheduler with aggressive optimization, now the default. Tuned for
-          CPU-bound throughput with more aggressive balancing, tighter latency and preemptive
-          work stealing.</p>
+          <p>An ULE-derived scheduler, now the default, tuned for CPU-bound throughput with
+          aggressive balancing and preemptive work stealing.</p>
         </div>
         <div class="feature">
           <h3>RENUX_MALLOC</h3>
-          <p>A drop-in <code>kern_malloc</code> fork with lock-free statistics and deep per-CPU
-          bucket caches. Enabled by default in the GENERIC kernel.</p>
+          <p>A lock-free <code>kern_malloc</code> fork with deep per-CPU bucket caches, enabled
+          by default in GENERIC.</p>
         </div>
         <div class="feature">
-          <h3>Aggressive VFS defaults</h3>
-          <p><code>renux_vfs_cluster</code> and <code>renux_vfs_subr</code> deliver aggressive
-          I/O clustering defaults tuned for storage throughput out of the box.</p>
+          <h3>Aggressive VFS</h3>
+          <p><code>renux_vfs_cluster</code> and <code>renux_vfs_subr</code> ship aggressive I/O
+          clustering defaults for storage throughput.</p>
         </div>
         <div class="feature">
           <h3>Full preemption</h3>
-          <p><code>FULL_PREEMPTION</code> is enabled by default in GENERIC, reducing dispatch
-          latency throughout the kernel.</p>
+          <p><code>FULL_PREEMPTION</code> on by default in GENERIC cuts dispatch latency
+          throughout the kernel.</p>
         </div>
         <div class="feature">
           <h3>NetBSD-style build.sh</h3>
-          <p>One script to rule them all: <code>./build.sh build</code> for world and kernel,
-          plus <code>iso</code>, <code>bootimage</code>, <code>qemu</code>,
-          <code>release</code> and more.</p>
+          <p>One script for everything: <code>./build.sh build</code> for world and kernel,
+          plus <code>iso</code>, <code>qemu</code> and <code>release</code> targets.</p>
         </div>
         <div class="feature">
           <h3>Portable cross-build</h3>
-          <p>Self-contained and portable: runs on any Unix host, bootstraps <code>bmake</code>
-          and infers the clang/lld cross toolchain automatically.</p>
+          <p>Cross-builds from FreeBSD, Linux, NetBSD, OpenBSD, DragonFly or macOS, without any
+          preinstalled toolchain.</p>
         </div>
       </div>
+      <p><a href="features.html">All features &rsaquo;</a></p>
     </section>
 
-    <section id="get" class="anchor">
+    <section id="news">
+      <h2>Latest News</h2>
+      <ul>
+        <li><span class="news-date">2026-08-11</span> &mdash; <a href="news.html#x86-64-v2">amd64 baseline raised to x86-64-v2</a></li>
+        <li><span class="news-date">2026-08-11</span> &mdash; <a href="news.html#sched-default">sched_renux becomes the default scheduler</a></li>
+        <li><span class="news-date">2026-08-11</span> &mdash; <a href="news.html#malloc-default">RENUX_MALLOC enabled by default in GENERIC</a></li>
+      </ul>
+      <p><a href="news.html">All news &rsaquo;</a></p>
+    </section>
+
+    <section id="get">
       <h2>Get Renux</h2>
-      <p>Clone the source tree and build it yourself. No preinstalled FreeBSD host or
-      toolchain is required &mdash; Renux will bootstrap everything it needs.</p>
-      <pre><code>$ git clone &lt;repo&gt; /usr/src/renux
+      <p>Clone the source tree and build it yourself. No preinstalled host toolchain is
+      required &mdash; Renux bootstraps everything it needs:</p>
+      <pre><code>$ git clone https://github.com/renuxproject/src.git /usr/src/renux
 $ cd /usr/src/renux
-
-# Build world (userland) and the kernel
-$ ./build.sh build
-
-# Build only the kernel, no buildworld needed
-$ ./build.sh kernel=GENERIC
-
-# Bootable media (UEFI + BIOS), then boot it in QEMU
-$ ./build.sh iso
-$ ./build.sh qemu</code></pre>
-
-      <h3>Supported architectures</h3>
-      <table>
-        <thead>
-          <tr><th>Architecture</th><th>Directory</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>amd64 (x86-64, baseline x86-64-v2)</td><td><code>amd64</code></td></tr>
-          <tr><td>ARM (32-bit)</td><td><code>arm</code></td></tr>
-          <tr><td>ARM64</td><td><code>arm64</code></td></tr>
-          <tr><td>i386</td><td><code>i386</code></td></tr>
-          <tr><td>PowerPC</td><td><code>powerpc</code></td></tr>
-          <tr><td>RISC-V</td><td><code>riscv</code></td></tr>
-        </tbody>
-      </table>
-
-      <h3>System requirements</h3>
-      <ul>
-        <li>A modern amd64 (x86-64-v2) machine for the default target.</li>
-        <li>Any Unix host to build: FreeBSD, Linux, NetBSD, OpenBSD, DragonFly or macOS.</li>
-        <li>For the bootable images: UEFI firmware (GPT/FAT32 ESP) or BIOS (El Torito ISO).</li>
-      </ul>
-    </section>
-
-    <section id="docs" class="anchor">
-      <h2>Documentation</h2>
-      <ul>
-        <li><a href="../src/README.md">README</a> &mdash; top-level overview and source roadmap.</li>
-        <li><a href="../src/build.sh">build.sh</a> &mdash; the portable build entry point.</li>
-        <li><a href="../src/UPDATING">UPDATING</a> &mdash; notes for people updating the tree.</li>
-        <li><a href="../src/RELNOTES">RELNOTES</a> &mdash; release notes.</li>
-        <li><a href="../src/COPYRIGHT">COPYRIGHT</a> &mdash; licensing information.</li>
-        <li><code>build(7)</code>, <code>config(8)</code> &mdash; building the tree and configuring kernels.</li>
-      </ul>
-      <p>Release machinery lives in <code>release/</code>, boot loader sources in
-      <code>stand/</code>, and the kernel in <code>sys/</code>.</p>
-    </section>
-
-    <section id="community" class="anchor">
-      <h2>Community &amp; Development</h2>
-      <p>Renux is a hands-on project. The source is organized so that the whole tree is
-      meant to be understandable and modifiable &mdash; every subsystem is open to
-      inspection, and the test suite under <code>tests/</code> is run via Kyua.</p>
-      <ul>
-        <li><strong>Mailing lists</strong> &mdash; development and users lists, following the
-        classic BSD conventions.</li>
-        <li><strong>Bug reporting</strong> &mdash; via the project's issue tracker and the
-        automated CI under <code>.github/</code> and <code>.cirrus-ci/</code>.</li>
-        <li><strong>Code review</strong> &mdash; the tree ships <code>.arcconfig</code> and
-        <code>.arclint</code> for the Phabricator-style workflow used by the upstream heritage.</li>
-      </ul>
-    </section>
-
-    <section id="support" class="anchor">
-      <h2>Support</h2>
-      <p>Before asking for help, check the documentation shipped with the tree and the
-      <a href="../src/UPDATING">UPDATING</a> file for known issues. When in doubt, show the
-      exact commands you ran and the output of <code>./build.sh show-params</code> &mdash;
-      it makes diagnosing build problems much faster.</p>
-      <ul>
-        <li><code>./build.sh -n kernel=GENERIC</code> &mdash; dry-run, shows the commands.</li>
-        <li><code>./build.sh list-arch</code> &mdash; list supported architectures.</li>
-        <li><code>./build.sh show-params</code> &mdash; show current build parameters.</li>
-      </ul>
+$ ./build.sh build        # world + kernel
+$ ./build.sh iso          # UEFI + BIOS bootable media
+$ ./build.sh qemu         # boot it in QEMU</code></pre>
+      <p><a href="get.html">Download and building &rsaquo;</a></p>
     </section>
 
   </main>
@@ -194,39 +123,29 @@ $ ./build.sh qemu</code></pre>
       <h3>About the Project</h3>
       <p>Renux is a modern BSD operating system derived from the FreeBSD source tree, built
       with the NetBSD-style <code>build.sh</code> and tuned for performance and portability.</p>
-      <p><strong>Copyright &copy; 2026 The Renux Project.</strong></p>
-    </div>
-
-    <div class="box">
-      <h3>Latest News</h3>
-      <ul>
-        <li><span class="news-date">2026-08</span> &mdash; amd64 baseline raised to <code>x86-64-v2</code></li>
-        <li><span class="news-date">2026-08</span> &mdash; <code>sched_renux</code> becomes the default scheduler</li>
-        <li><span class="news-date">2026-08</span> &mdash; <code>RENUX_MALLOC</code> enabled by default in GENERIC</li>
-        <li><span class="news-date">2026-08</span> &mdash; <code>FULL_PREEMPTION</code> on by default</li>
-        <li><span class="news-date">2026-08</span> &mdash; aggressive VFS defaults via <code>renux_vfs_subr</code></li>
-      </ul>
+      <p><a href="about.html">Read more &rsaquo;</a></p>
     </div>
 
     <div class="box">
       <h3>Quick Links</h3>
       <ul>
-        <li><a href="../src/README.md">Source README</a></li>
-        <li><a href="../src/build.sh">build.sh</a></li>
-        <li><a href="../src/sys/README.md">Kernel sources</a></li>
-        <li><a href="../src/UPDATING">UPDATING</a></li>
-        <li><a href="../src/RELNOTES">Release notes</a></li>
-        <li><a href="../src/release/">Release machinery</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="features.html">Features</a></li>
+        <li><a href="get.html">Get Renux</a></li>
+        <li><a href="documentation.html">Documentation</a></li>
+        <li><a href="community.html">Community</a></li>
+        <li><a href="support.html">Support</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="development.html">Development</a></li>
       </ul>
     </div>
 
     <div class="box">
-      <h3>Get Involved</h3>
+      <h3>Source</h3>
       <ul>
-        <li>Build it: <code>./build.sh build</code></li>
-        <li>Boot it: <code>./build.sh qemu</code></li>
-        <li>Test it: the Kyua suite under <code>tests/</code></li>
-        <li>Report issues via the project tracker</li>
+        <li><a href="https://github.com/renuxproject/src">GitHub repository</a></li>
+        <li><a href="https://github.com/renuxproject/src/releases">Releases</a></li>
+        <li><a href="development.html">Live commits</a></li>
       </ul>
     </div>
 
@@ -240,7 +159,7 @@ $ ./build.sh qemu</code></pre>
     <div class="footer-links">
       <a href="#top">Back to top</a><span>|</span>
       <a href="LICENSE">License</a><span>|</span>
-      <a href="#docs">Documentation</a>
+      <a href="https://github.com/renuxproject/src">Source on GitHub</a>
     </div>
   </div>
 </footer>

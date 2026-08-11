@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<!--
+    SPDX-License-Identifier: BSD-2-Clause
+    Copyright (c) 2026 The Renux Project.  All rights reserved.
+    See LICENSE for full license text.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="description" content="About the Renux operating system project.">
+<title>About | Renux</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/components.css">
+</head>
+<body id="top">
+
+<header id="header">
+  <div class="header-inner">
+    <div class="brand">
+      <h1><a href="index.html">Renux</a></h1>
+    </div>
+    <div class="tagline">The Power of BSD, Reimagined</div>
+  </div>
+</header>
+
+<nav id="nav">
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html" class="active">About</a></li>
+    <li><a href="get.html">Get Renux</a></li>
+    <li><a href="features.html">Features</a></li>
+    <li><a href="documentation.html">Documentation</a></li>
+    <li><a href="community.html">Community</a></li>
+    <li><a href="support.html">Support</a></li>
+    <li><a href="news.html">News</a></li>
+    <li><a href="development.html">Development</a></li>
+  </ul>
+</nav>
+
+<div id="content">
+
+  <main id="main">
+
+    <section>
+      <h2>About the Project</h2>
+      <p>Renux is a modern BSD operating system, designed to be easy to maintain and debug,
+      with a focus on portability and performance. It is derived from the FreeBSD source tree
+      and brings the classic NetBSD <code>build.sh</code> entry point to a Berkeley-heritage
+      kernel and userland, so the whole tree builds from a single script on any Unix host.</p>
+    </section>
+
+    <section>
+      <h2>Source Roadmap</h2>
+      <p>The tree is organized so that every component lives where you would expect it. The
+      kernel is under <code>sys/</code>, userland under <code>bin/</code>, <code>sbin/</code>,
+      <code>usr.bin/</code> and <code>usr.sbin/</code>, and libraries under <code>lib/</code>.
+      Third-party code is cleanly separated in <code>contrib/</code>, <code>gnu/</code> and
+      <code>crypto/</code>.</p>
+      <table>
+        <thead>
+          <tr><th>Directory</th><th>Description</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><code>sys</code></td><td>Kernel sources.</td></tr>
+          <tr><td><code>bin, sbin</code></td><td>System and user commands.</td></tr>
+          <tr><td><code>usr.bin, usr.sbin</code></td><td>User commands and system administration.</td></tr>
+          <tr><td><code>lib, libexec</code></td><td>System libraries and daemons.</td></tr>
+          <tr><td><code>contrib, gnu, crypto</code></td><td>Third-party software.</td></tr>
+          <tr><td><code>stand</code></td><td>Boot loader sources.</td></tr>
+          <tr><td><code>release</code></td><td>Release and VM image building.</td></tr>
+          <tr><td><code>tests</code></td><td>Kyua test suite.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Design Goals</h2>
+      <ul>
+        <li><strong>Maintainability</strong> &mdash; a source tree that is understandable and modifiable by everyone.</li>
+        <li><strong>Portability</strong> &mdash; cross-builds on any Unix host: FreeBSD, Linux, NetBSD, OpenBSD, DragonFly or macOS.</li>
+        <li><strong>Performance</strong> &mdash; aggressive, well-tuned defaults for throughput and low latency.</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <aside class="sidebar">
+    <div class="box">
+      <h3>About the Project</h3>
+      <p>Renux is a modern BSD operating system derived from the FreeBSD source tree, built
+      with the NetBSD-style <code>build.sh</code> and tuned for performance and portability.</p>
+    </div>
+    <div class="box">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="features.html">Features</a></li>
+        <li><a href="get.html">Get Renux</a></li>
+        <li><a href="documentation.html">Documentation</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="development.html">Development</a></li>
+        <li><a href="https://github.com/renuxproject/src">Source on GitHub</a></li>
+      </ul>
+    </div>
+  </aside>
+
+</div>
+
+<footer id="footer">
+  <div class="footer-inner">
+    <div>Copyright &copy; 2026 The Renux Project. All rights reserved.</div>
+    <div class="footer-links">
+      <a href="#top">Back to top</a><span>|</span>
+      <a href="LICENSE">License</a><span>|</span>
+      <a href="https://github.com/renuxproject/src">Source on GitHub</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

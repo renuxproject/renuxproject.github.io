@@ -64,6 +64,7 @@
   text-transform: uppercase;
 }
 #nav li a:hover { background: #4e8517; text-decoration: none; }
+#nav li a.active { background: #4e8517; }
 
 /* ---- layout ---- */
 #content {
@@ -111,6 +112,30 @@ pre {
   border: 1px solid var(--hairline);
 }
 pre code { background: none; padding: 0; }
+
+/* ---- commit list (development) ---- */
+.commit-list { list-style: none; margin: 0; }
+.commit-list li {
+  padding: 12px 4px;
+  border-bottom: 1px solid var(--hairline);
+}
+.commit-list li:last-child { border-bottom: 0; }
+.commit-sha {
+  font-family: "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--bsd-green-dark);
+  background: var(--code-bg);
+  padding: 2px 6px;
+  border-radius: 3px;
+}
+.commit-sha:hover { text-decoration: none; }
+.commit-msg { display: block; margin: 6px 0 2px; font-weight: 600; }
+.commit-msg a { color: var(--text); }
+.commit-msg a:hover { color: var(--bsd-link); text-decoration: none; }
+.commit-meta { font-size: 12px; color: var(--muted); }
+.commit-status { font-size: 13px; color: var(--muted); margin: 8px 0; }
+.commit-status.error { color: #b06010; }
 
 /* ---- tables ---- */
 table { width: 100%; border-collapse: collapse; margin: 12px 0; }
