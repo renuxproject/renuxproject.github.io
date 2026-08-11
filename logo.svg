@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 220" role="img" aria-label="The Renux daemon">
+  <defs>
+    <radialGradient id="body" cx="40%" cy="35%" r="80%">
+      <stop offset="0%" stop-color="#b3c93a"/>
+      <stop offset="60%" stop-color="#7da31d"/>
+      <stop offset="100%" stop-color="#5c7f14"/>
+    </radialGradient>
+    <radialGradient id="belly" cx="45%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#f4efb0"/>
+      <stop offset="100%" stop-color="#e0d44f"/>
+    </radialGradient>
+  </defs>
+
+  <!-- tail -->
+  <path d="M84,188 C66,206 46,206 36,194 C30,186 34,176 44,174 C40,182 42,190 50,196 C60,202 74,201 86,190 Z" fill="url(#body)"/>
+
+  <!-- feet -->
+  <ellipse cx="64" cy="204" rx="12" ry="6" fill="url(#body)"/>
+  <ellipse cx="96" cy="204" rx="12" ry="6" fill="url(#body)"/>
+
+  <!-- body -->
+  <ellipse cx="80" cy="148" rx="44" ry="50" fill="url(#body)"/>
+  <!-- belly -->
+  <ellipse cx="80" cy="160" rx="27" ry="32" fill="url(#belly)"/>
+
+  <!-- wings -->
+  <path d="M40,126 C18,100 8,72 16,46 C26,66 36,84 52,98 C34,90 26,70 32,52 C44,66 54,84 64,98 Z" fill="#547a10"/>
+  <path d="M120,126 C142,100 152,72 144,46 C134,66 124,84 108,98 C126,90 134,70 128,52 C116,66 106,84 96,98 Z" fill="#547a10"/>
+
+  <!-- arms -->
+  <path d="M42,140 C28,150 26,162 32,176" stroke="#547a10" stroke-width="8" stroke-linecap="round" fill="none"/>
+  <path d="M118,140 C132,150 134,162 128,176" stroke="#547a10" stroke-width="8" stroke-linecap="round" fill="none"/>
+
+  <!-- pitchfork -->
+  <path d="M80,150 L80,206" stroke="#22360a" stroke-width="5" stroke-linecap="round"/>
+  <path d="M70,176 L90,176" stroke="#22360a" stroke-width="5"/>
+  <path d="M72,176 L72,158 M80,176 L80,152 M88,176 L88,158" stroke="#22360a" stroke-width="4" stroke-linecap="round"/>
+
+  <!-- hands -->
+  <circle cx="66" cy="176" r="6" fill="url(#body)"/>
+  <circle cx="94" cy="176" r="6" fill="url(#body)"/>
+
+  <!-- horns -->
+  <path d="M58,34 Q44,20 44,6 Q60,14 70,26 Z" fill="#547a10"/>
+  <path d="M102,34 Q116,20 116,6 Q100,14 90,26 Z" fill="#547a10"/>
+
+  <!-- ears -->
+  <path d="M40,44 L20,26 L42,28 Z" fill="#547a10"/>
+  <path d="M120,44 L140,26 L118,28 Z" fill="#547a10"/>
+
+  <!-- head -->
+  <ellipse cx="80" cy="56" rx="32" ry="28" fill="url(#body)"/>
+
+  <!-- eyes -->
+  <ellipse cx="68" cy="52" rx="8" ry="10" fill="#fff" transform="rotate(-15 68 52)"/>
+  <ellipse cx="92" cy="52" rx="8" ry="10" fill="#fff" transform="rotate(15 92 52)"/>
+  <circle cx="69" cy="54" r="3.4" fill="#547a10"/>
+  <circle cx="91" cy="54" r="3.4" fill="#547a10"/>
+
+  <!-- nostrils -->
+  <circle cx="75" cy="66" r="2.2" fill="#22360a"/>
+  <circle cx="85" cy="66" r="2.2" fill="#22360a"/>
+
+  <!-- mouth -->
+  <path d="M64,72 Q80,86 96,72 L96,74 Q80,92 64,74 Z" fill="#22360a"/>
+  <path d="M74,78 L70,88 L78,82 Z" fill="#fff"/>
+  <path d="M86,78 L90,88 L82,82 Z" fill="#fff"/>
+</svg>
