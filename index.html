@@ -44,16 +44,23 @@
 
   <main id="main">
 
-    <section class="hero">
-      <p class="lead"><strong>Renux</strong> is a modern BSD operating system, derived from
-      the FreeBSD source tree and designed to be easy to maintain and debug, with a focus on
-      portability and performance. It brings the classic NetBSD <code>build.sh</code> entry
-      point to a Berkeley-heritage kernel and userland, so the whole tree builds from a single
-      script on any Unix host.</p>
-      <p>From a finely-tuned ULE-derived scheduler to a lock-free per-CPU memory allocator,
-      Renux is engineered around aggressive defaults that favor throughput without giving up
-      the clean, comprehensible structure that makes a BSD system a pleasure to work with.
-      <a href="about.html">Learn more &rsaquo;</a></p>
+    <section class="hero-main">
+      <span class="hero-eyebrow">Renux BSD</span>
+      <h2 class="hero-title">A modern BSD operating system</h2>
+      <p class="hero-sub">Derived from the FreeBSD source tree, built with a NetBSD-style
+      <code>build.sh</code>, and tuned for performance and portability &mdash; no preinstalled
+      toolchain required.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="get.html">Get Renux</a>
+        <a class="btn btn-ghost" href="development.html">Live commits</a>
+      </div>
+      <div class="hero-chips">
+        <span class="chip">sched_renux</span>
+        <span class="chip">RENUX_MALLOC</span>
+        <span class="chip">FULL_PREEMPTION</span>
+        <span class="chip">build.sh</span>
+        <span class="chip">amd64 &middot; arm64 &middot; riscv</span>
+      </div>
     </section>
 
     <section id="features">
