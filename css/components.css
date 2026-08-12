@@ -44,6 +44,14 @@
   font-weight: 600;
 }
 
+/* ---- language switch ---- */
+.header-right { display: flex; flex-direction: column; align-items: flex-end; gap: 2px; }
+.lang-switch { display: flex; align-items: center; gap: 5px; font-size: 12px; font-weight: 600; }
+.lang-switch a { color: #0f2305; opacity: .72; }
+.lang-switch a:hover { opacity: 1; text-decoration: underline; }
+.lang-switch a.lang-current { opacity: 1; font-weight: 700; background: rgba(255, 255, 255, .28); padding: 1px 6px; border-radius: 4px; }
+.lang-switch .sep { color: rgba(15, 35, 5, .5); }
+
 /* ---- nav ---- */
 #nav {
   position: sticky;

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<!--
+    SPDX-License-Identifier: BSD-2-Clause
+    Copyright (c) 2026 The Renux Project.  All rights reserved.
+    See LICENSE for full license text.
+-->
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'none'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'none'">
+<meta name="description" content="Documentação do sistema operacional Renux.">
+<title>Documentação | Renux</title>
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="stylesheet" href="../css/base.css">
+<link rel="stylesheet" href="../css/components.css">
+<link rel="alternate" hreflang="en" href="../documentation.html">
+<link rel="alternate" hreflang="pt" href="documentation.html">
+<link rel="alternate" hreflang="es" href="../es/documentation.html">
+</head>
+<body id="top">
+<input type="checkbox" id="nav-toggle" class="nav-toggle">
+<header id="header">
+  <div class="header-inner">
+    <div class="brand">
+      <h1><a href="index.html">Renux</a></h1>
+    </div>
+    <div class="header-right">
+      <div class="tagline">O Poder do BSD, Reimaginado</div>
+      <div class="lang-switch">
+        <a href="../documentation.html">EN</a><span class="sep">&middot;</span><a href="documentation.html" class="lang-current">PT</a><span class="sep">&middot;</span><a href="../es/documentation.html">ES</a>
+      </div>
+    </div>
+    <label class="menu-toggle" for="nav-toggle" aria-label="Alternar navegação">
+      <span></span><span></span><span></span>
+    </label>
+  </div>
+</header>
+
+<nav id="nav">
+  <ul>
+    <li><a href="index.html">Início</a></li>
+    <li><a href="about.html">Sobre</a></li>
+    <li><a href="get.html">Obter Renux</a></li>
+    <li><a href="documentation.html" class="active">Documentação</a></li>
+  </ul>
+</nav>
+
+<div id="content">
+
+  <main id="main">
+
+    <section>
+      <h2>Documentação</h2>
+      <p>A documentação acompanha a árvore de fontes. Comece pelos arquivos abaixo e, em
+      seguida, explore o mapa da árvore para encontrar o subsistema de seu interesse.</p>
+      <table>
+        <thead>
+          <tr><th>Documento</th><th>Descrição</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><a href="https://github.com/renuxproject/src/blob/main/README.md">README</a></td><td>Visão geral de alto nível e mapa da árvore de fontes.</td></tr>
+          <tr><td><a href="https://github.com/renuxproject/src/blob/main/build.sh">build.sh</a></td><td>O ponto de entrada de compilação portável.</td></tr>
+          <tr><td><a href="https://github.com/renuxproject/src/blob/main/UPDATING">UPDATING</a></td><td>Notas para quem atualiza a árvore.</td></tr>
+          <tr><td><a href="https://github.com/renuxproject/src/blob/main/RELNOTES">RELNOTES</a></td><td>Notas de versão.</td></tr>
+          <tr><td><a href="https://github.com/renuxproject/src/blob/main/COPYRIGHT">COPYRIGHT</a></td><td>Informações de licenciamento.</td></tr>
+          <tr><td><code>build(7)</code>, <code>config(8)</code></td><td>Compilar a árvore e configurar kernels.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Onde Fica Cada Coisa</h2>
+      <ul>
+        <li><strong>Mecanismo de versões</strong> &mdash; <code>release/</code></li>
+        <li><strong>Fontes do carregador de boot</strong> &mdash; <code>stand/</code></li>
+        <li><strong>Fontes do núcleo</strong> &mdash; <code>sys/</code></li>
+        <li><strong>Conjunto de testes (Kyua)</strong> &mdash; <code>tests/</code></li>
+        <li><strong>Ferramentas auxiliares</strong> &mdash; <code>tools/</code></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Comunidade e Suporte</h2>
+      <ul>
+        <li><strong>Relatórios de bugs</strong> &mdash; o <a href="https://github.com/renuxproject/src/issues">rastreador de problemas</a> no GitHub.</li>
+        <li><strong>Desenvolvimento</strong> &mdash; acompanhe o <a href="https://github.com/renuxproject/src/commits">histórico de commits</a> e contribua pelo repositório.</li>
+        <li><strong>Segurança</strong> &mdash; os avisos seguem o modelo clássico BSD e são publicados na página de <a href="https://github.com/renuxproject/src/releases">versões</a>.</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <aside class="sidebar">
+    <div class="box">
+      <h3>Links rápidos</h3>
+      <ul>
+        <li><a href="about.html">Sobre</a></li>
+        <li><a href="get.html">Obter Renux</a></li>
+        <li><a href="https://github.com/renuxproject/src">Código no GitHub</a></li>
+      </ul>
+    </div>
+  </aside>
+
+</div>
+
+<footer id="footer">
+  <div class="footer-inner">
+    <div>Copyright &copy; 2026 The Renux Project. Todos os direitos reservados.</div>
+    <div class="footer-links">
+      <a href="#top">Voltar ao topo</a><span>|</span>
+      <a href="../LICENSE">Licença</a><span>|</span>
+      <a href="https://github.com/renuxproject/src">Código no GitHub</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

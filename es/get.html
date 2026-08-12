@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<!--
+    SPDX-License-Identifier: BSD-2-Clause
+    Copyright (c) 2026 The Renux Project.  All rights reserved.
+    See LICENSE for full license text.
+-->
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'none'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'none'">
+<meta name="description" content="Descargue y compile Renux.">
+<title>Obtener Renux | Renux</title>
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="stylesheet" href="../css/base.css">
+<link rel="stylesheet" href="../css/components.css">
+<link rel="alternate" hreflang="en" href="../get.html">
+<link rel="alternate" hreflang="pt" href="../pt/get.html">
+<link rel="alternate" hreflang="es" href="get.html">
+</head>
+<body id="top">
+<input type="checkbox" id="nav-toggle" class="nav-toggle">
+<header id="header">
+  <div class="header-inner">
+    <div class="brand">
+      <h1><a href="index.html">Renux</a></h1>
+    </div>
+    <div class="header-right">
+      <div class="tagline">El Poder de BSD, Reimaginado</div>
+      <div class="lang-switch">
+        <a href="../get.html">EN</a><span class="sep">&middot;</span><a href="../pt/get.html">PT</a><span class="sep">&middot;</span><a href="get.html" class="lang-current">ES</a>
+      </div>
+    </div>
+    <label class="menu-toggle" for="nav-toggle" aria-label="Alternar navegación">
+      <span></span><span></span><span></span>
+    </label>
+  </div>
+</header>
+
+<nav id="nav">
+  <ul>
+    <li><a href="index.html">Inicio</a></li>
+    <li><a href="about.html">Acerca de</a></li>
+    <li><a href="get.html" class="active">Obtener Renux</a></li>
+    <li><a href="documentation.html">Documentación</a></li>
+  </ul>
+</nav>
+
+<div id="content">
+
+  <main id="main">
+
+    <section>
+      <h2>Obtener el Código Fuente</h2>
+      <p>El árbol de fuentes está alojado en GitHub. No se requiere un host FreeBSD ni una
+      cadena de herramientas preinstalada &mdash; Renux prepara todo lo que necesita.</p>
+      <pre><code>$ git clone https://github.com/renuxproject/src.git /usr/src/renux
+$ cd /usr/src/renux</code></pre>
+    </section>
+
+    <section>
+      <h2>Compilar con build.sh</h2>
+      <p>Renux trae el clásico punto de entrada <code>build.sh</code> de NetBSD a un sistema
+      de herencia Berkeley. El script es autosuficiente y portable, y prepara automáticamente
+      cualquier herramienta de host ausente en <code>obj/host-shims</code>.</p>
+      <pre><code># Compilar world (userland) y el kernel
+$ ./build.sh build
+
+# Compilar solo el kernel (sin buildworld)
+$ ./build.sh kernel=GENERIC
+
+# Imágenes de arranque (kernel + loader, sin userland)
+$ ./build.sh bootimage                 # disco UEFI + ISO BIOS
+$ ./build.sh iso                       # ISO UEFI + ISO BIOS
+$ ./build.sh qemu                      # arranque de la imagen UEFI en QEMU
+
+# Otras operaciones útiles
+$ ./build.sh world                     # solo buildworld
+$ ./build.sh distribution              # construir la distribución
+$ ./build.sh release                   # construir una versión
+$ ./build.sh update                    # git pull --ff-only</code></pre>
+    </section>
+
+    <section>
+      <h2>Arquitecturas Soportadas</h2>
+      <table>
+        <thead>
+          <tr><th>Arquitectura</th><th>Directorio</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>amd64 (x86-64, base x86-64-v2)</td><td><code>amd64</code></td></tr>
+          <tr><td>ARM (32 bits)</td><td><code>arm</code></td></tr>
+          <tr><td>ARM64</td><td><code>arm64</code></td></tr>
+          <tr><td>i386</td><td><code>i386</code></td></tr>
+          <tr><td>PowerPC</td><td><code>powerpc</code></td></tr>
+          <tr><td>RISC-V</td><td><code>riscv</code></td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Requisitos del Sistema</h2>
+      <ul>
+        <li>Una máquina amd64 moderna (x86-64-v2) para el destino predeterminado.</li>
+        <li>Cualquier host Unix para compilar: FreeBSD, Linux, NetBSD, OpenBSD, DragonFly o macOS.</li>
+        <li>Para las imágenes de arranque: firmware UEFI (GPT/ESP FAT32) o BIOS (ISO El Torito).</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <aside class="sidebar">
+    <div class="box">
+      <h3>Versiones</h3>
+      <ul>
+        <li><a href="https://github.com/renuxproject/src/releases">Imágenes ISO en GitHub</a></li>
+        <li><a href="https://github.com/renuxproject/src/commits">Historial de desarrollo</a></li>
+      </ul>
+    </div>
+    <div class="box">
+      <h3>¿Necesita ayuda?</h3>
+      <p>Consulte la página de <a href="documentation.html">documentación</a> antes de
+      preguntar &mdash; el archivo <code>UPDATING</code> y <code>./build.sh show-params</code>
+      resuelven la mayoría de los problemas.</p>
+    </div>
+  </aside>
+
+</div>
+
+<footer id="footer">
+  <div class="footer-inner">
+    <div>Copyright &copy; 2026 The Renux Project. Todos los derechos reservados.</div>
+    <div class="footer-links">
+      <a href="#top">Volver arriba</a><span>|</span>
+      <a href="../LICENSE">Licencia</a><span>|</span>
+      <a href="https://github.com/renuxproject/src">Código en GitHub</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

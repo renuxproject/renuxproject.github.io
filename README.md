@@ -16,10 +16,12 @@ NetBSD-style `build.sh`.
 
 ```
 site/
-├── index.html           # homepage
+├── index.html           # homepage (English)
 ├── about.html           # about the project
 ├── get.html             # download and build instructions
 ├── documentation.html   # documentation, community and support
+├── pt/                  # Portuguese (neutral) translations
+├── es/                  # Spanish (neutral) translations
 ├── css/
 │   ├── base.css         # design tokens, dark/light themes, typography
 │   └── components.css   # layout components and responsive rules
@@ -28,6 +30,10 @@ site/
 ├── LICENSE              # BSD-2-Clause (same license as the OS)
 └── README.md
 ```
+
+The language is chosen manually via the selector in the header (EN / PT / ES);
+there is no JavaScript, so no automatic browser-language detection.
+`hreflang` alternate links are provided on every page.
 
 ## Development
 

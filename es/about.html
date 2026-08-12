@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<!--
+    SPDX-License-Identifier: BSD-2-Clause
+    Copyright (c) 2026 The Renux Project.  All rights reserved.
+    See LICENSE for full license text.
+-->
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'none'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'none'">
+<meta name="description" content="Acerca del proyecto del sistema operativo Renux.">
+<title>Acerca de | Renux</title>
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="stylesheet" href="../css/base.css">
+<link rel="stylesheet" href="../css/components.css">
+<link rel="alternate" hreflang="en" href="../about.html">
+<link rel="alternate" hreflang="pt" href="../pt/about.html">
+<link rel="alternate" hreflang="es" href="about.html">
+</head>
+<body id="top">
+<input type="checkbox" id="nav-toggle" class="nav-toggle">
+<header id="header">
+  <div class="header-inner">
+    <div class="brand">
+      <h1><a href="index.html">Renux</a></h1>
+    </div>
+    <div class="header-right">
+      <div class="tagline">El Poder de BSD, Reimaginado</div>
+      <div class="lang-switch">
+        <a href="../about.html">EN</a><span class="sep">&middot;</span><a href="../pt/about.html">PT</a><span class="sep">&middot;</span><a href="about.html" class="lang-current">ES</a>
+      </div>
+    </div>
+    <label class="menu-toggle" for="nav-toggle" aria-label="Alternar navegación">
+      <span></span><span></span><span></span>
+    </label>
+  </div>
+</header>
+
+<nav id="nav">
+  <ul>
+    <li><a href="index.html">Inicio</a></li>
+    <li><a href="about.html" class="active">Acerca de</a></li>
+    <li><a href="get.html">Obtener Renux</a></li>
+    <li><a href="documentation.html">Documentación</a></li>
+  </ul>
+</nav>
+
+<div id="content">
+
+  <main id="main">
+
+    <section>
+      <h2>Acerca del Proyecto</h2>
+      <p>Renux es un sistema operativo BSD moderno, diseñado para ser fácil de mantener y
+      depurar, con un enfoque en la portabilidad y el rendimiento. Deriva del árbol de
+      fuentes de FreeBSD y trae el clásico punto de entrada <code>build.sh</code> de NetBSD a
+      un núcleo y userland de herencia Berkeley, de modo que todo el árbol compila a partir de
+      un solo script en cualquier host Unix.</p>
+    </section>
+
+    <section>
+      <h2>Objetivos de Diseño</h2>
+      <ul>
+        <li><strong>Mantenibilidad</strong> &mdash; un árbol de fuentes comprensible y modificable para todos.</li>
+        <li><strong>Portabilidad</strong> &mdash; compilación cruzada en cualquier host Unix: FreeBSD, Linux, NetBSD, OpenBSD, DragonFly o macOS.</li>
+        <li><strong>Rendimiento</strong> &mdash; valores predeterminados agresivos y bien ajustados para rendimiento y baja latencia.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Mapa del Árbol de Fuentes</h2>
+      <p>El árbol está organizado para que cada componente esté donde usted esperaría:</p>
+      <ul>
+        <li><code>sys/</code> &mdash; fuentes del núcleo (código independiente de máquina, con código por arquitectura en <code>sys/arch/</code>).</li>
+        <li><code>bin/</code>, <code>sbin/</code>, <code>usr.bin/</code>, <code>usr.sbin/</code> &mdash; comandos de usuario y del sistema.</li>
+        <li><code>lib/</code>, <code>libexec/</code> &mdash; bibliotecas del sistema y daemons.</li>
+        <li><code>contrib/</code>, <code>gnu/</code>, <code>crypto/</code> &mdash; software de terceros.</li>
+        <li><code>stand/</code> &mdash; fuentes del cargador de arranque.</li>
+        <li><code>release/</code> &mdash; construcción de versiones e imágenes de VM.</li>
+        <li><code>tests/</code> &mdash; el conjunto de pruebas Kyua.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Licencia</h2>
+      <p>Renux se distribuye bajo una licencia BSD, en línea con la herencia Berkeley sobre la
+      que está construido. Consulte el archivo <a href="../LICENSE">LICENSE</a> para el texto
+      completo.</p>
+    </section>
+
+  </main>
+
+  <aside class="sidebar">
+    <div class="box">
+      <h3>Enlaces rápidos</h3>
+      <ul>
+        <li><a href="get.html">Obtener Renux</a></li>
+        <li><a href="documentation.html">Documentación</a></li>
+        <li><a href="https://github.com/renuxproject/src">Código en GitHub</a></li>
+      </ul>
+    </div>
+  </aside>
+
+</div>
+
+<footer id="footer">
+  <div class="footer-inner">
+    <div>Copyright &copy; 2026 The Renux Project. Todos los derechos reservados.</div>
+    <div class="footer-links">
+      <a href="#top">Volver arriba</a><span>|</span>
+      <a href="../LICENSE">Licencia</a><span>|</span>
+      <a href="https://github.com/renuxproject/src">Código en GitHub</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

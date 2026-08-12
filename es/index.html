@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<!--
+    SPDX-License-Identifier: BSD-2-Clause
+    Copyright (c) 2026 The Renux Project.  All rights reserved.
+    See LICENSE for full license text.
+-->
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'none'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'none'">
+<meta name="description" content="Renux es un sistema operativo BSD moderno, fácil de mantener y depurar, con un enfoque en la portabilidad y el rendimiento.">
+<title>Renux | El Poder de BSD, Reimaginado</title>
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="stylesheet" href="../css/base.css">
+<link rel="stylesheet" href="../css/components.css">
+<link rel="alternate" hreflang="en" href="../index.html">
+<link rel="alternate" hreflang="pt" href="../pt/index.html">
+<link rel="alternate" hreflang="es" href="index.html">
+</head>
+<body id="top">
+<input type="checkbox" id="nav-toggle" class="nav-toggle">
+<header id="header">
+  <div class="header-inner">
+    <div class="brand">
+      <h1><a href="index.html">Renux</a></h1>
+    </div>
+    <div class="header-right">
+      <div class="tagline">El Poder de BSD, Reimaginado</div>
+      <div class="lang-switch">
+        <a href="../index.html">EN</a><span class="sep">&middot;</span><a href="../pt/index.html">PT</a><span class="sep">&middot;</span><a href="index.html" class="lang-current">ES</a>
+      </div>
+    </div>
+    <label class="menu-toggle" for="nav-toggle" aria-label="Alternar navegación">
+      <span></span><span></span><span></span>
+    </label>
+  </div>
+</header>
+
+<nav id="nav">
+  <ul>
+    <li><a href="index.html" class="active">Inicio</a></li>
+    <li><a href="about.html">Acerca de</a></li>
+    <li><a href="get.html">Obtener Renux</a></li>
+    <li><a href="documentation.html">Documentación</a></li>
+  </ul>
+</nav>
+
+<div id="content">
+
+  <main id="main">
+
+    <section class="hero-main">
+      <span class="hero-eyebrow">Renux BSD</span>
+      <h2 class="hero-title">Un sistema operativo BSD moderno</h2>
+      <p class="hero-sub">Derivado del árbol de fuentes de FreeBSD, construido con un
+      <code>build.sh</code> estilo NetBSD y ajustado para rendimiento y portabilidad
+      &mdash; sin requerir una cadena de herramientas preinstalada.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="get.html">Obtener Renux</a>
+        <a class="btn btn-ghost" href="https://github.com/renuxproject/src">Código en GitHub</a>
+      </div>
+      <div class="hero-chips">
+        <span class="chip">sched_renux</span>
+        <span class="chip">RENUX_MALLOC</span>
+        <span class="chip">FULL_PREEMPTION</span>
+        <span class="chip">build.sh</span>
+        <span class="chip">amd64 &middot; arm64 &middot; riscv</span>
+      </div>
+    </section>
+
+    <section id="about">
+      <h2>Acerca de</h2>
+      <p>Renux es un sistema operativo BSD moderno, diseñado para ser fácil de mantener y
+      depurar, con un enfoque en la portabilidad y el rendimiento. Todo el árbol está pensado
+      para ser comprensible y modificable, y compila a partir de un único script portable en
+      cualquier host Unix.</p>
+      <p><a href="about.html">Leer más &rsaquo;</a></p>
+    </section>
+
+    <section id="features">
+      <h2>Características</h2>
+      <div class="features">
+        <div class="feature">
+          <h3>sched_renux</h3>
+          <p>Un planificador derivado de ULE, ahora el predeterminado, ajustado para
+          rendimiento en cargas limitadas por CPU, con balanceo agresivo y robo de trabajo
+          preventivo.</p>
+        </div>
+        <div class="feature">
+          <h3>RENUX_MALLOC</h3>
+          <p>Una bifurcación de <code>kern_malloc</code> sin bloqueos, con cachés profundas por
+          CPU, habilitada por defecto en GENERIC.</p>
+        </div>
+        <div class="feature">
+          <h3>VFS agresivo</h3>
+          <p><code>renux_vfs_cluster</code> y <code>renux_vfs_subr</code> ofrecen valores
+          predeterminados agresivos de agrupación de E/S para el rendimiento de almacenamiento.</p>
+        </div>
+        <div class="feature">
+          <h3>Preempción total</h3>
+          <p><code>FULL_PREEMPTION</code> habilitado por defecto en GENERIC reduce la latencia
+          de despacho en todo el núcleo.</p>
+        </div>
+        <div class="feature">
+          <h3>build.sh estilo NetBSD</h3>
+          <p>Un solo script para todo: <code>./build.sh build</code> para world y kernel,
+          además de <code>iso</code>, <code>qemu</code> y <code>release</code>.</p>
+        </div>
+        <div class="feature">
+          <h3>Compilación cruzada portable</h3>
+          <p>Compila desde FreeBSD, Linux, NetBSD, OpenBSD, DragonFly o macOS, sin ninguna
+          cadena de herramientas preinstalada.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="get">
+      <h2>Obtener Renux</h2>
+      <p>Clone el árbol de fuentes y compílelo usted mismo:</p>
+      <pre><code>$ git clone https://github.com/renuxproject/src.git /usr/src/renux
+$ cd /usr/src/renux
+$ ./build.sh build        # world + kernel
+$ ./build.sh iso          # medio de arranque UEFI + BIOS
+$ ./build.sh qemu         # arranque en QEMU</code></pre>
+      <p><a href="get.html">Instrucciones completas de compilación &rsaquo;</a></p>
+    </section>
+
+    <section id="news">
+      <h2>Actualizaciones recientes</h2>
+      <ul>
+        <li><a href="https://github.com/renuxproject/src/releases">Versiones e imágenes ISO</a></li>
+        <li><a href="https://github.com/renuxproject/src/commits">Historial de desarrollo</a></li>
+        <li><a href="https://github.com/renuxproject/src/blob/main/UPDATING">Notas de UPDATING</a></li>
+      </ul>
+    </section>
+
+  </main>
+
+  <aside class="sidebar">
+
+    <div class="box">
+      <h3>Acerca del proyecto</h3>
+      <p>Renux es un sistema operativo BSD moderno derivado del árbol de fuentes de FreeBSD,
+      construido con el <code>build.sh</code> estilo NetBSD y ajustado para rendimiento y
+      portabilidad.</p>
+    </div>
+
+    <div class="box">
+      <h3>Enlaces rápidos</h3>
+      <ul>
+        <li><a href="about.html">Acerca de</a></li>
+        <li><a href="get.html">Obtener Renux</a></li>
+        <li><a href="documentation.html">Documentación</a></li>
+        <li><a href="https://github.com/renuxproject/src">Código en GitHub</a></li>
+      </ul>
+    </div>
+
+  </aside>
+
+</div>
+
+<footer id="footer">
+  <div class="footer-inner">
+    <div>Copyright &copy; 2026 The Renux Project. Todos los derechos reservados.</div>
+    <div class="footer-links">
+      <a href="#top">Volver arriba</a><span>|</span>
+      <a href="../LICENSE">Licencia</a><span>|</span>
+      <a href="https://github.com/renuxproject/src">Código en GitHub</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
