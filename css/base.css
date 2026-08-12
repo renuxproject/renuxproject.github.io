@@ -23,6 +23,8 @@
   --muted: #66725c;
   --hairline: #e2e9d7;
   --code-bg: #eef1e4;
+  --active-bg: #1d2016;
+  --active-text: #ffffff;
 
   --radius: 14px;
   --radius-lg: 22px;
@@ -49,6 +51,8 @@
     --muted: #98a386;
     --hairline: #2b3320;
     --code-bg: #202616;
+    --active-bg: #c6dd57;
+    --active-text: #10140a;
 
     --shadow-sm: 0 1px 3px rgba(0, 0, 0, .4);
     --shadow-md: 0 6px 18px rgba(0, 0, 0, .45);
