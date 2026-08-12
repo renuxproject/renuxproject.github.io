@@ -34,7 +34,7 @@
 /* ---- design tokens (dark theme, automatic) ---- */
 @media (prefers-color-scheme: dark) {
   :root {
-    --green-deep: #0c1203;
+    --green-deep: #c6dd57;
     --green: #4e8517;
     --green-mid: #8fbf22;
     --green-light: #c6dd57;
