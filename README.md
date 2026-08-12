@@ -4,6 +4,14 @@ The official website of the [Renux Project](https://renuxproject.github.io),
 a modern BSD operating system derived from the FreeBSD source tree with a
 NetBSD-style `build.sh`.
 
+## Principles
+
+- **Simple and direct**: a few pages, no fluff.
+- **No JavaScript**: the site works with JS disabled. A strict
+  Content-Security-Policy (`script-src 'none'`) enforces this.
+- **Privacy-respecting**: no tracking, no analytics, no external fonts or
+  scripts. Links leave with `no-referrer`. All assets are served locally.
+
 ## Structure
 
 ```
@@ -11,22 +19,14 @@ site/
 ├── index.html           # homepage
 ├── about.html           # about the project
 ├── get.html             # download and build instructions
-├── features.html        # feature overview
-├── documentation.html   # documentation index
-├── community.html       # community and development
-├── support.html         # support and bug reporting
-├── news.html            # news and announcements
-├── development.html     # live commits (GitHub API)
-├── feed.xml             # RSS feed for the news
-├── logo.svg             # Renux daemon logo
-├── favicon.svg          # site favicon
-├── LICENSE              # BSD-2-Clause (same license as the OS)
-├── README.md
+├── documentation.html   # documentation, community and support
 ├── css/
 │   ├── base.css         # design tokens, dark/light themes, typography
 │   └── components.css   # layout components and responsive rules
-└── js/
-    └── commits.js       # fetches the latest commits from the GitHub API
+├── favicon.svg          # site favicon
+├── logo.svg             # Renux daemon logo
+├── LICENSE              # BSD-2-Clause (same license as the OS)
+└── README.md
 ```
 
 ## Development
@@ -38,15 +38,7 @@ python3 -m http.server 8000
 ```
 
 The color theme follows the system preference automatically
-(`prefers-color-scheme`). There is no build step or dependency.
-
-## Live commits
-
-The Development page (`development.html`) fetches the latest commits from
-`https://api.github.com/repos/renuxproject/src/commits` via `js/commits.js`.
-The repository is configurable with the `REPO` constant in that file. Results
-are cached in `localStorage` for five minutes to respect the GitHub API rate
-limit (60 requests/hour per IP unauthenticated).
+(`prefers-color-scheme`). There is no build step and no dependency.
 
 ## Deployment
 

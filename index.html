@@ -9,6 +9,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light dark">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'none'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'none'">
 <meta name="description" content="Renux is a modern BSD operating system, easy to maintain and debug, with a focus on portability and performance.">
 <title>Renux | The Power of BSD, Reimagined</title>
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -31,12 +33,7 @@
     <li><a href="index.html" class="active">Home</a></li>
     <li><a href="about.html">About</a></li>
     <li><a href="get.html">Get Renux</a></li>
-    <li><a href="features.html">Features</a></li>
     <li><a href="documentation.html">Documentation</a></li>
-    <li><a href="community.html">Community</a></li>
-    <li><a href="support.html">Support</a></li>
-    <li><a href="news.html">News</a></li>
-    <li><a href="development.html">Development</a></li>
   </ul>
 </nav>
 
@@ -52,7 +49,7 @@
       toolchain required.</p>
       <div class="hero-cta">
         <a class="btn btn-primary" href="get.html">Get Renux</a>
-        <a class="btn btn-ghost" href="development.html">Live commits</a>
+        <a class="btn btn-ghost" href="https://github.com/renuxproject/src">Source on GitHub</a>
       </div>
       <div class="hero-chips">
         <span class="chip">sched_renux</span>
@@ -61,6 +58,15 @@
         <span class="chip">build.sh</span>
         <span class="chip">amd64 &middot; arm64 &middot; riscv</span>
       </div>
+    </section>
+
+    <section id="about">
+      <h2>About</h2>
+      <p>Renux is a modern BSD operating system, designed to be easy to maintain and debug,
+      with a focus on portability and performance. The whole tree is meant to be
+      understandable and modifiable, and it builds from a single portable script on any Unix
+      host.</p>
+      <p><a href="about.html">Read more &rsaquo;</a></p>
     </section>
 
     <section id="features">
@@ -97,29 +103,26 @@
           preinstalled toolchain.</p>
         </div>
       </div>
-      <p><a href="features.html">All features &rsaquo;</a></p>
-    </section>
-
-    <section id="news">
-      <h2>Latest News</h2>
-      <ul>
-        <li><span class="news-date">2026-08-11</span> &mdash; <a href="news.html#x86-64-v2">amd64 baseline raised to x86-64-v2</a></li>
-        <li><span class="news-date">2026-08-11</span> &mdash; <a href="news.html#sched-default">sched_renux becomes the default scheduler</a></li>
-        <li><span class="news-date">2026-08-11</span> &mdash; <a href="news.html#malloc-default">RENUX_MALLOC enabled by default in GENERIC</a></li>
-      </ul>
-      <p><a href="news.html">All news &rsaquo;</a></p>
     </section>
 
     <section id="get">
       <h2>Get Renux</h2>
-      <p>Clone the source tree and build it yourself. No preinstalled host toolchain is
-      required &mdash; Renux bootstraps everything it needs:</p>
+      <p>Clone the source tree and build it yourself:</p>
       <pre><code>$ git clone https://github.com/renuxproject/src.git /usr/src/renux
 $ cd /usr/src/renux
 $ ./build.sh build        # world + kernel
 $ ./build.sh iso          # UEFI + BIOS bootable media
 $ ./build.sh qemu         # boot it in QEMU</code></pre>
-      <p><a href="get.html">Download and building &rsaquo;</a></p>
+      <p><a href="get.html">Full build instructions &rsaquo;</a></p>
+    </section>
+
+    <section id="news">
+      <h2>Recent Updates</h2>
+      <ul>
+        <li><a href="https://github.com/renuxproject/src/releases">Releases and ISO images</a></li>
+        <li><a href="https://github.com/renuxproject/src/commits">Development history</a></li>
+        <li><a href="https://github.com/renuxproject/src/blob/main/UPDATING">UPDATING notes</a></li>
+      </ul>
     </section>
 
   </main>
@@ -130,29 +133,15 @@ $ ./build.sh qemu         # boot it in QEMU</code></pre>
       <h3>About the Project</h3>
       <p>Renux is a modern BSD operating system derived from the FreeBSD source tree, built
       with the NetBSD-style <code>build.sh</code> and tuned for performance and portability.</p>
-      <p><a href="about.html">Read more &rsaquo;</a></p>
     </div>
 
     <div class="box">
       <h3>Quick Links</h3>
       <ul>
         <li><a href="about.html">About</a></li>
-        <li><a href="features.html">Features</a></li>
         <li><a href="get.html">Get Renux</a></li>
         <li><a href="documentation.html">Documentation</a></li>
-        <li><a href="community.html">Community</a></li>
-        <li><a href="support.html">Support</a></li>
-        <li><a href="news.html">News</a></li>
-        <li><a href="development.html">Development</a></li>
-      </ul>
-    </div>
-
-    <div class="box">
-      <h3>Source</h3>
-      <ul>
-        <li><a href="https://github.com/renuxproject/src">GitHub repository</a></li>
-        <li><a href="https://github.com/renuxproject/src/releases">Releases</a></li>
-        <li><a href="development.html">Live commits</a></li>
+        <li><a href="https://github.com/renuxproject/src">Source on GitHub</a></li>
       </ul>
     </div>
 

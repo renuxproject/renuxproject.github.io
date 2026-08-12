@@ -9,6 +9,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light dark">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'none'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'none'">
 <meta name="description" content="Renux operating system documentation.">
 <title>Documentation | Renux</title>
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -31,12 +33,7 @@
     <li><a href="index.html">Home</a></li>
     <li><a href="about.html">About</a></li>
     <li><a href="get.html">Get Renux</a></li>
-    <li><a href="features.html">Features</a></li>
     <li><a href="documentation.html" class="active">Documentation</a></li>
-    <li><a href="community.html">Community</a></li>
-    <li><a href="support.html">Support</a></li>
-    <li><a href="news.html">News</a></li>
-    <li><a href="development.html">Development</a></li>
   </ul>
 </nav>
 
@@ -75,10 +72,12 @@
     </section>
 
     <section>
-      <h2>Manual Pages</h2>
-      <p>Manual pages for the kernel and userland are built from the tree. Key references
-      include <code>build(7)</code>, <code>config(8)</code>, and the <code>sched_renux</code>
-      and <code>malloc(9)</code> pages for the kernel internals.</p>
+      <h2>Community &amp; Support</h2>
+      <ul>
+        <li><strong>Bug reports</strong> &mdash; the <a href="https://github.com/renuxproject/src/issues">issue tracker</a> on GitHub.</li>
+        <li><strong>Development</strong> &mdash; follow the <a href="https://github.com/renuxproject/src/commits">commit history</a> and contribute via the repository.</li>
+        <li><strong>Security</strong> &mdash; advisories follow the classic BSD model and are published on the <a href="https://github.com/renuxproject/src/releases">releases</a> page.</li>
+      </ul>
     </section>
 
   </main>
@@ -88,17 +87,8 @@
       <h3>Quick Links</h3>
       <ul>
         <li><a href="about.html">About</a></li>
-        <li><a href="features.html">Features</a></li>
         <li><a href="get.html">Get Renux</a></li>
-        <li><a href="support.html">Support</a></li>
-      </ul>
-    </div>
-    <div class="box">
-      <h3>Source on GitHub</h3>
-      <ul>
-        <li><a href="https://github.com/renuxproject/src">Repository</a></li>
-        <li><a href="https://github.com/renuxproject/src/releases">Releases</a></li>
-        <li><a href="development.html">Live commits</a></li>
+        <li><a href="https://github.com/renuxproject/src">Source on GitHub</a></li>
       </ul>
     </div>
   </aside>
