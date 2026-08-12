@@ -176,7 +176,7 @@ section { margin-bottom: 42px; }
 .btn:hover { transform: translateY(-1px); text-decoration: none; }
 .btn-primary {
   background: #fff;
-  color: var(--green-deep);
+  color: #101010;
   box-shadow: 0 8px 20px rgba(0, 0, 0, .2);
 }
 .btn-primary:hover { background: #f4f8ec; }
