@@ -56,8 +56,8 @@
       <h2>Obter o Código-Fonte</h2>
       <p>A árvore de fontes está hospedada no GitHub. Não é necessário um host FreeBSD ou uma
       cadeia de ferramentas pré-instalada &mdash; o Renux prepara tudo o que precisa.</p>
-      <pre><code>$ git clone https://github.com/renuxproject/src.git /usr/src/renux
-$ cd /usr/src/renux</code></pre>
+      <pre class="cmd-box"><span class="cmd-prompt">user <span class="cmd-symbol">$</span></span> git clone https://github.com/renuxproject/src.git /usr/src/renux
+<span class="cmd-prompt">user <span class="cmd-symbol">$</span></span> cd /usr/src/renux</pre>
     </section>
 
     <section>
@@ -65,22 +65,19 @@ $ cd /usr/src/renux</code></pre>
       <p>O Renux traz o clássico ponto de entrada <code>build.sh</code> do NetBSD para um
       sistema de herança Berkeley. O script é autossuficiente e portável, preparando
       automaticamente qualquer ferramenta de host ausente em <code>obj/host-shims</code>.</p>
-      <pre><code># Compilar world (userland) e o kernel
-$ ./build.sh build
-
-# Compilar somente o kernel (sem buildworld)
-$ ./build.sh kernel=GENERIC
-
-# Imagens inicializáveis (kernel + loader, sem userland)
-$ ./build.sh bootimage                 # disco UEFI + ISO BIOS
-$ ./build.sh iso                       # ISO UEFI + ISO BIOS
-$ ./build.sh qemu                      # boot da imagem UEFI no QEMU
-
-# Outras operações úteis
-$ ./build.sh world                     # somente buildworld
-$ ./build.sh distribution              # construir a distribuição
-$ ./build.sh release                   # construir uma versão
-$ ./build.sh update                    # git pull --ff-only</code></pre>
+      <pre class="cmd-box"><span class="cmd-comment"># Compilar world (userland) e o kernel</span>
+<span class="cmd-prompt">root <span class="cmd-symbol">#</span></span> ./build.sh build
+<span class="cmd-comment"># Compilar somente o kernel (sem buildworld)</span>
+<span class="cmd-prompt">root <span class="cmd-symbol">#</span></span> ./build.sh kernel=GENERIC
+<span class="cmd-comment"># Imagens inicializáveis (kernel + loader, sem userland)</span>
+<span class="cmd-prompt">root <span class="cmd-symbol">#</span></span> ./build.sh bootimage
+<span class="cmd-prompt">root <span class="cmd-symbol">#</span></span> ./build.sh iso
+<span class="cmd-prompt">root <span class="cmd-symbol">#</span></span> ./build.sh qemu
+<span class="cmd-comment"># Outras operações úteis</span>
+<span class="cmd-prompt">root <span class="cmd-symbol">#</span></span> ./build.sh world
+<span class="cmd-prompt">root <span class="cmd-symbol">#</span></span> ./build.sh distribution
+<span class="cmd-prompt">root <span class="cmd-symbol">#</span></span> ./build.sh release
+<span class="cmd-prompt">root <span class="cmd-symbol">#</span></span> ./build.sh update</pre>
     </section>
 
     <section>
