@@ -67,7 +67,7 @@
         <span class="chip">RENUX_MALLOC</span>
         <span class="chip">FULL_PREEMPTION</span>
         <span class="chip">build.sh</span>
-        <span class="chip">amd64 &middot; arm64 &middot; riscv</span>
+        <span class="chip">amd64</span>
       </div>
     </section>
 
@@ -124,6 +124,11 @@
           <p>Compila a partir de FreeBSD, Linux, NetBSD, OpenBSD, DragonFly ou macOS, sem
           nenhuma cadeia de ferramentas pré-instalada.</p>
         </div>
+        <div class="feature">
+          <h3>Separação MD/MI</h3>
+          <p>O código dependente de máquina fica em <code>sys/arch/</code>, mantendo a maior
+          parte do núcleo independente de máquina e pronta para novos ports.</p>
+        </div>
       </div>
     </section>
 
@@ -140,16 +145,27 @@
 
     <section id="roadmap">
       <h2>Roteiro</h2>
-      <ul>
-        <li><strong>RSL &mdash; Renux Subsystem for Linux</strong>: rodar programas Flatpak e
-        de linha de comando Linux via uma VM bhyve (Alpine/Void Linux) mostrada na tela do
-        Renux. Ferramentas planejadas: <code>rsl-init</code>, <code>rsl-shell</code>,
+      <ul class="roadmap">
+        <li><span class="status status-done">Feito</span>
+        <strong>Separação MD/MI</strong>: código dependente de máquina em
+        <code>sys/arch/</code>; o restante do núcleo é independente de máquina.</li>
+        <li><span class="status status-wip">Em desenvolvimento</span>
+        <strong>Instalador</strong>: um instalador de primeira classe para colocar o Renux no
+        disco, guiado pelo <code>bsdinstall</code> na imagem ao vivo.</li>
+        <li><span class="status status-planned">Planejado</span>
+        <strong>RSL &mdash; Renux Subsystem for Linux</strong>: rodar programas Flatpak e de
+        linha de comando Linux via uma VM bhyve (Alpine/Void Linux) mostrada na tela do Renux.
+        Ferramentas planejadas: <code>rsl-init</code>, <code>rsl-shell</code>,
         <code>rsl-install</code> (C99 + Zig build).</li>
-        <li><strong>Linuxulator</strong>: executar binários Linux nativamente no núcleo.</li>
-        <li><strong>Separação MD/MI</strong>: código dependente de máquina em <code>sys/arch/</code> (feito).</li>
-        <li><strong>Shell e utilitários em Zig</strong>.</li>
-        <li><strong>Mais arquiteturas suportadas</strong> para portabilidade.</li>
-        <li><strong>Zig build</strong> como orquestrador alternativo de compilação.</li>
+        <li><span class="status status-planned">Planejado</span>
+        <strong>Mais arquiteturas</strong>: portar além do amd64 &mdash; i386, arm64, RISC-V,
+        PowerPC e outras são o alvo atual para portabilidade.</li>
+        <li><span class="status status-planned">Planejado</span>
+        <strong>Linuxulator</strong>: executar binários Linux nativamente no núcleo.</li>
+        <li><span class="status status-planned">Planejado</span>
+        <strong>Shell e utilitários em Zig</strong>.</li>
+        <li><span class="status status-planned">Planejado</span>
+        <strong>Zig build</strong> como orquestrador alternativo de compilação.</li>
       </ul>
     </section>
 

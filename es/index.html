@@ -67,7 +67,7 @@
         <span class="chip">RENUX_MALLOC</span>
         <span class="chip">FULL_PREEMPTION</span>
         <span class="chip">build.sh</span>
-        <span class="chip">amd64 &middot; arm64 &middot; riscv</span>
+        <span class="chip">amd64</span>
       </div>
     </section>
 
@@ -125,6 +125,11 @@
           <p>Compila desde FreeBSD, Linux, NetBSD, OpenBSD, DragonFly o macOS, sin ninguna
           cadena de herramientas preinstalada.</p>
         </div>
+        <div class="feature">
+          <h3>Separación MD/MI</h3>
+          <p>El código dependiente de la máquina vive en <code>sys/arch/</code>, manteniendo
+          la mayor parte del núcleo independiente de la máquina y listo para nuevos ports.</p>
+        </div>
       </div>
     </section>
 
@@ -141,16 +146,27 @@
 
     <section id="roadmap">
       <h2>Hoja de ruta</h2>
-      <ul>
-        <li><strong>RSL &mdash; Renux Subsystem for Linux</strong>: ejecutar programas Flatpak
-        y de línea de comandos Linux mediante una VM bhyve (Alpine/Void Linux) mostrada en la
+      <ul class="roadmap">
+        <li><span class="status status-done">Hecho</span>
+        <strong>Separación MD/MI</strong>: código dependiente de la máquina en
+        <code>sys/arch/</code>; el resto del núcleo es independiente de la máquina.</li>
+        <li><span class="status status-wip">En desarrollo</span>
+        <strong>Instalador</strong>: un instalador de primera clase para poner Renux en el
+        disco, guiado por <code>bsdinstall</code> en la imagen en vivo.</li>
+        <li><span class="status status-planned">Planificado</span>
+        <strong>RSL &mdash; Renux Subsystem for Linux</strong>: ejecutar programas Flatpak y de
+        línea de comandos Linux mediante una VM bhyve (Alpine/Void Linux) mostrada en la
         pantalla de Renux. Herramientas planificadas: <code>rsl-init</code>,
         <code>rsl-shell</code>, <code>rsl-install</code> (C99 + Zig build).</li>
-        <li><strong>Linuxulator</strong>: ejecutar binarios de Linux de forma nativa en el núcleo.</li>
-        <li><strong>Separación MD/MI</strong>: código dependiente de la máquina en <code>sys/arch/</code> (hecho).</li>
-        <li><strong>Shell y utilidades en Zig</strong>.</li>
-        <li><strong>Más arquitecturas compatibles</strong> para portabilidad.</li>
-        <li><strong>Zig build</strong> como orquestador alternativo de compilación.</li>
+        <li><span class="status status-planned">Planificado</span>
+        <strong>Más arquitecturas</strong>: portar más allá de amd64 &mdash; i386, arm64,
+        RISC-V, PowerPC y otras son el objetivo actual para la portabilidad.</li>
+        <li><span class="status status-planned">Planificado</span>
+        <strong>Linuxulator</strong>: ejecutar binarios de Linux de forma nativa en el núcleo.</li>
+        <li><span class="status status-planned">Planificado</span>
+        <strong>Shell y utilidades en Zig</strong>.</li>
+        <li><span class="status status-planned">Planificado</span>
+        <strong>Zig build</strong> como orquestador alternativo de compilación.</li>
       </ul>
     </section>
 

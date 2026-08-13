@@ -67,7 +67,7 @@
         <span class="chip">RENUX_MALLOC</span>
         <span class="chip">FULL_PREEMPTION</span>
         <span class="chip">build.sh</span>
-        <span class="chip">amd64 &middot; arm64 &middot; riscv</span>
+        <span class="chip">amd64</span>
       </div>
     </section>
 
@@ -124,6 +124,11 @@
           <p>Cross-builds from FreeBSD, Linux, NetBSD, OpenBSD, DragonFly or macOS, without any
           preinstalled toolchain.</p>
         </div>
+        <div class="feature">
+          <h3>MD/MI separation</h3>
+          <p>Machine-dependent code lives under <code>sys/arch/</code>, keeping the bulk of the
+          kernel machine-independent and ready for new ports.</p>
+        </div>
       </div>
     </section>
 
@@ -140,16 +145,27 @@
 
     <section id="roadmap">
       <h2>Roadmap</h2>
-      <ul>
-        <li><strong>RSL &mdash; Renux Subsystem for Linux</strong>: run Flatpak and CLI Linux
+      <ul class="roadmap">
+        <li><span class="status status-done">Done</span>
+        <strong>MD/MI separation</strong>: machine-dependent code under
+        <code>sys/arch/</code>, the rest of the kernel is machine-independent.</li>
+        <li><span class="status status-wip">In development</span>
+        <strong>Installer</strong>: a first-class installer to put Renux on disk, driven by
+        <code>bsdinstall</code> on the live image.</li>
+        <li><span class="status status-planned">Planned</span>
+        <strong>RSL &mdash; Renux Subsystem for Linux</strong>: run Flatpak and CLI Linux
         programs through a bhyve VM (Alpine/Void Linux) shown on the Renux screen. Planned
         tools: <code>rsl-init</code>, <code>rsl-shell</code>, <code>rsl-install</code>
         (C99 + Zig build).</li>
-        <li><strong>Linuxulator</strong>: run Linux binaries natively in the kernel.</li>
-        <li><strong>MD/MI separation</strong>: machine-dependent code under <code>sys/arch/</code> (done).</li>
-        <li><strong>Zig-based shell and core utilities</strong>.</li>
-        <li><strong>Broader architecture support</strong> for portability.</li>
-        <li><strong>Zig build</strong> as an alternative system build orchestrator.</li>
+        <li><span class="status status-planned">Planned</span>
+        <strong>More architectures</strong>: port beyond amd64 &mdash; i386, arm64,
+        RISC-V, PowerPC and others are the current target for portability.</li>
+        <li><span class="status status-planned">Planned</span>
+        <strong>Linuxulator</strong>: run Linux binaries natively in the kernel.</li>
+        <li><span class="status status-planned">Planned</span>
+        <strong>Zig-based shell and core utilities</strong>.</li>
+        <li><span class="status status-planned">Planned</span>
+        <strong>Zig build</strong> as an alternative system build orchestrator.</li>
       </ul>
     </section>
 

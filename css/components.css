@@ -370,6 +370,40 @@ table {
   -webkit-overflow-scrolling: touch;
 }
 
+/* ---- status badges (roadmap) ---- */
+.status {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .4px;
+  text-transform: uppercase;
+  padding: 2px 9px;
+  border-radius: 999px;
+  margin-right: 8px;
+  vertical-align: 2px;
+}
+.status-done {
+  background: rgba(63, 125, 22, .14);
+  color: var(--green);
+  border: 1px solid rgba(63, 125, 22, .35);
+}
+.status-wip {
+  background: rgba(199, 143, 0, .14);
+  color: #b07500;
+  border: 1px solid rgba(199, 143, 0, .4);
+}
+.status-planned {
+  background: rgba(102, 114, 92, .14);
+  color: var(--muted);
+  border: 1px solid var(--hairline);
+}
+.roadmap { list-style: none; margin-left: 0; }
+.roadmap li {
+  padding: 9px 0 9px 4px;
+  border-bottom: 1px solid var(--hairline);
+}
+.roadmap li:last-child { border-bottom: 0; }
+
 /* ---- notice / alert ---- */
 .notice {
   display: flex;
@@ -389,10 +423,15 @@ table {
 .notice .notice-body p { margin: 2px 0 0; }
 
 /* ---- responsive ---- */
+@media (max-width: 980px) {
+  #content { grid-template-columns: 1fr; gap: 30px; }
+  .sidebar { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
+  .sidebar .box { margin-bottom: 0; }
+}
+
 @media (max-width: 860px) {
-  #content { grid-template-columns: 1fr; }
   .hero-main { padding: 40px 24px; }
-  .features { grid-template-columns: 1fr; }
+  .features { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
 }
 
 @media (max-width: 768px) {
@@ -406,6 +445,10 @@ table {
   .nav-toggle:checked ~ #header .menu-toggle span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
   .nav-toggle:checked ~ #header .menu-toggle span:nth-child(2) { opacity: 0; }
   .nav-toggle:checked ~ #header .menu-toggle span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+  .notice { flex-wrap: wrap; gap: 8px; padding: 12px 14px; }
+  .notice .notice-icon { font-size: 18px; }
+  .hero-cta { flex-direction: column; align-items: stretch; }
+  .hero-cta .btn { text-align: center; }
 }
 
 @media (max-width: 480px) {
@@ -421,4 +464,6 @@ table {
   pre { font-size: 12px; padding: 12px; }
   th, td { padding: 8px 10px; font-size: 12.5px; }
   .lang-switch { font-size: 11px; gap: 3px; }
+  .header-right { align-items: flex-end; }
+  .status { display: block; width: fit-content; margin: 0 0 4px; }
 }

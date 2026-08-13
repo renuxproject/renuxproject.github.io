@@ -55,9 +55,11 @@
     <div class="notice">
       <span class="notice-icon">&#9888;&#65039;</span>
       <div class="notice-body">
-        <strong>Software EXPERIMENTAL.</strong>
-        <p>O Renux está em constante desenvolvimento e não é estável. Não use em máquinas de
-        produção ou importantes. Espere bugs, recursos faltantes e mudanças frequentes.</p>
+        <strong>EXPERIMENTAL &mdash; somente AMD64.</strong>
+        <p>O Renux está em constante desenvolvimento e não é estável. Os recursos apresentados
+        aqui podem ainda não estar todos presentes, e o sistema atualmente suporta apenas amd64
+        (x86-64). O RSL (Renux Subsystem for Linux) é planejado para o futuro, e o instalador
+        ainda está em desenvolvimento. Não use em máquinas de produção ou importantes.</p>
       </div>
     </div>
 
@@ -91,17 +93,20 @@
 
     <section>
       <h2>Arquiteturas Suportadas</h2>
+      <p>Atualmente somente <strong>amd64 (x86-64)</strong> é suportada e inicializável. A
+      árvore contém ports para outras arquiteturas que estão sendo preparados &mdash; ainda
+      não utilizáveis.</p>
       <table>
         <thead>
-          <tr><th>Arquitetura</th><th>Diretório</th></tr>
+          <tr><th>Arquitetura</th><th>Diretório</th><th>Status</th></tr>
         </thead>
         <tbody>
-          <tr><td>amd64 (x86-64, base x86-64-v2)</td><td><code>amd64</code></td></tr>
-          <tr><td>ARM (32 bits)</td><td><code>arm</code></td></tr>
-          <tr><td>ARM64</td><td><code>arm64</code></td></tr>
-          <tr><td>i386</td><td><code>i386</code></td></tr>
-          <tr><td>PowerPC</td><td><code>powerpc</code></td></tr>
-          <tr><td>RISC-V</td><td><code>riscv</code></td></tr>
+          <tr><td>amd64 (x86-64, base x86-64-v2)</td><td><code>amd64</code></td><td><span class="status status-done">Suportada</span></td></tr>
+          <tr><td>i386</td><td><code>i386</code></td><td><span class="status status-wip">Em progresso</span></td></tr>
+          <tr><td>ARM (32 bits)</td><td><code>arm</code></td><td><span class="status status-wip">Em progresso</span></td></tr>
+          <tr><td>ARM64</td><td><code>arm64</code></td><td><span class="status status-wip">Em progresso</span></td></tr>
+          <tr><td>RISC-V</td><td><code>riscv</code></td><td><span class="status status-wip">Em progresso</span></td></tr>
+          <tr><td>PowerPC</td><td><code>powerpc</code></td><td><span class="status status-planned">Planejada</span></td></tr>
         </tbody>
       </table>
     </section>
