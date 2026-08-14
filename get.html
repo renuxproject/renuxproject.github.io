@@ -93,20 +93,19 @@
 
     <section>
       <h2>Supported Architectures</h2>
-      <p>Currently only <strong>amd64 (x86-64)</strong> is supported and bootable. The tree
-      carries ports for other architectures that are being brought up &mdash; they are not
-      usable yet.</p>
+      <p>Currently <strong>amd64 (x86-64)</strong> is the stable target. The other ports live
+      under <code>sys/arch/</code> and are experimental &mdash; they are not usable yet.</p>
       <table>
         <thead>
           <tr><th>Architecture</th><th>Directory</th><th>Status</th></tr>
         </thead>
         <tbody>
-          <tr><td>amd64 (x86-64, baseline x86-64-v2)</td><td><code>amd64</code></td><td><span class="status status-done">Supported</span></td></tr>
-          <tr><td>i386</td><td><code>i386</code></td><td><span class="status status-wip">In progress</span></td></tr>
-          <tr><td>ARM (32-bit)</td><td><code>arm</code></td><td><span class="status status-wip">In progress</span></td></tr>
-          <tr><td>ARM64</td><td><code>arm64</code></td><td><span class="status status-wip">In progress</span></td></tr>
-          <tr><td>RISC-V</td><td><code>riscv</code></td><td><span class="status status-wip">In progress</span></td></tr>
-          <tr><td>PowerPC</td><td><code>powerpc</code></td><td><span class="status status-planned">Planned</span></td></tr>
+          <tr><td>amd64 (x86-64, baseline x86-64-v2)</td><td><code>arch/amd64</code></td><td><span class="status status-done">Stable</span></td></tr>
+          <tr><td>i386</td><td><code>arch/i386</code></td><td><span class="status status-wip">Experimental</span></td></tr>
+          <tr><td>ARM (32-bit)</td><td><code>arch/arm</code></td><td><span class="status status-wip">Experimental</span></td></tr>
+          <tr><td>ARM64</td><td><code>arch/arm64</code></td><td><span class="status status-wip">Experimental</span></td></tr>
+          <tr><td>RISC-V</td><td><code>arch/riscv</code></td><td><span class="status status-wip">Experimental</span></td></tr>
+          <tr><td>PowerPC</td><td><code>arch/powerpc</code></td><td><span class="status status-wip">Experimental</span></td></tr>
         </tbody>
       </table>
     </section>
