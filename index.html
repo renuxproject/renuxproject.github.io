@@ -133,6 +133,12 @@
           <p>Machine-dependent code lives under <code>sys/arch/</code>, keeping the bulk of the
           kernel machine-independent and ready for new ports.</p>
         </div>
+        <div class="feature">
+          <h3>Hackable by design</h3>
+          <p>One <code>build.sh</code> for the whole tree, a machine-independent core and a
+          self-contained cross-build on any Unix host make Renux easy to understand, modify and
+          rebuild.</p>
+        </div>
       </div>
     </section>
 
@@ -199,6 +205,24 @@
         needs permission to be called Renux.</li>
         <li><strong>Distribution</strong> &mdash; there is no mandatory official repository;
         communities keep their own and users choose whom to trust.</li>
+      </ul>
+    </section>
+
+    <section id="hackability">
+      <h2>Hackability</h2>
+      <p>Being hackable is part of the Renux philosophy: the system is meant to be understood,
+      modified and rebuilt by whoever uses it. What keeps it hackable:</p>
+      <ul>
+        <li><strong>One build script</strong> &mdash; <code>./build.sh build</code> rebuilds
+        world and kernel; no preinstalled toolchain required.</li>
+        <li><strong>Machine-independent core</strong> &mdash; MD code lives under
+        <code>sys/arch/</code>, so hacking a port touches one place.</li>
+        <li><strong>Modular components</strong> &mdash; kernel, init, libc and userland can
+        evolve relatively independently.</li>
+        <li><strong>Any Unix host</strong> &mdash; cross-builds from FreeBSD, Linux, NetBSD,
+        OpenBSD, DragonFly or macOS.</li>
+        <li><strong>Your own Renux</strong> &mdash; community-driven and fork-friendly: hacking
+        the system can become your own line of development.</li>
       </ul>
     </section>
 

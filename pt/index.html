@@ -133,6 +133,12 @@
           <p>O código dependente de máquina fica em <code>sys/arch/</code>, mantendo a maior
           parte do núcleo independente de máquina e pronta para novos ports.</p>
         </div>
+        <div class="feature">
+          <h3>Hackeável por projeto</h3>
+          <p>Um único <code>build.sh</code> para toda a árvore, um núcleo independente de máquina
+          e um cross-build autossuficiente em qualquer host Unix fazem do Renux um sistema fácil
+          de entender, modificar e recompilar.</p>
+        </div>
       </div>
     </section>
 
@@ -201,6 +207,24 @@
         nenhum precisa de permissão para se chamar Renux.</li>
         <li><strong>Distribuição</strong> &mdash; não existe repositório oficial obrigatório;
         comunidades mantêm os seus e usuários escolhem em quem confiar.</li>
+      </ul>
+    </section>
+
+    <section id="hackability">
+      <h2>Hackeabilidade</h2>
+      <p>Ser hackeável faz parte da filosofia do Renux: o sistema é feito para ser entendido,
+      modificado e recompilado por quem o usa. O que o mantém hackeável:</p>
+      <ul>
+        <li><strong>Um único script de build</strong> &mdash; <code>./build.sh build</code>
+        recompila world e kernel; sem exigir cadeia de ferramentas pré-instalada.</li>
+        <li><strong>Núcleo independente de máquina</strong> &mdash; o código MD fica em
+        <code>sys/arch/</code>, então hackear um port toca um só lugar.</li>
+        <li><strong>Componentes modulares</strong> &mdash; kernel, init, libc e userland podem
+        evoluir de forma relativamente independente.</li>
+        <li><strong>Qualquer host Unix</strong> &mdash; cross-build a partir de FreeBSD, Linux,
+        NetBSD, OpenBSD, DragonFly ou macOS.</li>
+        <li><strong>Seu próprio Renux</strong> &mdash; conduzido pela comunidade e favorável a
+        forks: hackear o sistema pode virar a sua própria linha de desenvolvimento.</li>
       </ul>
     </section>
 

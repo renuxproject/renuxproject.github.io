@@ -134,6 +134,12 @@
           <p>El código dependiente de la máquina vive en <code>sys/arch/</code>, manteniendo
           la mayor parte del núcleo independiente de la máquina y listo para nuevos ports.</p>
         </div>
+        <div class="feature">
+          <h3>Hackeable por diseño</h3>
+          <p>Un solo <code>build.sh</code> para todo el árbol, un núcleo independiente de la
+          máquina y una compilación cruzada autosuficiente en cualquier host Unix hacen de Renux
+          un sistema fácil de entender, modificar y recompilar.</p>
+        </div>
       </div>
     </section>
 
@@ -201,6 +207,24 @@
         de primera clase; ninguna necesita permiso para llamarse Renux.</li>
         <li><strong>Distribución</strong> &mdash; no existe un repositorio oficial obligatorio;
         las comunidades mantienen los suyos y los usuarios eligen en quién confiar.</li>
+      </ul>
+    </section>
+
+    <section id="hackability">
+      <h2>Hackeabilidad</h2>
+      <p>Ser hackeable forma parte de la filosofía de Renux: el sistema está pensado para ser
+      entendido, modificado y recompilado por quien lo usa. Lo que lo mantiene hackeable:</p>
+      <ul>
+        <li><strong>Un solo script de compilación</strong> &mdash; <code>./build.sh build</code>
+        recompila world y kernel; sin cadena de herramientas preinstalada.</li>
+        <li><strong>Núcleo independiente de la máquina</strong> &mdash; el código MD vive en
+        <code>sys/arch/</code>, así hackear un port toca un solo lugar.</li>
+        <li><strong>Componentes modulares</strong> &mdash; kernel, init, libc y userland pueden
+        evolucionar de forma relativamente independiente.</li>
+        <li><strong>Cualquier host Unix</strong> &mdash; compilación cruzada desde FreeBSD, Linux,
+        NetBSD, OpenBSD, DragonFly o macOS.</li>
+        <li><strong>Tu propio Renux</strong> &mdash; impulsado por la comunidad y favorable a
+        bifurcaciones: hackear el sistema puede convertirse en tu propia línea de desarrollo.</li>
       </ul>
     </section>
 
