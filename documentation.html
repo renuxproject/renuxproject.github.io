@@ -72,6 +72,24 @@
     </section>
 
     <section>
+      <h2>Building with the Renux Build System</h2>
+      <p>The Renux Build System (<code>renux</code>, the <code>./renux</code> utility at the top
+      of the tree) drives the whole build from a single script, the NetBSD-style way. It works
+      on any Unix host &mdash; FreeBSD, Linux, NetBSD, OpenBSD, DragonFly or macOS &mdash; with
+      few host dependencies: just a C compiler (<code>clang</code>), a few standard utilities,
+      and for images <code>xorriso</code>/<code>makefs</code>. Everything else is bootstrapped
+      from the tree.</p>
+      <pre class="cmd-box"><span class="cmd-prompt">user <span class="cmd-symbol">$</span></span> git clone https://github.com/renuxproject/src.git /usr/src/renux
+<span class="cmd-prompt">user <span class="cmd-symbol">$</span></span> cd /usr/src/renux
+<span class="cmd-prompt">root <span class="cmd-symbol">#</span></span> ./renux build
+<span class="cmd-prompt">root <span class="cmd-symbol">#</span></span> ./renux worldiso</pre>
+      <p>Common operations: <code>./renux kernel=GENERIC</code> (kernel only), <code>./renux
+      iso</code> (bootable images), <code>./renux qemu</code> (boot in QEMU), <code>./renux
+      clean</code>, <code>./renux update</code>. See <code>./renux --help</code> for the full
+      list.</p>
+    </section>
+
+    <section>
       <h2>Where Things Live</h2>
       <ul>
         <li><strong>Release machinery</strong> &mdash; <code>release/</code></li>

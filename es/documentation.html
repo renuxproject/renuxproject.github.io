@@ -72,6 +72,24 @@
     </section>
 
     <section>
+      <h2>Compilar con el Renux Build System</h2>
+      <p>El Renux Build System (la utilidad <code>renux</code>, el <code>./renux</code> en la
+      parte superior del árbol) dirige toda la compilación desde un único script, al estilo
+      NetBSD. Funciona en cualquier host Unix &mdash; FreeBSD, Linux, NetBSD, OpenBSD,
+      DragonFly o macOS &mdash; con pocas dependencias del host: solo un compilador de C
+      (<code>clang</code>), algunas utilidades estándar y, para imágenes,
+      <code>xorriso</code>/<code>makefs</code>. El resto lo prepara el propio árbol.</p>
+      <pre class="cmd-box"><span class="cmd-prompt">user <span class="cmd-symbol">$</span></span> git clone https://github.com/renuxproject/src.git /usr/src/renux
+<span class="cmd-prompt">user <span class="cmd-symbol">$</span></span> cd /usr/src/renux
+<span class="cmd-prompt">root <span class="cmd-symbol">#</span></span> ./renux build
+<span class="cmd-prompt">root <span class="cmd-symbol">#</span></span> ./renux worldiso</pre>
+      <p>Operaciones comunes: <code>./renux kernel=GENERIC</code> (solo el kernel),
+      <code>./renux iso</code> (imágenes de arranque), <code>./renux qemu</code> (arranque en
+      QEMU), <code>./renux clean</code>, <code>./renux update</code>. Vea
+      <code>./renux --help</code> para la lista completa.</p>
+    </section>
+
+    <section>
       <h2>Dónde Está Cada Cosa</h2>
       <ul>
         <li><strong>Mecanismo de versiones</strong> &mdash; <code>release/</code></li>
