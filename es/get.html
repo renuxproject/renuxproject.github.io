@@ -72,23 +72,23 @@
     </section>
 
     <section>
-      <h2>Compilar con build.sh</h2>
-      <p>Renux trae el clásico punto de entrada <code>build.sh</code> de NetBSD a un sistema
+      <h2>Compilar con renux</h2>
+      <p>Renux trae el Renux Build System (<code>renux</code>) a un sistema
       de herencia Berkeley. El script es autosuficiente y portable, y prepara automáticamente
       cualquier herramienta de host ausente en <code>obj/host-shims</code>.</p>
       <pre class="cmd-box"><span class="cmd-comment"># Compilar world (userland) y el kernel</span>
-<span class="cmd-prompt">root <span class="cmd-symbol">#</span></span> ./build.sh build
+<span class="cmd-prompt">root <span class="cmd-symbol">#</span></span> ./renux build
 <span class="cmd-comment"># Compilar solo el kernel (sin buildworld)</span>
-<span class="cmd-prompt">root <span class="cmd-symbol">#</span></span> ./build.sh kernel=GENERIC
+<span class="cmd-prompt">root <span class="cmd-symbol">#</span></span> ./renux kernel=GENERIC
 <span class="cmd-comment"># Imágenes de arranque (kernel + loader, sin userland)</span>
-<span class="cmd-prompt">root <span class="cmd-symbol">#</span></span> ./build.sh bootimage
-<span class="cmd-prompt">root <span class="cmd-symbol">#</span></span> ./build.sh iso
-<span class="cmd-prompt">root <span class="cmd-symbol">#</span></span> ./build.sh qemu
+<span class="cmd-prompt">root <span class="cmd-symbol">#</span></span> ./renux bootimage
+<span class="cmd-prompt">root <span class="cmd-symbol">#</span></span> ./renux iso
+<span class="cmd-prompt">root <span class="cmd-symbol">#</span></span> ./renux qemu
 <span class="cmd-comment"># Otras operaciones útiles</span>
-<span class="cmd-prompt">root <span class="cmd-symbol">#</span></span> ./build.sh world
-<span class="cmd-prompt">root <span class="cmd-symbol">#</span></span> ./build.sh distribution
-<span class="cmd-prompt">root <span class="cmd-symbol">#</span></span> ./build.sh release
-<span class="cmd-prompt">root <span class="cmd-symbol">#</span></span> ./build.sh update</pre>
+<span class="cmd-prompt">root <span class="cmd-symbol">#</span></span> ./renux world
+<span class="cmd-prompt">root <span class="cmd-symbol">#</span></span> ./renux distribution
+<span class="cmd-prompt">root <span class="cmd-symbol">#</span></span> ./renux release
+<span class="cmd-prompt">root <span class="cmd-symbol">#</span></span> ./renux update</pre>
     </section>
 
     <section>
@@ -132,7 +132,7 @@
     <div class="box">
       <h3>¿Necesita ayuda?</h3>
       <p>Consulte la página de <a href="documentation.html">documentación</a> antes de
-      preguntar &mdash; el archivo <code>UPDATING</code> y <code>./build.sh show-params</code>
+      preguntar &mdash; el archivo <code>UPDATING</code> y <code>./renux show-params</code>
       resuelven la mayoría de los problemas.</p>
     </div>
   </aside>

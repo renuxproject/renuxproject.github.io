@@ -2,7 +2,7 @@
 
 The official website of the [Renux Project](https://renuxproject.github.io),
 a modern BSD operating system derived from the FreeBSD source tree with a
-NetBSD-style `build.sh`.
+Renux Build System (`renux`).
 
 ## Principles
 

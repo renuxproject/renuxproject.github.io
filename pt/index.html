@@ -59,8 +59,8 @@
     <section class="hero-main">
       <span class="hero-eyebrow">Renux BSD</span>
       <h2 class="hero-title">Um sistema operacional BSD moderno</h2>
-      <p class="hero-sub">Derivado da árvore de fontes do FreeBSD, construído com um
-      <code>build.sh</code> no estilo NetBSD e ajustado para desempenho e portabilidade
+      <p class="hero-sub">Derivado da árvore de fontes do FreeBSD, construído com o Renux Build
+      System (<code>renux</code>) e ajustado para desempenho e portabilidade
       &mdash; sem exigir uma cadeia de ferramentas pré-instalada.</p>
       <div class="hero-cta">
         <a class="btn btn-primary" href="get.html">Obter Renux</a>
@@ -70,7 +70,7 @@
         <span class="chip">sched_renux</span>
         <span class="chip">RENUX_MALLOC</span>
         <span class="chip">FULL_PREEMPTION</span>
-        <span class="chip">build.sh</span>
+        <span class="chip">renux</span>
         <span class="chip">amd64</span>
       </div>
     </section>
@@ -119,8 +119,8 @@
           despacho no núcleo.</p>
         </div>
         <div class="feature">
-          <h3>build.sh no estilo NetBSD</h3>
-          <p>Um único script para tudo: <code>./build.sh build</code> para world e kernel,
+          <h3>Renux Build System</h3>
+          <p>Um único script para tudo: <code>./renux build</code> para world e kernel,
           além de <code>iso</code>, <code>qemu</code> e <code>release</code>.</p>
         </div>
         <div class="feature">
@@ -135,7 +135,7 @@
         </div>
         <div class="feature">
           <h3>Hackeável por projeto</h3>
-          <p>Um único <code>build.sh</code> para toda a árvore, um núcleo independente de máquina
+          <p>Um único <code>renux</code> para toda a árvore, um núcleo independente de máquina
           e um cross-build autossuficiente em qualquer host Unix fazem do Renux um sistema fácil
           de entender, modificar e recompilar.</p>
         </div>
@@ -147,9 +147,9 @@
       <p>Clone a árvore de fontes e compile você mesmo:</p>
       <pre class="cmd-box"><span class="cmd-prompt">user <span class="cmd-symbol">$</span></span> git clone https://github.com/renuxproject/src.git /usr/src/renux
 <span class="cmd-prompt">user <span class="cmd-symbol">$</span></span> cd /usr/src/renux
-<span class="cmd-prompt">root <span class="cmd-symbol">#</span></span> ./build.sh build
-<span class="cmd-prompt">root <span class="cmd-symbol">#</span></span> ./build.sh iso
-<span class="cmd-prompt">root <span class="cmd-symbol">#</span></span> ./build.sh qemu</pre>
+<span class="cmd-prompt">root <span class="cmd-symbol">#</span></span> ./renux build
+<span class="cmd-prompt">root <span class="cmd-symbol">#</span></span> ./renux iso
+<span class="cmd-prompt">root <span class="cmd-symbol">#</span></span> ./renux qemu</pre>
       <p><a href="get.html">Instruções completas de compilação &rsaquo;</a></p>
     </section>
 
@@ -215,7 +215,7 @@
       <p>Ser hackeável faz parte da filosofia do Renux: o sistema é feito para ser entendido,
       modificado e recompilado por quem o usa. O que o mantém hackeável:</p>
       <ul>
-        <li><strong>Um único script de build</strong> &mdash; <code>./build.sh build</code>
+        <li><strong>Um único script de build</strong> &mdash; <code>./renux build</code>
         recompila world e kernel; sem exigir cadeia de ferramentas pré-instalada.</li>
         <li><strong>Núcleo independente de máquina</strong> &mdash; o código MD fica em
         <code>sys/arch/</code>, então hackear um port toca um só lugar.</li>
@@ -244,7 +244,7 @@
     <div class="box">
       <h3>Sobre o projeto</h3>
       <p>O Renux é um sistema operacional BSD moderno derivado da árvore de fontes do
-      FreeBSD, construído com o <code>build.sh</code> no estilo NetBSD e ajustado para
+      FreeBSD, construído com o Renux Build System (<code>renux</code>) e ajustado para
       desempenho e portabilidade.</p>
     </div>
 
