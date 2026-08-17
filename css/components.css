@@ -351,6 +351,29 @@ tbody tr:hover td { background: rgba(127, 163, 29, .06); }
 #footer a:hover { color: #fff; }
 .footer-links span { color: #6e7a52; margin: 0 6px; }
 
+/* ---- "no JavaScript" badge ---- */
+.no-js {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #dce8c5;
+  border: 1px solid rgba(220, 232, 197, .32);
+  border-radius: 999px;
+  padding: 3px 11px;
+}
+.no-js::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--green-light);
+  box-shadow: 0 0 7px var(--green-light);
+}
+
 /* ---- anchors ---- */
 .anchor { scroll-margin-top: 8px; }
 
