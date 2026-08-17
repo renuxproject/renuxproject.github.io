@@ -7,10 +7,21 @@ Renux Build System (`renux`).
 ## Principles
 
 - **Simple and direct**: a few pages, no fluff.
-- **No JavaScript**: the site works with JS disabled. A strict
-  Content-Security-Policy (`script-src 'none'`) enforces this.
+- **Minimal JavaScript**: the site is fully usable with JS disabled. A strict
+  Content-Security-Policy keeps script and network use to a minimum. The only
+  script is `geo-block.js`, which shows a regional availability notice (see
+  below).
 - **Privacy-respecting**: no tracking, no analytics, no external fonts or
   scripts. Links leave with `no-referrer`. All assets are served locally.
+
+## Regional availability
+
+`geo-block.js` performs a client-side IP geolocation lookup (`ipwho.is`). In
+regions the project does not serve due to governmental requirements (currently
+Brazil), the normal content is replaced with a notice explaining that Renux is
+decentralized and that the source remains open. If the lookup fails, the site
+loads normally. This is the only way to geo-restrict a static Pages site
+without fronting it with infrastructure such as Cloudflare.
 
 ## Structure
 
@@ -25,6 +36,7 @@ site/
 ├── css/
 │   ├── base.css         # design tokens, dark/light themes, typography
 │   └── components.css   # layout components and responsive rules
+├── geo-block.js         # regional availability notice
 ├── favicon.svg          # site favicon
 ├── logo.svg             # Renux daemon logo
 ├── LICENSE              # BSD-2-Clause (same license as the OS)
