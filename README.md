@@ -1,8 +1,8 @@
 # Renux Website
 
 The official website of the [Renux Project](https://renuxproject.github.io),
-a modern BSD operating system derived from the FreeBSD source tree with a
-Renux Build System (`renux`).
+a modern BSD Unix-like operating system, in the same class as Linux and the
+other BSDs, built with a Renux Build System (`renux`).
 
 ## Principles
 
