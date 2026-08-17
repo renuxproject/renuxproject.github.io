@@ -31,6 +31,13 @@
   --shadow-sm: 0 1px 3px rgba(22, 44, 10, .07);
   --shadow-md: 0 6px 18px rgba(22, 44, 10, .09);
   --shadow-lg: 0 18px 44px rgba(22, 44, 10, .16);
+
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Inter", "Helvetica Neue", Arial, sans-serif;
+  --font-serif: Georgia, "Iowan Old Style", "Palatino Linotype",
+    "Times New Roman", serif;
+  --font-mono: "SF Mono", "Cascadia Code", Menlo, Consolas,
+    "Liberation Mono", monospace;
 }
 
 /* ---- design tokens (dark theme, automatic) ---- */
@@ -67,22 +74,35 @@
 html { scroll-behavior: smooth; }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial, sans-serif;
+  font-family: var(--font-sans);
   color: var(--text);
   background: var(--bg);
   background-image: radial-gradient(1200px 480px at 50% -10%, rgba(127, 163, 29, .09), transparent 62%);
   background-attachment: fixed;
   font-size: 14.5px;
   line-height: 1.7;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-variant-ligatures: common-ligatures;
 }
 
-a { color: var(--link); text-decoration: none; }
-a:hover { text-decoration: underline; }
+a { color: var(--link); text-decoration: none; transition: color .15s ease; }
+a:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+::selection { background: rgba(127, 163, 29, .32); }
+
+:focus-visible {
+  outline: 2px solid var(--green);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
 
 /* ---- typography ---- */
+h1, h2, h3, h4 { text-wrap: balance; }
+
 h2 {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: var(--font-sans);
   font-size: 23px;
   font-weight: 800;
   letter-spacing: -.3px;
@@ -109,9 +129,21 @@ li { margin: 4px 0; }
 strong { color: inherit; }
 
 code {
-  font-family: "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+  font-family: var(--font-mono);
   background: var(--code-bg);
   padding: 2px 6px;
   border-radius: 6px;
   font-size: 12.5px;
+}
+
+/* ---- reduced motion ---- */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *,
+  *::before,
+  *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
 }
