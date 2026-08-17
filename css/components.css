@@ -248,24 +248,24 @@ section { margin-bottom: 42px; }
 }
 .feature p { margin: 0; color: var(--muted); }
 
-/* ---- code blocks (Gentoo-style command boxes) ---- */
+/* ---- command boxes ---- */
 pre {
-  background: #1a1c18;
-  color: #d8d8d0;
-  padding: 14px 18px;
-  border-radius: 6px;
+  background: #16181a;
+  color: #dcded6;
+  padding: 16px 18px;
+  border-radius: 10px;
   font-size: 13px;
   overflow-x: auto;
-  font-family: "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+  font-family: var(--font-mono);
   line-height: 1.7;
-  border: 1px solid #2c2f28;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, .25);
+  border: 1px solid rgba(255, 255, 255, .08);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, .25), inset 0 1px 0 rgba(255, 255, 255, .05);
 }
 pre code { background: none; padding: 0; }
-.cmd-prompt { color: #4e9a06; font-weight: 700; user-select: none; }
-.cmd-prompt .cmd-symbol { color: royalblue; }
-.cmd-prompt-root { color: #ef2929; }
-.cmd-comment { color: #7d7d70; }
+.cmd-prompt { color: #8fbf4a; font-weight: 600; user-select: none; }
+.cmd-prompt .cmd-symbol { color: #98a08c; font-weight: 400; }
+.cmd-prompt-root { color: #e2a05c; }
+.cmd-comment { color: #7d7d70; font-style: italic; }
 
 /* ---- tables ---- */
 table {
