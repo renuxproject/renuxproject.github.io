@@ -1,59 +1,35 @@
 # Renux Website
 
-The official website of the [Renux Project](https://renuxproject.github.io),
-a modern BSD Unix-like operating system, in the same class as Linux and the
-other BSDs, built with a Renux Build System (`renux`).
-
-## Principles
-
-- **Simple and direct**: a few pages, no fluff.
-- **No JavaScript**: the site is fully static and works with JavaScript
-  completely disabled (or absent). A strict Content-Security-Policy allows
-  only same-origin resources. There is no script, no third-party request and
-  nothing is sent anywhere.
-- **Privacy-respecting**: no tracking, no analytics, no geolocation, no
-  external fonts or scripts. Links leave with `no-referrer`. All assets are
-  served locally.
-
-## Structure
+The website of the [Renux Project](https://renuxproject.github.io): one short
+page in English, Portuguese and Spanish, and one stylesheet.
 
 ```
-site/
-├── index.html           # homepage (English)
-├── about.html           # about the project
-├── get.html             # download and build instructions
-├── documentation.html   # documentation, community and support
-├── pt/                  # Portuguese (neutral) translations
-├── es/                  # Spanish (neutral) translations
-├── css/
-│   ├── base.css         # design tokens, dark/light themes, typography
-│   └── components.css   # layout components and responsive rules
-├── favicon.svg          # site favicon
-├── logo.svg             # Renux daemon logo
-├── LICENSE              # BSD-2-Clause (same license as the OS)
-└── README.md
+index.html       English
+pt/index.html    Portuguese
+es/index.html    Spanish
+css/site.css     the only stylesheet
+logos/           the Renux logo (main-logo.svg) and its PNG versions
+favicon.svg
 ```
 
-The language is chosen manually via the selector in the header (EN / PT / ES);
-there is no JavaScript, so no automatic browser-language detection.
-`hreflang` alternate links are provided on every page.
+## Keeping it simple
 
-## Development
+- The site says what changes rarely: what Renux is, how to build it, its
+  principles and its links.  What changes often (what builds, what comes
+  next) is in the [README of the source](https://github.com/renuxproject/renux#readme),
+  and the site links to it.
+- The three pages have the same structure: a change to one is made to the
+  other two.
+- No JavaScript, no build step and nothing from other sites: the pages work
+  opened straight from the disk.  The theme follows the system's (light or
+  dark).
 
-Open `index.html` in a browser or serve the directory with any static server:
-
-```sh
-python3 -m http.server 8000
-```
-
-The color theme follows the system preference automatically
-(`prefers-color-scheme`). There is no build step and no dependency.
+Open `index.html` in a browser to see a change.
 
 ## Deployment
 
-This repository is published with GitHub Pages from the `main` branch at
-`https://renuxproject.github.io`.
+GitHub Pages publishes the `main` branch at <https://renuxproject.github.io>.
 
 ## License
 
-BSD-2-Clause, matching the Renux operating system. See `LICENSE`.
+Mozilla Public License 2.0, as Renux's own work: see [`LICENSE`](LICENSE).

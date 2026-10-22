@@ -1,285 +1,92 @@
 <!DOCTYPE html>
 <!--
-    SPDX-License-Identifier: BSD-2-Clause
-    Copyright (c) 2026 The Renux Project.  All rights reserved.
-    See LICENSE for full license text.
+    SPDX-License-Identifier: MPL-2.0
+    Copyright (c) 2026 Renan Lucas Vieira Hilário
+    Copyright (c) 2026 The Renux Project
+
+    This Source Code Form is subject to the terms of the Mozilla Public
+    License, v. 2.0. If a copy of the MPL was not distributed with this
+    file, You can obtain one at https://mozilla.org/MPL/2.0/.
 -->
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="color-scheme" content="light dark">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self'; img-src 'self'">
 <meta name="referrer" content="no-referrer">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'">
-<meta name="description" content="Renux is a modern BSD operating system, easy to maintain and debug, with a focus on portability and performance.">
-<meta property="og:title" content="Renux | The Power of BSD, Reimagined">
-<meta property="og:description" content="A modern BSD operating system, easy to maintain and debug, with a focus on portability and performance.">
-<meta property="og:type" content="website">
+<meta name="description" content="Renux: A general-purpose operating system: easy to maintain, portable, and built with Zig.">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#141613" media="(prefers-color-scheme: dark)">
+<meta property="og:title" content="Renux">
+<meta property="og:description" content="A general-purpose operating system: easy to maintain, portable, and built with Zig.">
 <meta property="og:image" content="logos/renux-512.png">
-<title>Renux | The Power of BSD, Reimagined</title>
-<link rel="icon" type="image/svg+xml" href="favicon.svg">
-<link rel="stylesheet" href="css/base.css">
-<link rel="stylesheet" href="css/components.css">
+<title>Renux</title>
+<link rel="icon" href="favicon.svg">
+<link rel="stylesheet" href="css/site.css">
 <link rel="alternate" hreflang="en" href="index.html">
 <link rel="alternate" hreflang="pt" href="pt/index.html">
 <link rel="alternate" hreflang="es" href="es/index.html">
 </head>
-<body id="top">
-<input type="checkbox" id="nav-toggle" class="nav-toggle">
-<header id="header">
-  <div class="header-inner">
-    <div class="brand">
-      <h1><a href="index.html">Renux</a></h1>
-    </div>
-    <div class="header-right">
-      <div class="tagline">The Power of BSD, Reimagined</div>
-      <div class="lang-switch">
-        <a href="index.html" class="lang-current">EN</a><span class="sep">&middot;</span><a href="pt/index.html">PT</a><span class="sep">&middot;</span><a href="es/index.html">ES</a>
-      </div>
-    </div>
-    <label class="menu-toggle" for="nav-toggle" aria-label="Toggle navigation">
-      <span></span><span></span><span></span>
-    </label>
-  </div>
+<body>
+<div class="page">
+
+<header>
+  <nav aria-label="Languages"><strong aria-current="page">EN</strong> &middot; <a href="pt/index.html" hreflang="pt" lang="pt">PT</a> &middot; <a href="es/index.html" hreflang="es" lang="es">ES</a></nav>
 </header>
 
-<nav id="nav">
-  <ul>
-    <li><a href="index.html" class="active">Home</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="get.html">Get Renux</a></li>
-    <li><a href="documentation.html">Documentation</a></li>
-  </ul>
-</nav>
-
-<div id="content">
-
-  <main id="main">
-
-    <section class="hero-main">
-      <span class="hero-eyebrow">Renux BSD</span>
-      <h2 class="hero-title">A modern BSD operating system</h2>
-      <p class="hero-sub">A modern BSD Unix-like operating system, in the same class as Linux
-      and the other BSDs, built with the Renux Build System &mdash; you can compile it on any
-      Unix, with few host dependencies.</p>
-      <div class="hero-cta">
-        <a class="btn btn-primary" href="get.html#download">Download Renux</a>
-        <a class="btn btn-ghost" href="get.html">Get Renux</a>
-        <a class="btn btn-ghost" href="https://github.com/renuxproject/src">Source on GitHub</a>
-      </div>
-      <div class="hero-chips">
-        <span class="chip">sched_renux</span>
-        <span class="chip">RENUX_MALLOC</span>
-        <span class="chip">FULL_PREEMPTION</span>
-        <span class="chip">renux</span>
-        <span class="chip">amd64</span>
-      </div>
-    </section>
-
-    <div class="notice">
-      <span class="notice-icon">&#9888;&#65039;</span>
-      <div class="notice-body">
-        <strong>EXPERIMENTAL &mdash; AMD64 only.</strong>
-        <p>Renux is under constant development. Features presented here may not all be
-        present yet, and the system currently only targets amd64 (x86-64). The RSL
-        (Renux Subsystem for Linux) is planned for the future, and the installer is
-        still in development.</p>
-      </div>
-    </div>
-
-    <section id="about">
-      <h2>About</h2>
-      <p>Renux is a modern BSD operating system, designed to be easy to maintain and debug,
-      with a focus on portability and performance. The whole tree is meant to be
-      understandable and modifiable, and it builds from a single portable script on any Unix
-      host.</p>
-      <p><a href="about.html">Read more &rsaquo;</a></p>
-    </section>
-
-    <section id="features">
-      <h2>Features</h2>
-      <div class="features">
-        <div class="feature">
-          <h3>sched_renux</h3>
-          <p>A hierarchical scheduler, now the default, tuned for CPU-bound throughput with
-          aggressive balancing and preemptive work stealing.</p>
-        </div>
-        <div class="feature">
-          <h3>RENUX_MALLOC</h3>
-          <p>A lock-free <code>kern_malloc</code> fork with deep per-CPU bucket caches, enabled
-          by default in GENERIC.</p>
-        </div>
-        <div class="feature">
-          <h3>Aggressive VFS</h3>
-          <p><code>renux_vfs_cluster</code> and <code>renux_vfs_subr</code> ship aggressive I/O
-          clustering defaults for storage throughput.</p>
-        </div>
-        <div class="feature">
-          <h3>Full preemption</h3>
-          <p><code>FULL_PREEMPTION</code> on by default in GENERIC cuts dispatch latency
-          throughout the kernel.</p>
-        </div>
-        <div class="feature">
-          <h3>Renux Build System</h3>
-          <p>One script for everything: <code>./renux build</code> for world and kernel,
-          plus <code>iso</code>, <code>qemu</code> and <code>release</code> targets.</p>
-        </div>
-        <div class="feature">
-          <h3>Portable cross-build</h3>
-          <p>Cross-builds from FreeBSD, Linux, NetBSD, OpenBSD, DragonFly or macOS, without any
-          preinstalled toolchain.</p>
-        </div>
-        <div class="feature">
-          <h3>MD/MI separation</h3>
-          <p>Machine-dependent code lives under <code>sys/arch/</code>, keeping the bulk of the
-          kernel machine-independent and ready for new ports.</p>
-        </div>
-        <div class="feature">
-          <h3>Hackable by design</h3>
-          <p>One <code>renux</code> for the whole tree, a machine-independent core and a
-          self-contained cross-build on any Unix host make Renux easy to understand, modify and
-          rebuild.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="get">
-      <h2>Get Renux</h2>
-      <p>Clone the source tree and build it yourself:</p>
-      <pre class="cmd-box"><span class="cmd-prompt">user <span class="cmd-symbol">$</span></span> git clone https://github.com/renuxproject/src.git /usr/src/renux
-<span class="cmd-prompt">user <span class="cmd-symbol">$</span></span> cd /usr/src/renux
-<span class="cmd-prompt">root <span class="cmd-symbol">#</span></span> ./renux build
-<span class="cmd-prompt">root <span class="cmd-symbol">#</span></span> ./renux iso
-<span class="cmd-prompt">root <span class="cmd-symbol">#</span></span> ./renux qemu</pre>
-      <p><a href="get.html">Full build instructions &rsaquo;</a></p>
-    </section>
-
-    <section id="roadmap">
-      <h2>Roadmap</h2>
-      <ul class="roadmap">
-        <li><span class="status status-done">Done</span>
-        <strong>MD/MI separation</strong>: machine-dependent code under
-        <code>sys/arch/</code>, the rest of the kernel is machine-independent.</li>
-        <li><span class="status status-wip">In development</span>
-        <strong>Installer</strong>: a first-class installer to put Renux on disk, driven by
-        <code>bsdinstall</code> on the live image.</li>
-        <li><span class="status status-planned">Planned</span>
-        <strong>RSL &mdash; Renux Subsystem for Linux</strong>: run Flatpak and CLI Linux
-        programs through a bhyve VM (Alpine/Void Linux) shown on the Renux screen. Planned
-        tools: <code>rsl-init</code>, <code>rsl-shell</code>, <code>rsl-install</code>
-        (C99 + Zig build).</li>
-        <li><span class="status status-planned">Planned</span>
-        <strong>More architectures</strong>: port beyond amd64 &mdash; i386, arm64,
-        RISC-V, PowerPC and others are the current target for portability.</li>
-        <li><span class="status status-planned">Planned</span>
-        <strong>Linuxulator</strong>: run Linux binaries natively in the kernel.</li>
-        <li><span class="status status-planned">Planned</span>
-        <strong>Zig-based shell and core utilities</strong>.</li>
-        <li><span class="status status-planned">Planned</span>
-        <strong>Zig build</strong> as an alternative system build orchestrator.</li>
-      </ul>
-    </section>
-
-    <section id="community">
-      <h2>Community-Driven &amp; Decentralized</h2>
-      <p>Renux is a community-driven project, decentralized by principle. There is no central
-      authority, company or platform that owns or controls Renux.</p>
-      <p>Development and infrastructure may be distributed across different people, communities
-      and organizations, which may keep their own repositories, mirrors, services and versions
-      of the system.</p>
-      <p>Anyone can get the source, host it anywhere &mdash; a self-hosted forge, a mirror or a
-      tarball &mdash; and build their own version of Renux. Forks, variants and independent
-      efforts are legitimate parts of the ecosystem, not treated as competition.</p>
-      <p><strong>There is no single path to Renux. There are independent projects that share
-      the same philosophy.</strong></p>
-      <p><a href="https://github.com/renuxproject/src/blob/main/DECENTRALIZATION.md">Decentralization policy &rsaquo;</a></p>
-    </section>
-
-    <section id="decentralization">
-      <h2>How Decentralization Works</h2>
-      <ul>
-        <li><strong>Governance</strong> &mdash; no person or entity has absolute authority;
-        important decisions are public and open to discussion.</li>
-        <li><strong>Mirrors &amp; infrastructure</strong> &mdash; the repository is not a
-        single point of failure; anyone may host a mirror or forge and keep developing.</li>
-        <li><strong>Forks</strong> &mdash; forks and variants are first-class citizens; none
-        needs permission to be called Renux.</li>
-        <li><strong>Distribution</strong> &mdash; there is no mandatory official repository;
-        communities keep their own and users choose whom to trust.</li>
-      </ul>
-    </section>
-
-    <section id="hackability">
-      <h2>Hackability</h2>
-      <p>Being hackable is part of the Renux philosophy: the system is meant to be understood,
-      modified and rebuilt by whoever uses it. What keeps it hackable:</p>
-      <ul>
-        <li><strong>One build script</strong> &mdash; <code>./renux build</code> rebuilds
-        world and kernel; no preinstalled toolchain required.</li>
-        <li><strong>Machine-independent core</strong> &mdash; MD code lives under
-        <code>sys/arch/</code>, so hacking a port touches one place.</li>
-        <li><strong>Modular components</strong> &mdash; kernel, init, libc and userland can
-        evolve relatively independently.</li>
-        <li><strong>Any Unix host</strong> &mdash; cross-builds from FreeBSD, Linux, NetBSD,
-        OpenBSD, DragonFly or macOS.</li>
-        <li><strong>Your own Renux</strong> &mdash; community-driven and fork-friendly: hacking
-        the system can become your own line of development.</li>
-      </ul>
-    </section>
-
-    <section id="privacy">
-      <h2>Privacy &mdash; No Age Verification</h2>
-      <p>Renux is built for people who own their own system. It does not collect personal data
-      and does not require or perform age verification. It will not implement mandatory
-      age-verification schemes &mdash; including those proposed by Brazil's "Lei Felca" or
-      California law. Your device, your rules.</p>
-    </section>
-
-    <section id="news">
-      <h2>Recent Updates</h2>
-      <ul>
-        <li><a href="https://github.com/renuxproject/src/releases">Releases and ISO images</a></li>
-        <li><a href="https://github.com/renuxproject/src/commits">Development history</a></li>
-        <li><a href="https://github.com/renuxproject/src/blob/main/UPDATING">UPDATING notes</a></li>
-      </ul>
-    </section>
-
-  </main>
-
-  <aside class="sidebar">
-
-    <div class="box">
-      <h3>About the Project</h3>
-      <p>Renux is a modern BSD Unix-like operating system, in the same class as Linux and the
-      other BSDs, built with the Renux Build System (<code>renux</code>) &mdash; compiles on
-      any Unix with few host dependencies.</p>
-    </div>
-
-    <div class="box">
-      <h3>Quick Links</h3>
-      <ul>
-        <li><a href="about.html">About</a></li>
-        <li><a href="get.html">Get Renux</a></li>
-        <li><a href="documentation.html">Documentation</a></li>
-        <li><a href="https://github.com/renuxproject/src">Source on GitHub</a></li>
-      </ul>
-    </div>
-
-  </aside>
-
+<div class="intro">
+  <h1><img src="logos/main-logo.svg" alt="Renux"></h1>
+  <p class="lede">A general-purpose operating system: easy to maintain, portable, and built with Zig.</p>
+  <p class="about">Renux started from FreeBSD 15.1 and is becoming a system of its own. It keeps pulling FreeBSD's development in, a little at a time, so it stays current; its own code lives in its own files. Zig is its whole toolchain: the host needs nothing else, and the same source makes the same system on every machine.</p>
 </div>
 
-<footer id="footer">
-  <div class="footer-inner">
-    <div>Copyright &copy; 2026 The Renux Project. All rights reserved.</div>
-    <span class="no-js">No JavaScript</span>
-    <div class="footer-links">
-      <a href="#top">Back to top</a><span>|</span>
-      <a href="LICENSE">License</a><span>|</span>
-      <a href="https://github.com/renuxproject/src">Source on GitHub</a>
-    </div>
-  </div>
+<section>
+  <h2>Origin</h2>
+  <p class="story">Renux is <strong>Ren</strong>an + <strong>U</strong>ni<strong>x</strong>. Its creator, Renan Lucas Vieira Hilário, uses Linux and the BSDs, and saw how many toolchains and dependencies it takes to build them. Zig, his language of choice, compiles C, C++ and Zig for any machine, and it is a single binary. So the question came: what if an operating system were easy to maintain, portable, and built on many systems at the cost of Zig alone? Renux is the answer, and it is meant to be a technology anyone can take up.</p>
+  <p class="motto">Install Zig. Build the whole system.</p>
+</section>
+
+<section>
+  <h2>At a glance</h2>
+  <dl class="facts">
+    <div><dt>Base</dt><dd>FreeBSD 15.1</dd></div>
+    <div><dt>Toolchain</dt><dd>Zig 0.17</dd></div>
+    <div><dt>Machines</dt><dd>amd64</dd></div>
+    <div><dt>License</dt><dd>MPL 2.0 &middot; BSD</dd></div>
+  </dl>
+</section>
+
+<section>
+  <h2>Build</h2>
+<pre><span class="prompt">$ </span>git clone --depth 1 https://github.com/renuxproject/renux.git
+<span class="prompt">$ </span>cd renux
+<span class="prompt">$ </span>zig build</pre>
+  <p>On any host, with <a href="https://ziglang.org/download/">Zig 0.17</a>. Renux is experimental: what builds and what comes next is in the <a href="https://github.com/renuxproject/renux#readme">README</a>.</p>
+</section>
+
+<section>
+  <h2>Principles</h2>
+  <ol class="principles">
+    <li><strong>Open source, always</strong><span>Renux's work is under the Mozilla Public License 2.0.</span></li>
+    <li><strong>Decentralized</strong><span>No one owns Renux; anyone may mirror it, host it and build their own.</span></li>
+    <li><strong>Your device, your rules</strong><span>No personal data is collected, and no age verification is done or will be.</span></li>
+  </ol>
+</section>
+
+<section>
+  <h2>Links</h2>
+  <p class="links">
+    <a href="https://github.com/renuxproject/renux">Source</a>
+    <a href="https://github.com/renuxproject/renux/commits/main">Changes</a>
+    <a href="https://github.com/renuxproject/renux/actions">Builds</a>
+  </p>
+</section>
+
+<footer>
+  &copy; 2026 Renan Lucas Vieira Hilário &amp; The Renux Project &middot; <a href="LICENSE">MPL 2.0</a>
+  &middot; <a href="https://github.com/renuxproject/renuxproject.github.io">This site's source</a>
 </footer>
 
+</div>
 </body>
 </html>

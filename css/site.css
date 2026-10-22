@@ -1,0 +1,144 @@
+/*
+ * SPDX-License-Identifier: MPL-2.0
+ *
+ * Copyright (c) 2026 Renan Lucas Vieira Hilário
+ * Copyright (c) 2026 The Renux Project
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at https://mozilla.org/MPL/2.0/.
+ *
+ * The site's only stylesheet.  The logo opens the page; the numbers are
+ * set in an italic serif, as the logo's name; the text in the system's
+ * sans-serif.  Fonts come from the
+ * system only.  The theme follows the system's, light or dark.
+ */
+
+:root {
+  --bg: #fbfbf8;
+  --surface: #f3f4ee;
+  --text: #1c1f1a;
+  --muted: #646a5f;
+  --faint: #8d9387;
+  --rule: #e2e4dc;
+  --accent: #2f6b12;
+  --pre-bg: #1a1d18;
+  --pre-text: #e6e9e0;
+  --serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, "FreeSerif", serif;
+  --sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --mono: ui-monospace, "SFMono-Regular", Menlo, Consolas, "Liberation Mono", monospace;
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #121411;
+    --surface: #1a1d18;
+    --text: #e6e9e0;
+    --muted: #a3aa9b;
+    --faint: #7a8174;
+    --rule: #2a2e27;
+    --accent: #9ccc65;
+    --pre-bg: #0c0e0b;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 17px/1.7 var(--sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+.page { max-width: 880px; margin: 0 auto; padding: 0 24px; }
+
+a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+a:hover { text-decoration-thickness: 2px; }
+::selection { background: var(--accent); color: var(--bg); }
+
+/* ---- header ---- */
+header { display: flex; justify-content: flex-end; padding: 28px 0; }
+header nav { font-size: 13px; letter-spacing: .08em; color: var(--faint); }
+header nav a { color: var(--faint); text-decoration: none; }
+header nav a:hover { color: var(--text); }
+header nav strong { color: var(--text); font-weight: 600; }
+
+/* ---- the name and what it is ---- */
+.intro { padding: 72px 0 56px; border-bottom: 1px solid var(--rule); }
+/* The logo is the page's title. */
+h1 { margin: 0; line-height: 0; }
+h1 img {
+  width: clamp(112px, 22vw, 152px);
+  height: auto;
+  border-radius: 22%;
+  box-shadow: 0 10px 30px rgba(47, 107, 18, .22);
+}
+.lede { font-size: clamp(20px, 2.6vw, 25px); line-height: 1.45; margin: 32px 0 0; max-width: 30ch; }
+.about { color: var(--muted); max-width: 62ch; margin: 22px 0 0; }
+
+/* ---- sections ---- */
+section { padding: 52px 0; border-bottom: 1px solid var(--rule); }
+h2 {
+  font: 600 12px/1 var(--sans);
+  text-transform: uppercase;
+  letter-spacing: .16em;
+  color: var(--faint);
+  margin: 0 0 22px;
+}
+section > p { max-width: 62ch; margin: 18px 0 0; color: var(--muted); }
+
+/* Origin: the story, and the motto it ends with. */
+.story { max-width: 62ch; margin: 0; }
+.motto { font: italic 600 clamp(22px, 3vw, 28px)/1.3 var(--serif); color: var(--accent); margin: 24px 0 0; }
+
+/* At a glance: four facts in a row. */
+.facts { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); margin: 0; }
+.facts div { padding: 0 20px; border-left: 1px solid var(--rule); }
+.facts div:first-child { padding-left: 0; border-left: 0; }
+.facts dt { font-size: 13px; color: var(--faint); }
+.facts dd { margin: 4px 0 0; font: 600 18px/1.3 var(--sans); }
+
+pre {
+  background: var(--pre-bg);
+  color: var(--pre-text);
+  font: 14px/1.8 var(--mono);
+  padding: 20px 24px;
+  border-radius: 10px;
+  overflow-x: auto;
+  scrollbar-color: #3a4036 transparent;
+  margin: 0;
+}
+pre .prompt { color: #9ccc65; user-select: none; }
+
+/* Principles: three numbered columns. */
+.principles { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; }
+.principles li { counter-increment: principle; }
+.principles li::before {
+  content: counter(principle, decimal-leading-zero);
+  display: block;
+  font: italic 400 26px/1 var(--serif);
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+.principles strong { display: block; font-weight: 600; margin-bottom: 4px; }
+.principles span { color: var(--muted); font-size: 15px; }
+
+.links { display: flex; flex-wrap: wrap; gap: 10px 32px; margin: 0; }
+.links a { color: var(--text); text-decoration: none; font-weight: 500; }
+.links a::after { content: " \2192"; color: var(--accent); }
+.links a:hover { color: var(--accent); }
+
+footer { padding: 32px 0 44px; font-size: 13px; color: var(--faint); }
+footer a { color: var(--faint); }
+
+/* ---- narrow screens ---- */
+@media (max-width: 720px) {
+  .intro { padding: 48px 0 40px; }
+  section { padding: 40px 0; }
+  .facts { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 0; }
+  .facts div:nth-child(3) { padding-left: 0; border-left: 0; }
+  .principles { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+}
