@@ -42,8 +42,9 @@
 </div>
 
 <section id="nightly">
+  <img class="banner" src="banners/nightly.png" alt="Renux Nightly builds" width="1280" height="360">
   <h2 class="release">Renux Nightly build <span class="badge">Experimental</span></h2>
-  <p class="story">Snapshots of Renux 0.1-CURRENT &ldquo;Aurora&rdquo;, built by GitHub Actions from the latest source. They are for testing: things change, and can break, from one build to the next.</p>
+  <p class="story">Renux in development, built by GitHub Actions from the latest source every day at 18:00 Brasília time (21:00 UTC). A nightly build has no version: each one is named by its day and its commit. They are for testing: things change, and can break, from one build to the next.</p>
   <dl class="facts facts-3">
     <div><dt>Files</dt><dd>Installer ISO &middot; disk image &middot; SHA256</dd></div>
     <div><dt>Machine</dt><dd>amd64 &middot; UEFI</dd></div>
@@ -52,12 +53,13 @@
   <p class="actions"><a class="btn btn-primary" href="https://github.com/renuxproject/renux/releases">Snapshots on GitHub</a> <a class="btn" href="https://github.com/renuxproject/renux/actions/workflows/snapshot.yml">All builds</a></p>
   <p>The installer ISO boots into the Renux installer, which sets up the disk and the network and installs the system. The disk image is a ready system. Check and unpack what you download:</p>
 <pre><span class="prompt">$ </span>sha256sum -c SHA256
-<span class="prompt">$ </span>unxz renux-0.1-CURRENT-amd64-*-installer.iso.xz</pre>
+<span class="prompt">$ </span>unxz renux-nightly-amd64-*-installer.iso.xz</pre>
 </section>
 
 <section id="aurora">
+  <img class="banner" src="banners/aurora.png" alt="Renux 0.1 Aurora" width="1280" height="360">
   <h2 class="release">Renux 0.1 &ldquo;Aurora&rdquo; <span class="badge badge-dev">In development</span></h2>
-  <p class="story">The first release of Renux. Aurora is in development, in 0.1-CURRENT, and there is nothing to download yet. Until it comes out, the nightly builds are its preview.</p>
+  <p class="story">The first release of Renux. Aurora is in development, and there is nothing to download yet. Until it comes out, the nightly builds are its preview.</p>
   <p class="links"><a href="https://github.com/renuxproject/renux/commits/main">Follow the changes</a></p>
 </section>
 

@@ -135,6 +135,7 @@ section > p { max-width: 62ch; margin: 18px 0 0; color: var(--muted); }
 .facts dd { margin: 4px 0 0; font: 600 18px/1.3 var(--sans); }
 
 /* Download: each version, with a badge of where it stands. */
+.banner { display: block; width: 100%; height: auto; margin: 0 0 28px; }
 h2.release {
   font: 600 clamp(20px, 2.6vw, 24px)/1.3 var(--sans);
   text-transform: none;
@@ -155,6 +156,15 @@ h2.release {
   color: var(--accent);
 }
 .badge-dev { border-color: #b8860b; color: #b8860b; }
+/* The nightly builds wear the purple of their banner. */
+#nightly { --night: #6d28d9; }
+#nightly .badge { border-color: var(--night); color: var(--night); }
+#nightly .btn-primary { background: var(--night); border-color: var(--night); color: #fff; }
+#nightly .btn:hover { border-color: var(--night); }
+@media (prefers-color-scheme: dark) {
+  #nightly { --night: #a78bfa; }
+  #nightly .btn-primary { color: #1a0b45; }
+}
 .facts-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); margin: 28px 0 0; }
 .facts-3 dd { font-size: 15px; }
 section > pre { margin-top: 16px; }

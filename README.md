@@ -11,6 +11,8 @@ pt/                 the same pages in Portuguese
 es/                 the same pages in Spanish
 css/site.css        the only stylesheet
 screenshots/        the screenshots (PNG, 1280x800, from QEMU)
+banners/            the banners of the nightly builds and of Aurora, from
+                    the source's .github/nightly and .github/release
 logos/              the Renux logo (main-logo.svg) and its PNG versions
 favicon.svg
 ```
