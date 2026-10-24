@@ -59,12 +59,25 @@ a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset:
 a:hover { text-decoration-thickness: 2px; }
 ::selection { background: var(--accent); color: var(--bg); }
 
-/* ---- header ---- */
-header { display: flex; justify-content: flex-end; padding: 28px 0; }
-header nav { font-size: 13px; letter-spacing: .08em; color: var(--faint); }
-header nav a { color: var(--faint); text-decoration: none; }
-header nav a:hover { color: var(--text); }
-header nav strong { color: var(--text); font-weight: 600; }
+/* ---- header: the name, the menu, the languages ---- */
+header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 28px;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--rule);
+}
+.brand { display: flex; align-items: center; gap: 10px; color: var(--text); text-decoration: none; font: italic 600 20px/1 var(--serif); }
+.brand img { border-radius: 22%; }
+.menu { display: flex; flex-wrap: wrap; gap: 6px 22px; font-size: 15px; }
+.menu a { color: var(--muted); text-decoration: none; padding: 4px 0; border-bottom: 2px solid transparent; }
+.menu a:hover { color: var(--text); }
+.menu a[aria-current="page"] { color: var(--text); font-weight: 600; border-bottom-color: var(--accent); }
+.langs { margin-left: auto; font-size: 13px; letter-spacing: .08em; color: var(--faint); }
+.langs a { color: var(--faint); text-decoration: none; }
+.langs a:hover { color: var(--text); }
+.langs strong { color: var(--text); font-weight: 600; }
 
 /* ---- the name and what it is ---- */
 .intro { padding: 72px 0 56px; border-bottom: 1px solid var(--rule); }
@@ -78,6 +91,26 @@ h1 img {
 }
 .lede { font-size: clamp(20px, 2.6vw, 25px); line-height: 1.45; margin: 32px 0 0; max-width: 30ch; }
 .about { color: var(--muted); max-width: 62ch; margin: 22px 0 0; }
+
+/* Buttons: to download, to see more. */
+.actions { display: flex; flex-wrap: wrap; gap: 12px; margin: 28px 0 0; }
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  color: var(--text);
+  font-weight: 500;
+  text-decoration: none;
+}
+.btn:hover { border-color: var(--accent); }
+.btn-primary { background: var(--accent); border-color: var(--accent); color: var(--bg); }
+.btn-primary:hover { filter: brightness(1.1); }
+
+/* The title of a page other than the first. */
+.pagehead { padding: 56px 0 40px; border-bottom: 1px solid var(--rule); }
+.pagehead h1 { font: italic 600 clamp(30px, 4.5vw, 42px)/1.15 var(--serif); }
+.pagehead .about { margin-top: 14px; }
 
 /* ---- sections ---- */
 section { padding: 52px 0; border-bottom: 1px solid var(--rule); }
@@ -101,8 +134,32 @@ section > p { max-width: 62ch; margin: 18px 0 0; color: var(--muted); }
 .facts dt { font-size: 13px; color: var(--faint); }
 .facts dd { margin: 4px 0 0; font: 600 18px/1.3 var(--sans); }
 
+/* Download: each version, with a badge of where it stands. */
+h2.release {
+  font: 600 clamp(20px, 2.6vw, 24px)/1.3 var(--sans);
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--text);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 14px;
+}
+.badge {
+  font: 600 11px/1 var(--sans);
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+}
+.badge-dev { border-color: #b8860b; color: #b8860b; }
+.facts-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); margin: 28px 0 0; }
+.facts-3 dd { font-size: 15px; }
+section > pre { margin-top: 16px; }
+
 /* Screenshots: thumbnails in a grid, each a link to the full picture. */
-.shots-text { max-width: 62ch; margin: 0 0 24px; color: var(--muted); }
 .shots { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px 20px; }
 .shots figure { margin: 0; }
 .shots a { display: block; line-height: 0; }
@@ -155,6 +212,9 @@ footer a { color: var(--faint); }
   section { padding: 40px 0; }
   .facts { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 0; }
   .facts div:nth-child(3) { padding-left: 0; border-left: 0; }
+  .facts-3 { grid-template-columns: minmax(0, 1fr); }
+  .facts-3 div { padding-left: 0; border-left: 0; }
+  .langs { margin-left: 0; }
   .principles { grid-template-columns: minmax(0, 1fr); gap: 24px; }
   .shots { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 14px; }
 }

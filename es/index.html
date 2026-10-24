@@ -31,13 +31,16 @@
 <div class="page">
 
 <header>
-  <nav aria-label="Idiomas"><a href="../index.html" hreflang="en" lang="en">EN</a> &middot; <a href="../pt/index.html" hreflang="pt" lang="pt">PT</a> &middot; <strong aria-current="page">ES</strong></nav>
+  <a class="brand" href="index.html"><img src="../logos/main-logo.svg" alt="" width="28" height="28">Renux</a>
+  <nav class="menu" aria-label="Menú"><a href="index.html" aria-current="page">Inicio</a> <a href="screenshots.html">Capturas</a> <a href="download.html">Descargar</a> <a href="https://github.com/renuxproject/renux">Código fuente</a></nav>
+  <nav class="langs" aria-label="Idiomas"><a href="../index.html" hreflang="en" lang="en">EN</a> &middot; <a href="../pt/index.html" hreflang="pt" lang="pt">PT</a> &middot; <strong aria-current="page">ES</strong></nav>
 </header>
 
 <div class="intro">
   <h1><img src="../logos/main-logo.svg" alt="Renux"></h1>
   <p class="lede">Un sistema operativo de propósito general, fácil de mantener, portable y compilable con Zig.</p>
   <p class="about">Renux empezó en FreeBSD 15.1 y se está convirtiendo en un sistema propio. Sigue incorporando el desarrollo de FreeBSD, poco a poco, para mantenerse actualizado; el código de Renux vive en sus propios archivos. Zig es toda su toolchain: la máquina no necesita nada más, y el mismo código fuente produce el mismo sistema en cualquier computadora.</p>
+  <p class="actions"><a class="btn btn-primary" href="download.html">Descargar Renux</a> <a class="btn" href="screenshots.html">Ver las capturas</a></p>
 </div>
 
 <section>
@@ -56,29 +59,7 @@
   </dl>
 </section>
 
-<section>
-  <h2>Capturas de pantalla</h2>
-  <p class="shots-text">Renux 0.1 &ldquo;Aurora&rdquo;: el instalador, que habla inglés, español y portugués, y el sistema instalado.</p>
-  <div class="shots">
-    <figure><a href="../screenshots/01-boot-menu.png"><img src="../screenshots/01-boot-menu.png" alt="Menú de arranque" width="1280" height="800" loading="lazy"></a><figcaption>Menú de arranque</figcaption></figure>
-    <figure><a href="../screenshots/02-language.png"><img src="../screenshots/02-language.png" alt="Idioma del instalador" width="1280" height="800" loading="lazy"></a><figcaption>Idioma del instalador</figcaption></figure>
-    <figure><a href="../screenshots/03-welcome.png"><img src="../screenshots/03-welcome.png" alt="Bienvenida" width="1280" height="800" loading="lazy"></a><figcaption>Bienvenida</figcaption></figure>
-    <figure><a href="../screenshots/04-release-notes.png"><img src="../screenshots/04-release-notes.png" alt="Notas de la versión" width="1280" height="800" loading="lazy"></a><figcaption>Notas de la versión</figcaption></figure>
-    <figure><a href="../screenshots/05-about.png"><img src="../screenshots/05-about.png" alt="Acerca de Renux" width="1280" height="800" loading="lazy"></a><figcaption>Acerca de Renux</figcaption></figure>
-    <figure><a href="../screenshots/06-partitioning.png"><img src="../screenshots/06-partitioning.png" alt="Particionado" width="1280" height="800" loading="lazy"></a><figcaption>Particionado</figcaption></figure>
-    <figure><a href="../screenshots/07-network.png"><img src="../screenshots/07-network.png" alt="Red" width="1280" height="800" loading="lazy"></a><figcaption>Red</figcaption></figure>
-    <figure><a href="../screenshots/08-package-manager.png"><img src="../screenshots/08-package-manager.png" alt="Paquetes por internet" width="1280" height="800" loading="lazy"></a><figcaption>Paquetes por internet</figcaption></figure>
-    <figure><a href="../screenshots/09-services.png"><img src="../screenshots/09-services.png" alt="Servicios" width="1280" height="800" loading="lazy"></a><figcaption>Servicios</figcaption></figure>
-    <figure><a href="../screenshots/10-account.png"><img src="../screenshots/10-account.png" alt="Tu cuenta" width="1280" height="800" loading="lazy"></a><figcaption>Tu cuenta</figcaption></figure>
-    <figure><a href="../screenshots/11-final-configuration.png"><img src="../screenshots/11-final-configuration.png" alt="Configuración final" width="1280" height="800" loading="lazy"></a><figcaption>Configuración final</figcaption></figure>
-    <figure><a href="../screenshots/12-complete.png"><img src="../screenshots/12-complete.png" alt="Instalación completa" width="1280" height="800" loading="lazy"></a><figcaption>Instalación completa</figcaption></figure>
-    <figure><a href="../screenshots/13-login.png"><img src="../screenshots/13-login.png" alt="Inicio de sesión" width="1280" height="800" loading="lazy"></a><figcaption>Inicio de sesión</figcaption></figure>
-    <figure><a href="../screenshots/14-welcome-motd.png"><img src="../screenshots/14-welcome-motd.png" alt="Mensaje del día" width="1280" height="800" loading="lazy"></a><figcaption>Mensaje del día</figcaption></figure>
-    <figure><a href="../screenshots/15-zig-cc.png"><img src="../screenshots/15-zig-cc.png" alt="Zig y cc en el sistema base" width="1280" height="800" loading="lazy"></a><figcaption>Zig y cc en el sistema base</figcaption></figure>
-  </div>
-</section>
-
-<section>
+<section id="build">
   <h2>Compilar</h2>
 <pre><span class="prompt">$ </span>git clone --depth 1 https://github.com/renuxproject/renux.git
 <span class="prompt">$ </span>cd renux

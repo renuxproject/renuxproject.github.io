@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<!--
+    SPDX-License-Identifier: MPL-2.0
+    Copyright (c) 2026 Renan Lucas Vieira Hilário
+    Copyright (c) 2026 The Renux Project
+
+    This Source Code Form is subject to the terms of the Mozilla Public
+    License, v. 2.0. If a copy of the MPL was not distributed with this
+    file, You can obtain one at https://mozilla.org/MPL/2.0/.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self'; img-src 'self'">
+<meta name="referrer" content="no-referrer">
+<meta name="description" content="Renux: A general-purpose operating system: easy to maintain, portable, and built with Zig.">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#141613" media="(prefers-color-scheme: dark)">
+<meta property="og:title" content="Renux">
+<meta property="og:description" content="A general-purpose operating system: easy to maintain, portable, and built with Zig.">
+<meta property="og:image" content="logos/renux-512.png">
+<title>Download Renux &middot; Renux</title>
+<link rel="icon" href="favicon.svg">
+<link rel="stylesheet" href="css/site.css">
+<link rel="alternate" hreflang="en" href="download.html">
+<link rel="alternate" hreflang="pt" href="pt/download.html">
+<link rel="alternate" hreflang="es" href="es/download.html">
+</head>
+<body>
+<div class="page">
+
+<header>
+  <a class="brand" href="index.html"><img src="logos/main-logo.svg" alt="" width="28" height="28">Renux</a>
+  <nav class="menu" aria-label="Menu"><a href="index.html">Home</a> <a href="screenshots.html">Screenshots</a> <a href="download.html" aria-current="page">Download</a> <a href="https://github.com/renuxproject/renux">Source</a></nav>
+  <nav class="langs" aria-label="Languages"><strong aria-current="page">EN</strong> &middot; <a href="pt/download.html" hreflang="pt" lang="pt">PT</a> &middot; <a href="es/download.html" hreflang="es" lang="es">ES</a></nav>
+</header>
+
+<div class="pagehead">
+  <h1>Download Renux</h1>
+  <p class="about">Renux is experimental. It runs on amd64 machines with UEFI firmware.</p>
+</div>
+
+<section id="nightly">
+  <h2 class="release">Renux Nightly build <span class="badge">Experimental</span></h2>
+  <p class="story">Snapshots of Renux 0.1-CURRENT &ldquo;Aurora&rdquo;, built by GitHub Actions from the latest source. They are for testing: things change, and can break, from one build to the next.</p>
+  <dl class="facts facts-3">
+    <div><dt>Files</dt><dd>Installer ISO &middot; disk image &middot; SHA256</dd></div>
+    <div><dt>Machine</dt><dd>amd64 &middot; UEFI</dd></div>
+    <div><dt>File system</dt><dd>UFS (ZFS is not built yet)</dd></div>
+  </dl>
+  <p class="actions"><a class="btn btn-primary" href="https://github.com/renuxproject/renux/releases">Snapshots on GitHub</a> <a class="btn" href="https://github.com/renuxproject/renux/actions/workflows/snapshot.yml">All builds</a></p>
+  <p>The installer ISO boots into the Renux installer, which sets up the disk and the network and installs the system. The disk image is a ready system. Check and unpack what you download:</p>
+<pre><span class="prompt">$ </span>sha256sum -c SHA256
+<span class="prompt">$ </span>unxz renux-0.1-CURRENT-amd64-*-installer.iso.xz</pre>
+</section>
+
+<section id="aurora">
+  <h2 class="release">Renux 0.1 &ldquo;Aurora&rdquo; <span class="badge badge-dev">In development</span></h2>
+  <p class="story">The first release of Renux. Aurora is in development, in 0.1-CURRENT, and there is nothing to download yet. Until it comes out, the nightly builds are its preview.</p>
+  <p class="links"><a href="https://github.com/renuxproject/renux/commits/main">Follow the changes</a></p>
+</section>
+
+<section>
+  <h2>Build it yourself</h2>
+  <p class="story">Renux is built with Zig alone, on any host: see <a href="index.html#build">how to build it</a>.</p>
+</section>
+
+<footer>
+  &copy; 2026 Renan Lucas Vieira Hilário &amp; The Renux Project &middot; <a href="LICENSE">MPL 2.0</a>
+  &middot; <a href="https://github.com/renuxproject/renuxproject.github.io">This site's source</a>
+</footer>
+
+</div>
+</body>
+</html>
