@@ -101,6 +101,21 @@ section > p { max-width: 62ch; margin: 18px 0 0; color: var(--muted); }
 .facts dt { font-size: 13px; color: var(--faint); }
 .facts dd { margin: 4px 0 0; font: 600 18px/1.3 var(--sans); }
 
+/* Screenshots: thumbnails in a grid, each a link to the full picture. */
+.shots-text { max-width: 62ch; margin: 0 0 24px; color: var(--muted); }
+.shots { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px 20px; }
+.shots figure { margin: 0; }
+.shots a { display: block; line-height: 0; }
+.shots img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  border: 1px solid var(--rule);
+  transition: border-color .15s;
+}
+.shots a:hover img { border-color: var(--accent); }
+.shots figcaption { font-size: 13px; color: var(--muted); margin-top: 8px; line-height: 1.4; }
+
 pre {
   background: var(--pre-bg);
   color: var(--pre-text);
@@ -141,4 +156,5 @@ footer a { color: var(--faint); }
   .facts { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 0; }
   .facts div:nth-child(3) { padding-left: 0; border-left: 0; }
   .principles { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+  .shots { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 14px; }
 }
