@@ -1,0 +1,10 @@
+{%- comment -%}
+  A screenshot in a window of glass, floating over the blurred ones on
+  the home page.  It opens the gallery at that screenshot.
+{%- endcomment -%}
+{%- assign s = site.data.screenshots | where: 'file', include.file | first -%}
+{%- assign n = s.file | slice: 0, 2 -%}
+<figure class="hero-shot">
+  <figcaption class="hero-shot-bar"><span class="term-dots" aria-hidden="true"><i></i><i></i><i></i></span>{{ s[page.lang] }}</figcaption>
+  <a href="{{ t.prefix | append: '/' | append: site.routes.screenshots | relative_url }}#shot-{{ n }}"><img src="{{ '/screenshots/' | append: s.file | relative_url }}" alt="{{ s[page.lang] }}" width="1280" height="800" decoding="async"></a>
+</figure>

@@ -1,0 +1,86 @@
+/* The top of each page, on the sky. */
+h1 { margin: 0; font-family: var(--serif); font-style: italic; font-weight: 700; }
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 18px;
+  padding: 5px 14px 5px 10px;
+  border: 1px solid rgba(255, 255, 255, .3);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .08);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: .02em;
+  color: rgba(255, 255, 255, .92);
+}
+.eyebrow::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--sun);
+  box-shadow: 0 0 0 4px rgba(227, 212, 58, .25);
+}
+
+/* The home page: the name and what it is. */
+.intro { padding-top: clamp(36px, 7vw, 84px); padding-bottom: clamp(190px, 21vw, 260px); }
+.intro h1 { font-size: clamp(92px, 19vw, 232px); line-height: .9; letter-spacing: -.012em; margin-left: -.03em; }
+.lede { font-size: clamp(23px, 2.9vw, 33px); line-height: 1.28; font-weight: 500; letter-spacing: -.008em; margin: 26px 0 0; max-width: 25em; text-wrap: balance; }
+.about { max-width: 37em; margin: 20px 0 0; color: rgba(255, 255, 255, .92); text-wrap: pretty; }
+
+/* The title of a page other than the first. */
+.pagehead { padding-top: clamp(20px, 4vw, 44px); padding-bottom: clamp(150px, 15vw, 190px); }
+.pagehead h1 { font-size: clamp(50px, 8vw, 92px); line-height: 1; }
+.pagehead .about { margin-top: 14px; }
+
+@media (max-width: 620px) {
+  .intro { padding-bottom: 170px; }
+  .pagehead { padding-bottom: 130px; }
+}
+
+/* The home page: a screenshot, sharp, in a window of glass, floating
+   over the blurred ones.  Only where there is room beside the text. */
+.hero-shot {
+  position: absolute;
+  z-index: 1;
+  top: 210px;
+  right: max(var(--gutter), calc((100% - var(--width)) / 2 + var(--gutter)));
+  width: clamp(320px, 31vw, 440px);
+  margin: 0;
+  padding: 0 8px 8px;
+  border: 1px solid rgba(255, 255, 255, .22);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, .09);
+  -webkit-backdrop-filter: blur(14px) saturate(1.3);
+  backdrop-filter: blur(14px) saturate(1.3);
+  box-shadow: 0 50px 100px -30px rgba(0, 0, 0, .7), inset 0 1px 0 rgba(255, 255, 255, .18);
+  transform: perspective(1600px) rotateY(-12deg) rotateX(3deg);
+  transition: transform .6s var(--ease);
+  animation: float 9s ease-in-out infinite alternate;
+}
+.hero-shot:hover { transform: perspective(1600px) rotateY(-4deg) rotateX(1deg); }
+.hero-shot-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 6px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, .78);
+}
+.hero-shot a { display: block; line-height: 0; border-radius: 8px; }
+.hero-shot img { display: block; width: 100%; height: auto; border-radius: 8px; }
+@keyframes float {
+  from { translate: 0 0; }
+  to { translate: 0 -10px; }
+}
+/* The text keeps to the left of the window. */
+@media (min-width: 1180px) {
+  .is-home .intro h1 { font-size: clamp(150px, 15vw, 196px); }
+  .is-home .intro .lede, .is-home .intro .about { max-width: min(37em, calc(100vw - 2 * var(--gutter) - 31vw - 96px)); }
+  .is-home .intro .lede { max-width: 15em; }
+}
+@media (max-width: 1179px) {
+  .hero-shot { display: none; }
+}

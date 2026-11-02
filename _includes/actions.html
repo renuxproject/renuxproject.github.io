@@ -1,0 +1,13 @@
+{%- comment -%}
+  A row of buttons.  `items` is a list of { label, href, primary }; an
+  href that starts with "links." names an address of _data/links.yml.
+{%- endcomment -%}
+{%- if include.items %}
+<p class="actions">
+  {%- for a in include.items -%}
+  {%- assign href = a.href -%}
+  {%- if href contains 'links.' -%}{%- assign key = href | remove_first: 'links.' -%}{%- assign href = site.data.links[key] -%}{%- endif %}
+  <a class="btn{% if a.primary %} btn-primary{% endif %}" href="{{ href }}">{{ a.label }}{% if a.primary %}<span class="btn-arrow" aria-hidden="true">&rarr;</span>{% endif %}</a>
+  {%- endfor %}
+</p>
+{%- endif %}

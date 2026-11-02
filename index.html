@@ -1,56 +1,17 @@
-<!DOCTYPE html>
-<!--
-    SPDX-License-Identifier: MPL-2.0
-    Copyright (c) 2026 Renan Lucas Vieira Hilário
-    Copyright (c) 2026 The Renux Project
-
-    This Source Code Form is subject to the terms of the Mozilla Public
-    License, v. 2.0. If a copy of the MPL was not distributed with this
-    file, You can obtain one at https://mozilla.org/MPL/2.0/.
--->
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self'; img-src 'self'">
-<meta name="referrer" content="no-referrer">
-<meta name="description" content="Renux: A general-purpose operating system: easy to maintain, portable, and built with Zig.">
-<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#141613" media="(prefers-color-scheme: dark)">
-<meta property="og:title" content="Renux">
-<meta property="og:description" content="A general-purpose operating system: easy to maintain, portable, and built with Zig.">
-<meta property="og:image" content="logos/renux-512.png">
-<title>Renux</title>
-<link rel="icon" href="favicon.svg">
-<link rel="stylesheet" href="css/site.css">
-<link rel="alternate" hreflang="en" href="index.html">
-<link rel="alternate" hreflang="pt" href="pt/index.html">
-<link rel="alternate" hreflang="es" href="es/index.html">
-</head>
-<body>
-<div class="page">
-
-<header>
-  <a class="brand" href="index.html"><img src="logos/main-logo.svg" alt="" width="28" height="28">Renux</a>
-  <nav class="menu" aria-label="Menu"><a href="index.html" aria-current="page">Home</a> <a href="screenshots.html">Screenshots</a> <a href="download.html">Download</a> <a href="https://github.com/renuxproject/renux">Source</a></nav>
-  <nav class="langs" aria-label="Languages"><strong aria-current="page">EN</strong> &middot; <a href="pt/index.html" hreflang="pt" lang="pt">PT</a> &middot; <a href="es/index.html" hreflang="es" lang="es">ES</a></nav>
-</header>
-
-<div class="intro">
-  <h1><img src="logos/main-logo.svg" alt="Renux"></h1>
-  <p class="lede">A general-purpose operating system: easy to maintain, portable, and built with Zig.</p>
-  <p class="about">Renux started from FreeBSD 15.1 and is becoming a system of its own. It keeps pulling FreeBSD's development in, a little at a time, so it stays current; its own code lives in its own files. Zig is its whole toolchain: the host needs nothing else, and the same source makes the same system on every machine.</p>
-  <p class="actions"><a class="btn btn-primary" href="download.html">Download Renux</a> <a class="btn" href="screenshots.html">See the screenshots</a></p>
-</div>
-
-<section>
-  <h2>Origin</h2>
-  <p class="story">Renux is <strong>Ren</strong>an + <strong>U</strong>ni<strong>x</strong>. Its creator, Renan Lucas Vieira Hilário, uses Linux and the BSDs, and saw how many toolchains and dependencies it takes to build them. Zig, his language of choice, compiles C, C++ and Zig for any machine, and it is a single binary. So the question came: what if an operating system were easy to maintain, portable, and built on many systems at the cost of Zig alone? Renux is the answer, and it is meant to be a technology anyone can take up.</p>
-  <p class="motto">Install Zig. Build the whole system.</p>
-</section>
-
-<section>
-  <h2>At a glance</h2>
+---
+# SPDX-License-Identifier: MPL-2.0
+layout: default
+lang: en
+ref: home
+hero_shot: 03-welcome.png
+title: Renux
+eyebrow: A BSD Unix-like operating system
+about: "Renux started from FreeBSD 15.1 and is becoming a system of its own. It keeps pulling FreeBSD's development in, a little at a time, so it stays current; its own code lives in its own files. Zig is its whole toolchain: the host needs nothing else, and the same source makes the same system on every machine."
+actions:
+  - { label: Download Renux, href: download.html, primary: true }
+  - { label: See the screenshots, href: screenshots.html }
+---
+<section class="glance page" aria-label="At a glance">
   <dl class="facts">
     <div><dt>Base</dt><dd>FreeBSD 15.1</dd></div>
     <div><dt>Toolchain</dt><dd>Zig 0.17</dd></div>
@@ -59,15 +20,17 @@
   </dl>
 </section>
 
-<section id="build">
-  <h2>Build</h2>
-<pre><span class="prompt">$ </span>git clone --depth 1 https://github.com/renuxproject/renux.git
-<span class="prompt">$ </span>cd renux
-<span class="prompt">$ </span>zig build</pre>
-  <p>On any host, with <a href="https://ziglang.org/download/">Zig 0.17</a>. Renux is experimental: what builds and what comes next is in the <a href="https://github.com/renuxproject/renux#readme">README</a>.</p>
+<section id="build" class="build page">
+  <div>
+    <h2 class="kicker">Build</h2>
+    <p class="motto">Install Zig. Build the whole system.</p>
+    <p class="note">On any host, with <a href="{{ site.data.links.zig }}">Zig 0.17</a>. Renux is experimental: what builds and what comes next is in the <a href="{{ site.data.links.readme }}">README</a>.</p>
+  </div>
+  {% include terminal.html commands="build" %}
 </section>
 
-<section>
+<div class="band">
+<section class="page">
   <h2>Principles</h2>
   <ol class="principles">
     <li><strong>Open source, always</strong><span>Renux's work is under the Mozilla Public License 2.0.</span></li>
@@ -75,21 +38,17 @@
     <li><strong>Your device, your rules</strong><span>No personal data is collected, and no age verification is done or will be.</span></li>
   </ol>
 </section>
+</div>
 
-<section>
-  <h2>Links</h2>
-  <p class="links">
-    <a href="https://github.com/renuxproject/renux">Source</a>
-    <a href="https://github.com/renuxproject/renux/commits/main">Changes</a>
-    <a href="https://github.com/renuxproject/renux/actions">Builds</a>
-  </p>
+<section class="split page">
+  <h2>Origin</h2>
+  <div class="body"><p>Renux is <strong>Ren</strong>an + <strong>U</strong>ni<strong>x</strong>. Its creator, Renan Lucas Vieira Hilário, uses Linux and the BSDs, and saw how many toolchains and dependencies it takes to build them. Zig, his language of choice, compiles C, C++ and Zig for any machine, and it is a single binary. So the question came: what if an operating system were easy to maintain, portable, and built on many systems at the cost of Zig alone? Renux is the answer, and it is meant to be a technology anyone can take up.</p></div>
 </section>
 
-<footer>
-  &copy; 2026 Renan Lucas Vieira Hilário &amp; The Renux Project &middot; <a href="LICENSE">MPL 2.0</a>
-  &middot; <a href="https://github.com/renuxproject/renuxproject.github.io">This site's source</a>
-</footer>
-
-</div>
-</body>
-</html>
+<section class="page">
+  <div class="section-head">
+    <h2>Screenshots</h2>
+    <a class="more" href="screenshots.html">See the screenshots <span aria-hidden="true">&rarr;</span></a>
+  </div>
+  {% include screenshots.html teaser=true %}
+</section>

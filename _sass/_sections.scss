@@ -1,0 +1,20 @@
+/* Sections: the title in the margin, the content beside it. */
+section { padding-top: clamp(52px, 8vw, 96px); padding-bottom: clamp(52px, 8vw, 96px); }
+h2 { font: italic 700 clamp(32px, 3.6vw, 42px)/1.12 var(--serif); margin: 0; text-wrap: balance; }
+
+.split { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); gap: 16px 48px; align-items: start; }
+.body > * { max-width: 38em; }
+.body > :first-child { margin-top: 0; }
+.body p { margin: 18px 0 0; text-wrap: pretty; }
+
+/* A title, with a link at the other end. */
+.section-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 24px; }
+
+/* A section on the deep green of the logo. */
+.band { background: var(--leaf-900); color: #ffffff; }
+.band section { padding-top: clamp(52px, 7vw, 84px); padding-bottom: clamp(52px, 7vw, 84px); }
+.band a:focus-visible { outline-color: #ffffff; }
+
+@media (max-width: 860px) {
+  .split { grid-template-columns: minmax(0, 1fr); }
+}

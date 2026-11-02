@@ -1,0 +1,90 @@
+/* The screenshots. */
+.shots { display: grid; gap: 30px 22px; margin-top: 32px; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.shots figure { margin: 0; }
+.shots a { display: block; line-height: 0; border-radius: var(--radius-sm); }
+.shots img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-sm);
+  background: #000000;
+  box-shadow: var(--shadow);
+  transition: transform .35s var(--ease), box-shadow .35s var(--ease);
+}
+.shots a:hover img { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+.shots figcaption { display: flex; gap: 10px; align-items: baseline; font-size: 15px; color: var(--muted); margin-top: 12px; line-height: 1.35; }
+.shot-n { font: 12px/1 var(--mono); color: var(--accent); letter-spacing: .04em; }
+
+.gallery { padding-top: 12px; }
+.gallery .shots { margin-top: 0; }
+/* The first picture of the gallery opens it, larger. */
+.gallery figure:first-child { grid-column: 1 / -1; }
+.gallery figure:first-child img { max-width: 860px; }
+
+@media (max-width: 860px) {
+  .shots { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .teaser figure:first-child { grid-column: 1 / -1; }
+}
+
+/* The lightbox: a picture, larger, over the page, with no JavaScript.
+   A link to #shot-NN opens it; a link back to its thumbnail closes it. */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: none;
+  place-items: center;
+  padding: clamp(56px, 7vw, 72px) clamp(16px, 8vw, 104px);
+}
+.lightbox:target { display: grid; animation: lb-in .3s var(--ease) both; }
+body:has(.lightbox:target) { overflow: hidden; }
+@keyframes lb-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.lb-backdrop { position: absolute; inset: 0; background: rgba(8, 15, 5, .9); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); }
+.lb-figure { position: relative; margin: 0; max-width: 1280px; width: 100%; animation: lb-rise .4s var(--ease) both; }
+@keyframes lb-rise {
+  from { transform: translateY(12px) scale(.985); }
+  to { transform: none; }
+}
+.lb-figure a { display: block; line-height: 0; }
+.lb-figure img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: calc(100vh - 170px);
+  margin-inline: auto;
+  border-radius: var(--radius-sm);
+  background: #000000;
+  box-shadow: 0 30px 80px -20px rgba(0, 0, 0, .8);
+}
+.lb-figure figcaption { display: flex; justify-content: space-between; gap: 16px; margin: 16px auto 0; color: #ffffff; font-size: 16px; }
+.lb-count { color: rgba(255, 255, 255, .6); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.lb-btn {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, .22);
+  background: rgba(255, 255, 255, .08);
+  color: #ffffff;
+  font-size: 22px;
+  line-height: 1;
+  text-decoration: none;
+  transition: background-color .2s var(--ease), transform .2s var(--ease);
+}
+.lb-btn:hover { background: rgba(255, 255, 255, .2); }
+.lb-btn:focus-visible { outline-color: #ffffff; }
+.lb-prev { left: clamp(8px, 2.5vw, 32px); top: 50%; transform: translateY(-50%); }
+.lb-next { right: clamp(8px, 2.5vw, 32px); top: 50%; transform: translateY(-50%); }
+.lb-close { top: 14px; right: clamp(8px, 2.5vw, 32px); font-size: 26px; }
+
+@media (max-width: 620px) {
+  .lightbox { padding-bottom: 96px; }
+  .lb-prev, .lb-next { top: auto; bottom: 24px; transform: none; }
+  .lb-prev { left: calc(50% - 60px); }
+  .lb-next { right: calc(50% - 60px); }
+}

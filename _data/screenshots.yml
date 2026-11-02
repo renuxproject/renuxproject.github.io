@@ -1,0 +1,78 @@
+# SPDX-License-Identifier: MPL-2.0
+#
+# The screenshots, in order, with their captions in each language.  The
+# files are in screenshots/ (PNG, 1280x800, from QEMU).  `teaser: true`
+# puts a screenshot on the home page too; `backdrop: true` puts it, blurred,
+# in the background at the top of every page.
+
+- file: 01-boot-menu.png
+  backdrop: true
+  teaser: true
+  en: Boot menu
+  pt: Menu de boot
+  es: Menú de arranque
+- file: 02-language.png
+  en: Installer language
+  pt: Idioma do instalador
+  es: Idioma del instalador
+- file: 03-welcome.png
+  backdrop: true
+  en: Welcome
+  pt: Boas-vindas
+  es: Bienvenida
+- file: 04-release-notes.png
+  en: Release notes
+  pt: Notas de lançamento
+  es: Notas de la versión
+- file: 05-about.png
+  backdrop: true
+  en: About Renux
+  pt: Sobre o Renux
+  es: Acerca de Renux
+- file: 06-partitioning.png
+  backdrop: true
+  teaser: true
+  en: Partitioning
+  pt: Particionamento
+  es: Particionado
+- file: 07-network.png
+  en: Network
+  pt: Rede
+  es: Red
+- file: 08-package-manager.png
+  backdrop: true
+  en: Packages over the internet
+  pt: Pacotes pela internet
+  es: Paquetes por internet
+- file: 09-services.png
+  en: Services
+  pt: Serviços
+  es: Servicios
+- file: 10-account.png
+  backdrop: true
+  en: Your account
+  pt: Sua conta
+  es: Tu cuenta
+- file: 11-final-configuration.png
+  en: Final configuration
+  pt: Configuração final
+  es: Configuración final
+- file: 12-complete.png
+  en: Installation complete
+  pt: Instalação concluída
+  es: Instalación completa
+- file: 13-login.png
+  backdrop: true
+  en: Login
+  pt: Login
+  es: Inicio de sesión
+- file: 14-welcome-motd.png
+  en: Message of the day
+  pt: Mensagem do dia
+  es: Mensaje del día
+- file: 15-zig-cc.png
+  backdrop: true
+  teaser: true
+  en: Zig and cc in the base system
+  pt: Zig e cc no sistema base
+  es: Zig y cc en el sistema base

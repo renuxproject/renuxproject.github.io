@@ -1,0 +1,25 @@
+{%- comment -%}
+  The end of every page: the links, and who made it.
+{%- endcomment -%}
+<div class="ground">
+<div class="ground-top page">
+  <div class="ground-brand">
+    <img src="{{ '/favicon.svg' | relative_url }}" alt="" width="44" height="44">
+    <div>
+      <p class="ground-name">Renux</p>
+      <p class="ground-note">{{ t.footer_note }}</p>
+    </div>
+  </div>
+  <nav class="linkrow" aria-label="{{ t.links_label }}">
+    <h2>{{ t.links_label }}</h2>
+    <a href="{{ links.source }}">{{ t.links.source }}</a>
+    <a href="{{ links.changes }}">{{ t.links.changes }}</a>
+    <a href="{{ links.builds }}">{{ t.links.builds }}</a>
+  </nav>
+</div>
+<footer class="page">
+  <span>&copy; 2026 Renan Lucas Vieira Hilário &amp; The Renux Project</span>
+  <a href="{{ '/LICENSE' | relative_url }}">MPL 2.0</a>
+  <a href="{{ links.site_source }}">{{ t.site_source }}</a>
+</footer>
+</div>

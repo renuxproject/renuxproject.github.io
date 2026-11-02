@@ -1,0 +1,36 @@
+# SPDX-License-Identifier: MPL-2.0
+#
+# The site's settings.  GitHub Pages builds the site with Jekyll: the
+# layout, the header, the footer and the gallery are written once, in
+# _layouts/ and _includes/, and every page in every language uses them.
+
+title: Renux
+url: https://renuxproject.github.io
+baseurl: ""
+theme: null   # no theme: the layout is in _layouts/
+
+# The languages of the site, in the order of the switcher.  Their words
+# are in _data/i18n.yml.
+languages: [en, pt, es]
+
+# Each page, by the name the pages use for it (`ref:`), and its file.  A
+# language other than English puts its own folder (pt/, es/) before it.
+routes:
+  home: index.html
+  screenshots: screenshots.html
+  download: download.html
+
+sass:
+  sass_dir: _sass
+  style: compressed
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - .bundle
+  - .jekyll-cache
+
+include:
+  - LICENSE

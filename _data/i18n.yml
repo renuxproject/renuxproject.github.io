@@ -1,0 +1,91 @@
+# SPDX-License-Identifier: MPL-2.0
+#
+# The words every page shares, in each language: the menu, the links, the
+# footer and the gallery.  A page's own text is in the page itself.
+
+en:
+  name: English
+  prefix: ""
+  locale: en_US
+  tagline: "A general-purpose operating system: easy to maintain, portable, and built with Zig."
+  skip: Skip to content
+  menu_label: Menu
+  langs_label: Languages
+  nav:
+    home: Home
+    screenshots: Screenshots
+    download: Download
+    source: Source
+  links_label: Links
+  links:
+    source: Source
+    changes: Changes
+    builds: Builds
+  site_source: This site's source
+  close: Close
+  terminal_hint: Click a line to select it
+  footer_note: Free software, made in the open.
+  gallery:
+    close: Close
+    previous: Previous picture
+    next: Next picture
+    full: Open the full picture
+    of: of
+
+pt:
+  name: Português
+  prefix: /pt
+  locale: pt_BR
+  tagline: "Um sistema operacional de propósito geral, fácil de manter, portátil e compilável com Zig."
+  skip: Pular para o conteúdo
+  menu_label: Menu
+  langs_label: Idiomas
+  nav:
+    home: Início
+    screenshots: Capturas de tela
+    download: Download
+    source: Código-fonte
+  links_label: Links
+  links:
+    source: Código-fonte
+    changes: Mudanças
+    builds: Builds
+  site_source: Código deste site
+  close: Fechar
+  terminal_hint: Clique numa linha para selecioná-la
+  footer_note: Software livre, feito em público.
+  gallery:
+    close: Fechar
+    previous: Imagem anterior
+    next: Próxima imagem
+    full: Abrir a imagem inteira
+    of: de
+
+es:
+  name: Español
+  prefix: /es
+  locale: es_ES
+  tagline: "Un sistema operativo de propósito general, fácil de mantener, portable y compilable con Zig."
+  skip: Saltar al contenido
+  menu_label: Menú
+  langs_label: Idiomas
+  nav:
+    home: Inicio
+    screenshots: Capturas
+    download: Descargar
+    source: Código fuente
+  links_label: Enlaces
+  links:
+    source: Código fuente
+    changes: Cambios
+    builds: Builds
+  site_source: Código de este sitio
+  close: Cerrar
+  terminal_hint: Haga clic en una línea para seleccionarla
+  footer_note: Software libre, hecho en abierto.
+  gallery:
+    close: Cerrar
+    previous: Imagen anterior
+    next: Imagen siguiente
+    full: Abrir la imagen completa
+    of: de

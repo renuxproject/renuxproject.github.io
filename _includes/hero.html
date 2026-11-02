@@ -1,0 +1,27 @@
+{%- comment -%}
+  The top of the page, on the sky.  The home page shows the name, what
+  Renux is and two buttons; the other pages show their title and a line
+  about them.  All of it comes from the page's front matter.
+{%- endcomment -%}
+{%- if page.ref == 'home' %}
+<div class="intro page">
+  <p class="eyebrow">{{ page.eyebrow }}</p>
+  <h1>Renux</h1>
+  <p class="lede">{{ t.tagline }}</p>
+  {%- if page.about %}
+  <p class="about">{{ page.about }}</p>
+  {%- endif %}
+  {%- include actions.html items=page.actions %}
+</div>
+{%- else %}
+<div class="pagehead page">
+  {%- if page.eyebrow %}
+  <p class="eyebrow">{{ page.eyebrow }}</p>
+  {%- endif %}
+  <h1>{{ page.heading | default: page.title }}</h1>
+  {%- if page.about %}
+  <p class="about">{{ page.about }}</p>
+  {%- endif %}
+  {%- include actions.html items=page.actions %}
+</div>
+{%- endif %}

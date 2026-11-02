@@ -1,0 +1,47 @@
+{%- comment -%}
+  The <head> of every page: the title, what the page is about, its
+  versions in the other languages, and the stylesheet.
+{%- endcomment -%}
+{%- assign description = page.description | default: t.tagline -%}
+{%- if page.ref == 'home' -%}
+  {%- assign full_title = site.title -%}
+{%- else -%}
+  {%- assign full_title = page.title | append: ' · ' | append: site.title -%}
+{%- endif -%}
+{%- assign route = site.routes[page.ref] -%}
+{%- if route -%}
+  {%- assign self = t.prefix | append: '/' | append: route | absolute_url -%}
+{%- else -%}
+  {%- assign self = page.url | absolute_url -%}
+{%- endif -%}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'">
+<meta name="referrer" content="no-referrer">
+<title>{{ full_title }}</title>
+<meta name="description" content="{{ description | escape }}">
+<meta name="theme-color" content="#0a0f09">
+<meta name="color-scheme" content="light dark">
+<meta property="og:site_name" content="{{ site.title }}">
+<meta property="og:title" content="{{ full_title }}">
+<meta property="og:description" content="{{ description | escape }}">
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{ self }}">
+<meta property="og:image" content="{{ '/logos/renux-512.png' | absolute_url }}">
+<meta property="og:locale" content="{{ t.locale }}">
+{%- for l in site.languages %}{% unless l == page.lang %}
+<meta property="og:locale:alternate" content="{{ site.data.i18n[l].locale }}">
+{%- endunless %}{% endfor %}
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="{{ '/favicon.svg' | relative_url }}" type="image/svg+xml">
+<link rel="apple-touch-icon" href="{{ '/logos/renux-512.png' | relative_url }}">
+<link rel="preload" href="{{ '/fonts/hanken-grotesk-latin-wght-normal.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="{{ '/fonts/stix-two-text-latin-wght-italic.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="{{ '/css/site.css' | relative_url }}">
+<link rel="canonical" href="{{ self }}">
+{%- if route %}
+{%- for l in site.languages %}
+<link rel="alternate" hreflang="{{ l }}" href="{{ site.data.i18n[l].prefix | append: '/' | append: route | absolute_url }}">
+{%- endfor %}
+<link rel="alternate" hreflang="x-default" href="{{ '/' | append: route | absolute_url }}">
+{%- endif %}

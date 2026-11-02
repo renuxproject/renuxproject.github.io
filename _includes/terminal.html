@@ -1,0 +1,13 @@
+{%- comment -%}
+  Commands, as the Renux console shows them.  `commands` names a list of
+  _data/commands.yml; `title` is the line on the window's bar.
+  A click on a command selects all of it, ready to copy (CSS
+  user-select: all), without the prompt.
+{%- endcomment -%}
+{%- assign lines = site.data.commands[include.commands] -%}
+<figure class="term">
+  <figcaption class="term-bar"><span class="term-dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="term-title">{{ include.title | default: 'sh' }}</span><span class="term-hint">{{ site.data.i18n[page.lang].terminal_hint }}</span></figcaption>
+{%- capture nl %}
+{% endcapture -%}
+<pre tabindex="0">{% for line in lines %}<span class="prompt" aria-hidden="true">$ </span><span class="cmd">{{ line | escape }}</span>{% unless forloop.last %}{{ nl }}{% endunless %}{% endfor %}</pre>
+</figure>

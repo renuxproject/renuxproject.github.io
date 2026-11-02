@@ -1,0 +1,40 @@
+{%- comment -%}
+  The screenshots of _data/screenshots.yml.
+
+  {% include screenshots.html teaser=true %}  the few marked `teaser`; each
+                                              opens in the gallery.
+  {% include screenshots.html %}              all of them, each opening
+                                              larger over the page, with
+                                              no JavaScript (CSS :target).
+{%- endcomment -%}
+{%- assign t = site.data.i18n[page.lang] -%}
+{%- assign gallery = t.prefix | append: '/' | append: site.routes.screenshots | relative_url -%}
+{%- assign shots = site.data.screenshots -%}
+{%- if include.teaser %}{% assign shots = shots | where: 'teaser', true %}{% endif -%}
+{%- assign total = site.data.screenshots | size -%}
+<div class="shots{% if include.teaser %} teaser{% endif %}">
+  {%- for s in shots %}
+  {%- assign n = s.file | slice: 0, 2 %}
+  <figure id="thumb-{{ n }}">
+    <a href="{% if include.teaser %}{{ gallery }}{% endif %}#shot-{{ n }}"><img src="{{ '/screenshots/' | append: s.file | relative_url }}" alt="{{ s[page.lang] }}" width="1280" height="800"{% unless forloop.first and include.teaser == nil %} loading="lazy"{% endunless %} decoding="async"></a>
+    <figcaption><span class="shot-n">{{ n }}</span>{{ s[page.lang] }}</figcaption>
+  </figure>
+  {%- endfor %}
+</div>
+{%- unless include.teaser %}
+{%- for s in shots %}
+{%- assign n = s.file | slice: 0, 2 %}
+{%- if forloop.first %}{% assign prev = shots | last %}{% else %}{% assign i = forloop.index0 | minus: 1 %}{% assign prev = shots[i] %}{% endif %}
+{%- if forloop.last %}{% assign next = shots | first %}{% else %}{% assign next = shots[forloop.index] %}{% endif %}
+<div class="lightbox" id="shot-{{ n }}" role="dialog" aria-label="{{ s[page.lang] }}">
+  <a class="lb-backdrop" href="#thumb-{{ n }}" tabindex="-1" aria-hidden="true"></a>
+  <figure class="lb-figure">
+    <a href="{{ '/screenshots/' | append: s.file | relative_url }}" title="{{ t.gallery.full }}"><img src="{{ '/screenshots/' | append: s.file | relative_url }}" alt="{{ s[page.lang] }}" width="1280" height="800" loading="lazy" decoding="async"></a>
+    <figcaption><span>{{ s[page.lang] }}</span><span class="lb-count">{{ forloop.index }} {{ t.gallery.of }} {{ total }}</span></figcaption>
+  </figure>
+  <a class="lb-btn lb-prev" href="#shot-{{ prev.file | slice: 0, 2 }}" aria-label="{{ t.gallery.previous }}">&larr;</a>
+  <a class="lb-btn lb-next" href="#shot-{{ next.file | slice: 0, 2 }}" aria-label="{{ t.gallery.next }}">&rarr;</a>
+  <a class="lb-btn lb-close" href="#thumb-{{ n }}" aria-label="{{ t.gallery.close }}">&times;</a>
+</div>
+{%- endfor %}
+{%- endunless %}

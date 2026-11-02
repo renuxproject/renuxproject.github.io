@@ -1,0 +1,58 @@
+/* What JavaScript would do, in HTML and CSS alone.  Each part is an
+   enhancement: a browser without it shows the site as it is, unchanged.
+
+   - From page to page, a cross-fade, with the header and the sky kept in
+     place (cross-document view transitions).
+   - A thin bar at the top shows how far down the page is read, and the
+     content rises in as it comes into view (scroll-driven animations).
+   - Elsewhere: the gallery's lightbox (:target, in _gallery), the menu
+     on narrow screens (popover, in _masthead), and commands selected in
+     one click (user-select, in _terminal). */
+
+@view-transition { navigation: auto; }
+.masthead { view-transition-name: masthead; }
+.backdrop { view-transition-name: backdrop; }
+::view-transition-old(root),
+::view-transition-new(root) { animation-duration: .35s; }
+
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    /* The reading bar. */
+    body::before {
+      content: "";
+      position: fixed;
+      z-index: 150;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--leaf-400), var(--sun));
+      transform-origin: left;
+      animation: read linear both;
+      animation-timeline: scroll(root);
+    }
+
+    /* The content rises in. */
+    .facts > div,
+    .build > *,
+    .principles li,
+    .split,
+    .section-head,
+    .shots figure,
+    .banner,
+    .release-grid,
+    .check {
+      animation: rise linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 55%;
+    }
+  }
+}
+@keyframes read {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+@keyframes rise {
+  from { opacity: 0; transform: translateY(28px); }
+  to { opacity: 1; transform: none; }
+}

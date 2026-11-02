@@ -1,0 +1,30 @@
+{%- comment -%}
+  The header: the name, the menu and the languages.  On a narrow screen
+  the menu is a popover (HTML's own, no JavaScript): the button opens it,
+  and a tap outside or Esc closes it.  Where popovers are not supported,
+  the menu stays in the header, as on a wide screen.
+{%- endcomment -%}
+{%- assign here = t.prefix | append: '/' -%}
+<header class="masthead page">
+  <a class="brand" href="{{ here | append: site.routes.home | relative_url }}"><img class="brand-mark" src="{{ '/favicon.svg' | relative_url }}" alt="" width="30" height="30">Renux</a>
+  <nav class="menu" id="site-menu" popover aria-label="{{ t.menu_label }}">
+    <button class="menu-close" type="button" popovertarget="site-menu" popovertargetaction="hide" aria-label="{{ t.close }}">&times;</button>
+    {%- for r in site.routes %}
+    {%- assign key = r[0] %}
+    <a href="{{ here | append: r[1] | relative_url }}"{% if page.ref == key %} aria-current="page"{% endif %}>{{ t.nav[key] }}</a>
+    {%- endfor %}
+    <a class="menu-ext" href="{{ links.source }}">{{ t.nav.source }}<span class="ext" aria-hidden="true">&#8599;</span></a>
+  </nav>
+  <nav class="langs" aria-label="{{ t.langs_label }}">
+    {%- assign route = site.routes[page.ref] | default: site.routes.home -%}
+    {%- for l in site.languages -%}
+    {%- assign lt = site.data.i18n[l] -%}
+    {%- if l == page.lang %}
+    <strong aria-current="true" title="{{ lt.name }}">{{ l | upcase }}</strong>
+    {%- else %}
+    <a href="{{ lt.prefix | append: '/' | append: route | relative_url }}" hreflang="{{ l }}" lang="{{ l }}" title="{{ lt.name }}">{{ l | upcase }}</a>
+    {%- endif -%}
+    {%- endfor %}
+  </nav>
+  <button class="menu-toggle" type="button" popovertarget="site-menu" aria-label="{{ t.menu_label }}"><span aria-hidden="true"></span></button>
+</header>

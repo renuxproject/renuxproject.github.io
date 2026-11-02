@@ -1,0 +1,37 @@
+---
+# Jekyll compiles this file, and the partials of _sass/, into css/site.css.
+---
+/*
+ * SPDX-License-Identifier: MPL-2.0
+ *
+ * Copyright (c) 2026 Renan Lucas Vieira Hilário
+ * Copyright (c) 2026 The Renux Project
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at https://mozilla.org/MPL/2.0/.
+ *
+ * The site's stylesheet, one module per part of the page.  Every page
+ * opens on a sky made of Renux itself: its screenshots, blurred, under a
+ * dark veil, with the page itself as the horizon.  Titles are set in an italic serif, as
+ * the logo's name, and the text in a sans-serif; both fonts are in
+ * fonts/.  Commands look like the Renux console.  The theme follows the
+ * system's, light or dark.
+ */
+
+@import
+  "fonts",      // STIX Two Text and Hanken Grotesk, from fonts/
+  "tokens",     // colours, type, spacing; light and dark
+  "base",       // the elements, links, focus, the page's width
+  "sky",        // the blurred screenshots, the veil and the horizon
+  "masthead",   // the name, the menu, the languages
+  "hero",       // the title of each page
+  "buttons",    // buttons, badges and "more" links
+  "sections",   // sections, the split layout
+  "home",       // the facts, the build, the principles
+  "terminal",   // the console
+  "gallery",    // the screenshots and the lightbox
+  "download",   // the releases
+  "ground",     // the links and the footer
+  "enhance",    // what JavaScript would do, in HTML and CSS
+  "motion";     // reduced motion, and print

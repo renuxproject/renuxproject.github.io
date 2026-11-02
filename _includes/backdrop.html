@@ -1,0 +1,15 @@
+{%- comment -%}
+  The sky at the top of every page: the screenshots marked `backdrop` in
+  _data/screenshots.yml, blurred, under a dark veil that keeps the text
+  readable.  Only decoration: hidden from screen readers.
+{%- endcomment -%}
+{%- assign shots = site.data.screenshots | where: 'backdrop', true %}
+<div class="backdrop" aria-hidden="true">
+  {%- comment %} Twice, the second time backwards, to fill the sky; the
+  browser downloads each picture once. {% endcomment %}
+  {%- assign back = shots | reverse %}
+  {%- assign wall = shots | concat: back %}
+  {%- for s in wall %}
+  <img src="{{ '/screenshots/' | append: s.file | relative_url }}" alt="" width="1280" height="800" decoding="async" fetchpriority="low">
+  {%- endfor %}
+</div>
