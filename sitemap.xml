@@ -1,0 +1,18 @@
+---
+# SPDX-License-Identifier: MPL-2.0
+layout: null
+sitemap: false
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+{%- for l in site.languages %}
+{%- for r in site.routes %}
+  <url>
+    <loc>{{ site.data.i18n[l].prefix | append: '/' | append: r[1] | absolute_url }}</loc>
+    {%- for a in site.languages %}
+    <xhtml:link rel="alternate" hreflang="{{ a }}" href="{{ site.data.i18n[a].prefix | append: '/' | append: r[1] | absolute_url }}"/>
+    {%- endfor %}
+  </url>
+{%- endfor %}
+{%- endfor %}
+</urlset>

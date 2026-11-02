@@ -1,56 +1,16 @@
-<!DOCTYPE html>
-<!--
-    SPDX-License-Identifier: MPL-2.0
-    Copyright (c) 2026 Renan Lucas Vieira Hilário
-    Copyright (c) 2026 The Renux Project
-
-    This Source Code Form is subject to the terms of the Mozilla Public
-    License, v. 2.0. If a copy of the MPL was not distributed with this
-    file, You can obtain one at https://mozilla.org/MPL/2.0/.
--->
-<html lang="pt">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self'; img-src 'self'">
-<meta name="referrer" content="no-referrer">
-<meta name="description" content="Renux: Um sistema operacional de propósito geral, fácil de manter, portátil e compilável com Zig.">
-<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#141613" media="(prefers-color-scheme: dark)">
-<meta property="og:title" content="Renux">
-<meta property="og:description" content="Um sistema operacional de propósito geral, fácil de manter, portátil e compilável com Zig.">
-<meta property="og:image" content="../logos/renux-512.png">
-<title>Renux</title>
-<link rel="icon" href="../favicon.svg">
-<link rel="stylesheet" href="../css/site.css">
-<link rel="alternate" hreflang="en" href="../index.html">
-<link rel="alternate" hreflang="pt" href="../pt/index.html">
-<link rel="alternate" hreflang="es" href="../es/index.html">
-</head>
-<body>
-<div class="page">
-
-<header>
-  <a class="brand" href="index.html"><img src="../logos/main-logo.svg" alt="" width="28" height="28">Renux</a>
-  <nav class="menu" aria-label="Menu"><a href="index.html" aria-current="page">Início</a> <a href="screenshots.html">Capturas de tela</a> <a href="download.html">Download</a> <a href="https://github.com/renuxproject/renux">Código-fonte</a></nav>
-  <nav class="langs" aria-label="Idiomas"><a href="../index.html" hreflang="en" lang="en">EN</a> &middot; <strong aria-current="page">PT</strong> &middot; <a href="../es/index.html" hreflang="es" lang="es">ES</a></nav>
-</header>
-
-<div class="intro">
-  <h1><img src="../logos/main-logo.svg" alt="Renux"></h1>
-  <p class="lede">Um sistema operacional de propósito geral, fácil de manter, portátil e compilável com Zig.</p>
-  <p class="about">O Renux começou no FreeBSD 15.1 e está se tornando um sistema próprio. Ele continua trazendo o desenvolvimento do FreeBSD, aos poucos, para se manter atualizado; o código do Renux fica em arquivos próprios. O Zig é toda a sua toolchain: a máquina não precisa de mais nada, e o mesmo código-fonte gera o mesmo sistema em qualquer computador.</p>
-  <p class="actions"><a class="btn btn-primary" href="download.html">Baixar o Renux</a> <a class="btn" href="screenshots.html">Ver as capturas de tela</a></p>
-</div>
-
-<section>
-  <h2>Origem</h2>
-  <p class="story">Renux é <strong>Ren</strong>an + <strong>U</strong>ni<strong>x</strong>. O criador, Renan Lucas Vieira Hilário, usa Linux e BSDs e percebeu quantas toolchains e dependências são precisas para construí-los. O Zig, a linguagem preferida dele, compila C, C++ e Zig para qualquer máquina, e é um binário só. Daí veio a pergunta: e se um sistema operacional fosse fácil de manter, portátil e compilasse em vários sistemas custando só o Zig? O Renux é a resposta, e a ideia é que ele seja uma tecnologia que qualquer um possa adotar.</p>
-  <p class="motto">Instale o Zig. Compile o sistema inteiro.</p>
-</section>
-
-<section>
-  <h2>Em resumo</h2>
+---
+# SPDX-License-Identifier: MPL-2.0
+layout: default
+lang: pt
+ref: home
+title: Renux
+eyebrow: Um sistema operacional Unix-like BSD
+about: "O Renux começou no FreeBSD 15.1 e está se tornando um sistema próprio. Ele continua trazendo o desenvolvimento do FreeBSD, aos poucos, para se manter atualizado; o código do Renux fica em arquivos próprios. O Zig é toda a sua toolchain: a máquina não precisa de mais nada, e o mesmo código-fonte gera o mesmo sistema em qualquer computador."
+actions:
+  - { label: Baixar o Renux, href: download.html, primary: true }
+  - { label: Ver as capturas de tela, href: screenshots.html }
+---
+<section class="glance page" aria-label="Em resumo">
   <dl class="facts">
     <div><dt>Base</dt><dd>FreeBSD 15.1</dd></div>
     <div><dt>Toolchain</dt><dd>Zig 0.17</dd></div>
@@ -59,15 +19,17 @@
   </dl>
 </section>
 
-<section id="build">
-  <h2>Compilar</h2>
-<pre><span class="prompt">$ </span>git clone --depth 1 https://github.com/renuxproject/renux.git
-<span class="prompt">$ </span>cd renux
-<span class="prompt">$ </span>zig build</pre>
-  <p>Em qualquer sistema, com o <a href="https://ziglang.org/download/">Zig 0.17</a>. O Renux é experimental: o que já compila e o que vem a seguir está no <a href="https://github.com/renuxproject/renux#readme">README</a>.</p>
+<section id="build" class="build page">
+  <div>
+    <h2 class="kicker">Compilar</h2>
+    <p class="motto">Instale o Zig. Compile o sistema inteiro.</p>
+    <p class="note">Em qualquer sistema, com o <a href="{{ site.data.links.zig }}">Zig 0.17</a>. O Renux é experimental: o que já compila e o que vem a seguir está no <a href="{{ site.data.links.readme }}">README</a>.</p>
+  </div>
+  {% include terminal.html commands="build" %}
 </section>
 
-<section>
+<div class="band">
+<section class="page">
   <h2>Princípios</h2>
   <ol class="principles">
     <li><strong>Sempre open source</strong><span>O trabalho do Renux é licenciado pela Mozilla Public License 2.0.</span></li>
@@ -75,21 +37,17 @@
     <li><strong>Seu dispositivo, suas regras</strong><span>Nenhum dado pessoal é coletado, e não há nem haverá verificação de idade.</span></li>
   </ol>
 </section>
+</div>
 
-<section>
-  <h2>Links</h2>
-  <p class="links">
-    <a href="https://github.com/renuxproject/renux">Código-fonte</a>
-    <a href="https://github.com/renuxproject/renux/commits/main">Mudanças</a>
-    <a href="https://github.com/renuxproject/renux/actions">Builds</a>
-  </p>
+<section class="split page">
+  <h2>Origem</h2>
+  <div class="body"><p>Renux é <strong>Ren</strong>an + <strong>U</strong>ni<strong>x</strong>. O criador, Renan Lucas Vieira Hilário, usa Linux e BSDs e percebeu quantas toolchains e dependências são precisas para construí-los. O Zig, a linguagem preferida dele, compila C, C++ e Zig para qualquer máquina, e é um binário só. Daí veio a pergunta: e se um sistema operacional fosse fácil de manter, portátil e compilasse em vários sistemas custando só o Zig? O Renux é a resposta, e a ideia é que ele seja uma tecnologia que qualquer um possa adotar.</p></div>
 </section>
 
-<footer>
-  &copy; 2026 Renan Lucas Vieira Hilário &amp; The Renux Project &middot; <a href="../LICENSE">MPL 2.0</a>
-  &middot; <a href="https://github.com/renuxproject/renuxproject.github.io">Código deste site</a>
-</footer>
-
-</div>
-</body>
-</html>
+<section class="page">
+  <div class="section-head">
+    <h2>Capturas de tela</h2>
+    <a class="more" href="screenshots.html">Ver as capturas de tela <span aria-hidden="true">&rarr;</span></a>
+  </div>
+  {% include screenshots.html teaser=true %}
+</section>

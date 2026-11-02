@@ -1,0 +1,42 @@
+/* The end of the page: the links, and who made it. */
+.ground { background: var(--leaf-900); color: #ffffff; }
+.band + .ground { border-top: 1px solid rgba(255, 255, 255, .14); }
+.ground a { color: #ffffff; }
+.ground a:focus-visible { outline-color: #ffffff; }
+
+.ground-top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px 48px;
+  padding-top: 44px;
+  padding-bottom: 32px;
+}
+.ground-brand { display: flex; align-items: center; gap: 14px; }
+.ground-brand img { width: 44px; height: 44px; }
+.ground-brand p { margin: 0; }
+.ground-name { font: italic 700 26px/1 var(--serif); }
+.ground-note { margin-top: 6px !important; font-size: 15px; color: rgba(255, 255, 255, .72); }
+
+.linkrow { display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px 28px; }
+.linkrow h2 { font: 600 12px/1 var(--sans); letter-spacing: .1em; text-transform: uppercase; color: rgba(255, 255, 255, .6); }
+.linkrow a { font-weight: 600; text-decoration: none; }
+.linkrow a:hover { text-decoration: underline; }
+
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 24px;
+  padding-top: 20px;
+  padding-bottom: 34px;
+  border-top: 1px solid rgba(255, 255, 255, .12);
+  font-size: 14px;
+  color: rgba(255, 255, 255, .72);
+}
+footer a { color: rgba(255, 255, 255, .84) !important; }
+footer span { margin-right: auto; }
+
+@media (max-width: 620px) {
+  footer span { width: 100%; }
+}

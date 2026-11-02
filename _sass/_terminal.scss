@@ -1,0 +1,39 @@
+/* The commands, as the Renux console shows them: white on black. */
+.term {
+  margin: 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: #000000;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid rgba(255, 255, 255, .06);
+}
+.term-bar {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 10px 16px;
+  background: #121512;
+  border-bottom: 1px solid #1f241e;
+  color: #8a9285;
+  font: 12px/1 var(--mono);
+}
+.term-dots { display: inline-flex; gap: 6px; }
+.term-dots i { width: 10px; height: 10px; border-radius: 50%; background: var(--leaf-600); }
+.term-dots i:nth-child(2) { background: var(--leaf-400); }
+.term-dots i:nth-child(3) { background: var(--sun); }
+
+pre {
+  background: #000000;
+  color: #d4d4d4;
+  font: 14px/1.9 var(--mono);
+  padding: 20px 24px 22px;
+  overflow-x: auto;
+  scrollbar-color: #3a4036 transparent;
+  margin: 0;
+}
+pre .prompt { color: #5fd35f; user-select: none; }
+pre:focus-visible { outline-offset: -2px; }
+
+@media (max-width: 620px) {
+  pre { padding: 16px 18px; font-size: 13px; }
+}

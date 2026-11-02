@@ -1,0 +1,33 @@
+/* Download: each version, with a badge of where it stands. */
+.release-block { padding-top: 12px; }
+.release-block + .release-block { padding-top: clamp(24px, 4vw, 48px); }
+.banner {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0 0 clamp(26px, 4vw, 44px);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+}
+.release-grid { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 28px 56px; align-items: start; }
+h2.release { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; }
+#nightly { --tone: var(--night); }
+#aurora { --tone: var(--dev); }
+.release-text p { margin: 18px 0 0; max-width: 38em; text-wrap: pretty; }
+.release-text .actions { margin-top: 26px; }
+#nightly .btn-primary { background: var(--night); border-color: var(--night); color: var(--on-night); }
+
+/* What a build is made of. */
+.specs { margin: 0; padding: 6px 24px; border: 1px solid var(--rule); border-radius: var(--radius); background: var(--card); box-shadow: var(--shadow); }
+.specs div { padding: 13px 0; }
+.specs div + div { border-top: 1px solid var(--rule); }
+.specs dt { font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.specs dd { margin: 2px 0 0; font-weight: 500; }
+
+.check { margin-top: clamp(30px, 4vw, 48px); }
+.check p { margin: 0 0 18px; max-width: 38em; }
+.check .term { max-width: 760px; }
+
+@media (max-width: 860px) {
+  .release-grid { grid-template-columns: minmax(0, 1fr); }
+}

@@ -1,0 +1,12 @@
+# SPDX-License-Identifier: MPL-2.0
+#
+# The commands the site shows, as the Renux console shows them.
+
+build:
+  - git clone --depth 1 https://github.com/renuxproject/renux.git
+  - cd renux
+  - zig build
+
+verify:
+  - sha256sum -c SHA256
+  - unxz renux-nightly-amd64-*-installer.iso.xz

@@ -1,0 +1,11 @@
+{%- comment -%}
+  Commands, as the Renux console shows them.  `commands` names a list of
+  _data/commands.yml; `title` is the line on the window's bar.
+{%- endcomment -%}
+{%- assign lines = site.data.commands[include.commands] -%}
+<figure class="term">
+  <figcaption class="term-bar"><span class="term-dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="term-title">{{ include.title | default: 'sh' }}</span></figcaption>
+{%- capture nl %}
+{% endcapture -%}
+<pre tabindex="0">{% for line in lines %}<span class="prompt" aria-hidden="true">$ </span>{{ line | escape }}{% unless forloop.last %}{{ nl }}{% endunless %}{% endfor %}</pre>
+</figure>

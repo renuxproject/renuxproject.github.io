@@ -1,0 +1,43 @@
+/* The home page. */
+
+/* At a glance: four facts, on the horizon. */
+.glance { padding-top: 12px; padding-bottom: clamp(36px, 6vw, 64px); }
+.facts { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; margin: 0; }
+.facts div { padding: 2px 24px; border-left: 1px solid var(--rule); }
+.facts div:first-child { padding-left: 0; border-left: 0; }
+.facts dt { font-size: 13px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.facts dd { margin: 4px 0 0; font: italic 600 clamp(23px, 2.5vw, 29px)/1.2 var(--serif); }
+
+/* Build: the motto and the commands. */
+.build { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 32px 56px; align-items: center; }
+.kicker { color: var(--accent); font: 600 13px/1.3 var(--sans); letter-spacing: .1em; text-transform: uppercase; }
+.motto { font: italic 700 clamp(40px, 5.6vw, 68px)/1.04 var(--serif); margin: 12px 0 0; letter-spacing: -.008em; text-wrap: balance; }
+.build .note { margin: 18px 0 0; color: var(--muted); max-width: 30em; }
+
+/* Principles: three, numbered, on the deep green of the logo. */
+.principles {
+  list-style: none;
+  counter-reset: principle;
+  padding: 0;
+  margin: 32px 0 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px 48px;
+}
+.principles li { counter-increment: principle; border-top: 1px solid rgba(255, 255, 255, .3); padding-top: 18px; }
+.principles li::before {
+  content: counter(principle, decimal-leading-zero);
+  display: block;
+  margin-bottom: 10px;
+  font: italic 600 16px/1 var(--serif);
+  color: var(--sun);
+}
+.principles strong { display: block; font: italic 600 25px/1.2 var(--serif); margin-bottom: 8px; }
+.principles span { color: rgba(255, 255, 255, .84); font-size: 17px; }
+
+@media (max-width: 860px) {
+  .build { grid-template-columns: minmax(0, 1fr); }
+  .principles { grid-template-columns: minmax(0, 1fr); }
+  .facts { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 0; }
+  .facts div:nth-child(3) { padding-left: 0; border-left: 0; }
+}

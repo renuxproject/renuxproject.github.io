@@ -1,0 +1,16 @@
+/* For those who ask the screen to keep still. */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+
+/* On paper: the text, without the sky. */
+@media print {
+  .dawn { background: none; color: #000000; }
+  .dawn::before, .dawn::after, .sun, .menu, .langs, .actions, .skip, .lightbox, .ground-top { display: none; }
+  .about, .eyebrow { color: #000000; border: 0; background: none; }
+  .band, .ground { background: none; color: #000000; }
+  .band span, footer { color: #000000; }
+  .brand { color: #000000; }
+  .term, .shots img, .banner, .specs { box-shadow: none; }
+  section { padding-top: 24px; padding-bottom: 24px; }
+}

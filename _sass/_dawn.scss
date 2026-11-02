@@ -1,0 +1,55 @@
+/* The dawn: the sky, the sun, the haze and the land. */
+.dawn {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  color: #ffffff;
+  background: linear-gradient(152deg, var(--leaf-900) 0%, var(--leaf-800) 34%, var(--leaf-700) 58%, var(--leaf-600) 74%, var(--leaf-400) 90%, var(--sun) 104%);
+}
+.dawn a:focus-visible { outline-color: #ffffff; }
+
+/* The sun comes up once, behind the horizon. */
+.sun {
+  position: absolute;
+  z-index: -2;
+  right: 15%;
+  bottom: 0;
+  width: clamp(190px, 25vw, 340px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--sunlight);
+  animation: sunrise 2.6s cubic-bezier(.16, .8, .3, 1) both;
+}
+@keyframes sunrise {
+  from { transform: translateY(58%); }
+  to { transform: none; }
+}
+/* Its light: a gradient, as a large shadow shows its edges. */
+.sun::before {
+  content: "";
+  position: absolute;
+  inset: -85%;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(255, 248, 210, .62) 36%, rgba(227, 212, 58, .24) 56%, rgba(227, 212, 58, 0) 100%);
+}
+
+/* The haze over the land, and the land: the page itself. */
+.dawn::before,
+.dawn::after {
+  content: "";
+  position: absolute;
+  left: -32%;
+  width: 172%;
+  border-radius: 50%;
+}
+.dawn::before { z-index: -1; height: 520px; bottom: -404px; background: rgba(255, 255, 255, .17); }
+.dawn::after { z-index: -1; height: 520px; bottom: -452px; background: var(--bg); }
+
+.dawn-short .sun { width: clamp(140px, 17vw, 230px); }
+
+@media (max-width: 620px) {
+  .sun { right: -9%; }
+  .dawn::before, .dawn::after { left: -70%; width: 240%; height: 360px; }
+  .dawn::before { bottom: -258px; }
+  .dawn::after { bottom: -300px; }
+}
