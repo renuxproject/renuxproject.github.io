@@ -37,3 +37,11 @@ pre:focus-visible { outline-offset: -2px; }
 @media (max-width: 620px) {
   pre { padding: 16px 18px; font-size: 13px; }
 }
+
+/* One click selects a whole command, ready to copy. */
+pre .cmd { -webkit-user-select: all; user-select: all; cursor: copy; border-radius: 3px; }
+pre .cmd:hover { background: rgba(95, 211, 95, .1); }
+.term-hint { margin-left: auto; font-family: var(--sans); font-size: 12px; color: #6d7569; }
+@media (max-width: 620px) {
+  .term-hint { display: none; }
+}

@@ -5,8 +5,8 @@
 
 /* On paper: the text, without the sky. */
 @media print {
-  .dawn { background: none; color: #000000; }
-  .dawn::before, .dawn::after, .sun, .menu, .langs, .actions, .skip, .lightbox, .ground-top { display: none; }
+  .sky { background: none; color: #000000; }
+  .sky::before, .sky::after, .backdrop, .hero-shot, .menu-toggle, .menu, .langs, .actions, .skip, .lightbox, .ground-top { display: none; }
   .about, .eyebrow { color: #000000; border: 0; background: none; }
   .band, .ground { background: none; color: #000000; }
   .band span, footer { color: #000000; }

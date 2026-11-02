@@ -20,11 +20,11 @@
 .btn-primary { background: var(--accent); border-color: var(--accent); color: var(--on-accent); box-shadow: var(--shadow); }
 .btn-primary:hover { background: var(--accent); filter: brightness(1.1); }
 
-/* On the dawn. */
-.dawn .btn { color: #ffffff; border-color: rgba(255, 255, 255, .55); }
-.dawn .btn:hover { background: rgba(255, 255, 255, .14); border-color: #ffffff; }
-.dawn .btn-primary { background: #ffffff; border-color: #ffffff; color: var(--leaf-800); box-shadow: 0 10px 30px -10px rgba(0, 0, 0, .45); }
-.dawn .btn-primary:hover { background: var(--sunlight); border-color: var(--sunlight); filter: none; }
+/* On the sky. */
+.sky .btn { color: #ffffff; border-color: rgba(255, 255, 255, .55); }
+.sky .btn:hover { background: rgba(255, 255, 255, .14); border-color: #ffffff; }
+.sky .btn-primary { background: #ffffff; border-color: #ffffff; color: var(--leaf-800); box-shadow: 0 10px 30px -10px rgba(0, 0, 0, .45); }
+.sky .btn-primary:hover { background: var(--sunlight); border-color: var(--sunlight); filter: none; }
 
 /* Where a version stands. */
 .badge {

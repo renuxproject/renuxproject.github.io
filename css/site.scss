@@ -12,8 +12,8 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  *
  * The site's stylesheet, one module per part of the page.  Every page
- * opens on a dawn: the logo's gradient as the sky, the sun of Aurora, and
- * the page itself as the horizon.  Titles are set in an italic serif, as
+ * opens on a sky made of Renux itself: its screenshots, blurred, under a
+ * dark veil, with the page itself as the horizon.  Titles are set in an italic serif, as
  * the logo's name, and the text in a sans-serif; both fonts are in
  * fonts/.  Commands look like the Renux console.  The theme follows the
  * system's, light or dark.
@@ -23,7 +23,7 @@
   "fonts",      // STIX Two Text and Hanken Grotesk, from fonts/
   "tokens",     // colours, type, spacing; light and dark
   "base",       // the elements, links, focus, the page's width
-  "dawn",       // the sky, the sun and the horizon
+  "sky",        // the blurred screenshots, the veil and the horizon
   "masthead",   // the name, the menu, the languages
   "hero",       // the title of each page
   "buttons",    // buttons, badges and "more" links
@@ -33,4 +33,5 @@
   "gallery",    // the screenshots and the lightbox
   "download",   // the releases
   "ground",     // the links and the footer
+  "enhance",    // what JavaScript would do, in HTML and CSS
   "motion";     // reduced motion, and print

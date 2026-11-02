@@ -22,6 +22,8 @@ en:
     changes: Changes
     builds: Builds
   site_source: This site's source
+  close: Close
+  terminal_hint: Click a line to select it
   footer_note: Free software, made in the open.
   gallery:
     close: Close
@@ -49,6 +51,8 @@ pt:
     changes: Mudanças
     builds: Builds
   site_source: Código deste site
+  close: Fechar
+  terminal_hint: Clique numa linha para selecioná-la
   footer_note: Software livre, feito em público.
   gallery:
     close: Fechar
@@ -76,6 +80,8 @@ es:
     changes: Cambios
     builds: Builds
   site_source: Código de este sitio
+  close: Cerrar
+  terminal_hint: Haga clic en una línea para seleccionarla
   footer_note: Software libre, hecho en abierto.
   gallery:
     close: Cerrar

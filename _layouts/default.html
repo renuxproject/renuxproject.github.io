@@ -16,10 +16,13 @@
 </head>
 <body class="is-{{ page.ref | default: 'page' }}">
 <a class="skip" href="#main">{{ t.skip }}</a>
-<div class="dawn{% unless page.ref == 'home' %} dawn-short{% endunless %}">
-<span class="sun" aria-hidden="true"></span>
+<div class="sky{% unless page.ref == 'home' %} sky-short{% endunless %}">
+{% include backdrop.html %}
 {% include header.html %}
 {% include hero.html %}
+{%- if page.ref == 'home' and page.hero_shot %}
+{% include hero-shot.html file=page.hero_shot %}
+{%- endif %}
 </div>
 
 <main id="main" tabindex="-1">

@@ -17,7 +17,9 @@ _layouts/default.html   the frame of every page
 _includes/              the parts of a page:
   head.html               title, description, Open Graph, hreflang
   header.html             the name, the menu and the languages
-  hero.html               the top of the page, on the dawn
+  backdrop.html           the blurred screenshots at the top of every page
+  hero.html               the top of the page, over the blurred screenshots
+  hero-shot.html          the floating screenshot on the home page
   actions.html            a row of buttons
   terminal.html           commands, as the Renux console shows them
   screenshots.html        the screenshots, and the lightbox (CSS only)
@@ -28,7 +30,7 @@ _data/                  what the pages share:
   screenshots.yml         the screenshots and their captions
   commands.yml            the commands shown on the site
 css/site.scss           the stylesheet: it imports the modules of _sass/
-_sass/                  one module per part: tokens, dawn, masthead, hero,
+_sass/                  one module per part: tokens, sky, masthead, hero,
                         buttons, sections, home, terminal, gallery,
                         download, ground, motion
 fonts/                  STIX Two Text and Hanken Grotesk (SIL OFL)
@@ -44,7 +46,9 @@ sitemap.xml  robots.txt
   two.
 - **Menu, footer, gallery words**: `_data/i18n.yml`.
 - **A screenshot**: put the PNG in `screenshots/` and add it to
-  `_data/screenshots.yml`; every gallery follows.
+  `_data/screenshots.yml`; every gallery follows.  `backdrop: true` puts
+  it, blurred, behind the top of the pages; `hero_shot:` in the home
+  page's front matter picks the one that floats there.
 - **A link**: `_data/links.yml`.
 - **A colour or a measure**: `_sass/_tokens.scss`.
 - **A new language**: add it to `languages` in `_config.yml` and to
@@ -57,6 +61,23 @@ principles and its links.  What changes often is in the
 
 No JavaScript and nothing from other sites: the fonts are served from
 `fonts/`, and the theme follows the system's (light or dark).
+
+## Interactivity without JavaScript
+
+What a script would do, the site does with HTML and CSS alone, at build
+time with Liquid (Jekyll) or in the browser:
+
+| What                                   | How                                   | Where               |
+|----------------------------------------|---------------------------------------|---------------------|
+| Gallery: a picture opens larger, with previous/next | `:target`                | `_sass/_gallery`    |
+| The menu on a phone                    | the `popover` attribute               | `_sass/_masthead`   |
+| Fade from page to page, header in place | cross-document view transitions      | `_sass/_enhance`    |
+| A reading bar; content rising into view | scroll-driven animations             | `_sass/_enhance`    |
+| One click selects a whole command      | `user-select: all`                    | `_sass/_terminal`   |
+| Menus, languages, galleries built from data | Liquid, when the site is built   | `_includes/`        |
+
+Each one is an enhancement: a browser without it shows the site as it
+is, and all of it stops moving when the system asks for less motion.
 
 ## Seeing it
 
