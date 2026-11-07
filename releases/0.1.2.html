@@ -1,0 +1,87 @@
+---
+# SPDX-License-Identifier: MPL-2.0
+layout: default
+lang: en
+ref: release-0.1.2
+title: Renux 0.1.2 "Aurora" release notes
+heading: Renux 0.1.2 &ldquo;Aurora&rdquo;
+eyebrow: Release notes &middot; 7 November 2026
+about: "Release notes for Renux 0.1.2 Aurora."
+---
+<section class="release-block page">
+  <img class="banner" src="{{ '/banners/aurora.png' | relative_url }}" alt="Renux 0.1 Aurora" width="1280" height="360">
+  <div class="release-text">
+    <h2 class="release">Renux 0.1.2 &ldquo;Aurora&rdquo; <span class="badge">Experimental</span></h2>
+    <p class="note">Renux 0.1.2 &ldquo;Aurora&rdquo;, the second update of Renux 0.1, is out, built with Zig 0.17.1. Its installer no longer erases a disk it cannot install on, and it is for UEFI only. It is experimental: do not install it on a machine that holds data you need. It is amd64 and UEFI only.</p>
+    <p class="actions"><a class="btn btn-primary" href="{{ site.data.links.release_0_1_2 }}">Download<span class="btn-arrow" aria-hidden="true">&rarr;</span></a> <a class="btn" href="{{ site.data.links.source }}">Source</a></p>
+  </div>
+</section>
+
+<section class="split page">
+  <h2>What is new in 0.1.2</h2>
+  <div class="body">
+    <ul>
+      <li><strong>The installer no longer destroys a disk it cannot install on.</strong> In 0.1.1, Auto (ZFS) prepared the disk to boot by BIOS too, with boot code Renux does not have (<code>/boot/pmbr</code>, <code>/boot/gptzfsboot</code>): it erased the disk's partitions and then stopped with an error, leaving neither the old system nor Renux. The installer now makes the disk for UEFI only.</li>
+      <li>Renux boots by UEFI only. When the installer was started by BIOS (CSM, Legacy), it says so and stops before it touches the disk.</li>
+      <li>The workarounds for booting GPT disks by BIOS on some Lenovo, HP, Intel and Acer machines are gone.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="split page">
+  <h2>What is in it</h2>
+  <div class="body">
+    <ul>
+      <li>The kernel, the EFI loader and the whole userland are built by <code>zig build</code> from the Renux source tree, with Zig 0.17.1 as the compiler.</li>
+      <li>Renux is based on FreeBSD 15.1 and follows FreeBSD's development.</li>
+      <li>854 kernel modules are installed in <code>/boot/modules</code>, including ZFS and the drivers FreeBSD ships as modules.</li>
+      <li>The installer offers <strong>Auto (UFS)</strong> and <strong>Auto (ZFS)</strong>. ZFS includes the kernel module, <code>zpool</code>/<code>zfs</code> and the loader support.</li>
+      <li>The release has an installer ISO for a DVD and an <strong>installer memstick</strong> for a USB stick or an external disk: a GPT disk with an EFI system partition and a UFS root, written with <code>dd</code>.</li>
+      <li>The installer speaks English, Spanish and Portuguese. It sets up the network and can install the package manager (<code>pkg</code>) from the Internet.</li>
+      <li>The console and the login: an underline cursor, full-screen programs, and a welcome from Renux.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="split page">
+  <h2>Known limitations</h2>
+  <div class="body">
+    <ul>
+      <li>amd64 and UEFI only: Renux does not boot by BIOS (CSM, Legacy).</li>
+      <li>The ZFS menu configures the pool, datasets and optional encryption; advanced pool layouts are manual.</li>
+      <li>In Spanish and Portuguese, the names of keymaps and of most time zones are still in English.</li>
+      <li>The system's compiler, Zig 0.17.1, is ziglang.org's build for FreeBSD; it is not yet built from the Renux tree.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="split page">
+  <h2>Files</h2>
+  <div class="body">
+    <dl class="specs">
+      <div><dt><code>renux-0.1.2-amd64-installer.iso.xz</code></dt><dd>The installer for a DVD: it boots into the Renux installer, which sets up the disk and the network and installs the system, with UFS or ZFS.</dd></div>
+      <div><dt><code>renux-0.1.2-amd64-memstick.img.xz</code></dt><dd>The installer for a USB stick or an external disk: a GPT disk with an EFI system partition and a UFS root, written with <code>dd</code>.</dd></div>
+      <div><dt><code>renux-0.1.2-amd64.img.xz</code></dt><dd>A disk with the system ready, for a virtual machine or to write to a disk.</dd></div>
+      <div><dt><code>SHA256</code></dt><dd>The sha256 of the three files.</dd></div>
+    </dl>
+  </div>
+  <div class="check">
+    <p>Check and unpack:</p>
+    {% include terminal.html commands="verify_release" %}
+  </div>
+</section>
+
+<section class="split page">
+  <h2>Install</h2>
+  <div class="body">
+    <p>Write the installer ISO to a DVD, or the memstick image to a USB stick or an external disk with <code>dd</code> (it erases the target). Then boot the machine in UEFI mode and choose <strong>Auto (UFS)</strong> or <strong>Auto (ZFS)</strong>; the installer sets up the disk and the network and installs the system. Do not install it on the disk you booted from.</p>
+    {% include terminal.html commands="write_memstick" %}
+  </div>
+</section>
+
+<section class="split page">
+  <h2>License</h2>
+  <div class="body">
+    <p>Renux's work is under the <a href="https://github.com/renuxproject/renux/blob/main/LICENSES/MPL-2.0.txt">Mozilla Public License 2.0</a>; FreeBSD's code is under the BSD licenses. The ZFS module and tools are under the CDDL (see <a href="https://github.com/renuxproject/renux/blob/main/cddl/COPYRIGHT">cddl/COPYRIGHT</a>).</p>
+  </div>
+</section>

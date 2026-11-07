@@ -14,9 +14,9 @@ verify:
 
 verify_release:
   - sha256sum -c SHA256
-  - unxz renux-0.1.1-amd64-installer.iso.xz
-  - unxz renux-0.1.1-amd64-memstick.img.xz
+  - unxz renux-0.1.2-amd64-installer.iso.xz
+  - unxz renux-0.1.2-amd64-memstick.img.xz
 
 write_memstick:
-  - sudo dd if=renux-0.1.1-amd64-memstick.img of=/dev/da0 bs=1m conv=fsync
+  - sudo dd if=renux-0.1.2-amd64-memstick.img of=/dev/da0 bs=1m conv=fsync
   - sudo gpart recover da0

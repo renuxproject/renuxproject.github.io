@@ -1,0 +1,87 @@
+---
+# SPDX-License-Identifier: MPL-2.0
+layout: default
+lang: pt
+ref: release-0.1.2
+title: Notas da versão Renux 0.1.2 "Aurora"
+heading: Renux 0.1.2 &ldquo;Aurora&rdquo;
+eyebrow: Notas da versão &middot; 7 de novembro de 2026
+about: "Notas da versão Renux 0.1.2 Aurora."
+---
+<section class="release-block page">
+  <img class="banner" src="{{ '/banners/aurora.png' | relative_url }}" alt="Renux 0.1 Aurora" width="1280" height="360">
+  <div class="release-text">
+    <h2 class="release">Renux 0.1.2 &ldquo;Aurora&rdquo; <span class="badge">Experimental</span></h2>
+    <p class="note">O Renux 0.1.2 &ldquo;Aurora&rdquo;, a segunda atualização do Renux 0.1, saiu, compilado com o Zig 0.17.1. O instalador já não apaga um disco em que não consegue instalar, e é só para UEFI. É experimental: não o instale num equipamento com dados importantes. É só amd64 e UEFI.</p>
+    <p class="actions"><a class="btn btn-primary" href="{{ site.data.links.release_0_1_2 }}">Baixar<span class="btn-arrow" aria-hidden="true">&rarr;</span></a> <a class="btn" href="{{ site.data.links.source }}">Código-fonte</a></p>
+  </div>
+</section>
+
+<section class="split page">
+  <h2>Novidades da 0.1.2</h2>
+  <div class="body">
+    <ul>
+      <li><strong>O instalador já não destrói um disco em que não consegue instalar.</strong> Na 0.1.1, o Automático (ZFS) preparava o disco para iniciar também por BIOS, com um código de arranque que o Renux não tem (<code>/boot/pmbr</code>, <code>/boot/gptzfsboot</code>): apagava as partições do disco e depois parava com um erro, sem deixar nem o sistema anterior nem o Renux. Agora o instalador prepara o disco só para UEFI.</li>
+      <li>O Renux inicia só por UEFI. Se o instalador foi iniciado por BIOS (CSM, Legacy), ele avisa e para antes de mexer no disco.</li>
+      <li>Foram retirados os ajustes para iniciar discos GPT por BIOS em alguns equipamentos Lenovo, HP, Intel e Acer.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="split page">
+  <h2>O que inclui</h2>
+  <div class="body">
+    <ul>
+      <li>O kernel, o carregador EFI e todos os programas do sistema são compilados com <code>zig build</code> a partir do código-fonte do Renux, com o Zig 0.17.1 como compilador.</li>
+      <li>O Renux é baseado no FreeBSD 15.1 e acompanha o desenvolvimento dele.</li>
+      <li>854 módulos do kernel são instalados em <code>/boot/modules</code>, incluindo o ZFS e os controladores que o FreeBSD distribui como módulos.</li>
+      <li>O instalador oferece <strong>Automático (UFS)</strong> e <strong>Automático (ZFS)</strong>. O ZFS inclui o módulo do kernel, <code>zpool</code>/<code>zfs</code> e o suporte do carregador.</li>
+      <li>A versão tem um ISO de instalação para DVD e uma <strong>memstick do instalador</strong> para um USB ou um disco externo: um disco GPT com uma partição de sistema EFI e uma raiz UFS, gravada com <code>dd</code>.</li>
+      <li>O instalador está em inglês, espanhol e português. Configura a rede e pode instalar o gestor de pacotes (<code>pkg</code>) pela Internet.</li>
+      <li>O console e o início de sessão: cursor sublinhado, programas de ecrã inteiro e as boas-vindas do Renux.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="split page">
+  <h2>Limitações conhecidas</h2>
+  <div class="body">
+    <ul>
+      <li>Só amd64 e UEFI: o Renux não inicia por BIOS (CSM, Legacy).</li>
+      <li>O menu do ZFS configura o pool, os datasets e a encriptação opcional; layouts avançados de pool são manuais.</li>
+      <li>Em espanhol e português, os nomes dos teclados e da maioria dos fusos horários continuam em inglês.</li>
+      <li>O compilador do sistema, o Zig 0.17.1, é a versão do ziglang.org para FreeBSD; ainda não é compilado a partir do código-fonte do Renux.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="split page">
+  <h2>Arquivos</h2>
+  <div class="body">
+    <dl class="specs">
+      <div><dt><code>renux-0.1.2-amd64-installer.iso.xz</code></dt><dd>O instalador para DVD: inicia no instalador do Renux, que prepara o disco e a rede e instala o sistema, com UFS ou ZFS.</dd></div>
+      <div><dt><code>renux-0.1.2-amd64-memstick.img.xz</code></dt><dd>O instalador para um USB ou um disco externo: um disco GPT com uma partição de sistema EFI e uma raiz UFS, gravado com <code>dd</code>.</dd></div>
+      <div><dt><code>renux-0.1.2-amd64.img.xz</code></dt><dd>Um disco com o sistema pronto, para uma máquina virtual ou para gravar num disco.</dd></div>
+      <div><dt><code>SHA256</code></dt><dd>O sha256 dos três arquivos.</dd></div>
+    </dl>
+  </div>
+  <div class="check">
+    <p>Confira e descompacte:</p>
+    {% include terminal.html commands="verify_release" %}
+  </div>
+</section>
+
+<section class="split page">
+  <h2>Instalar</h2>
+  <div class="body">
+    <p>Grave a ISO do instalador num DVD, ou a imagem memstick num USB ou num disco externo com <code>dd</code> (isso apaga o destino). Boote a máquina em modo UEFI e escolha <strong>Automático (UFS)</strong> ou <strong>Automático (ZFS)</strong>; o instalador prepara o disco e a rede e instala o sistema. Não o instale no disco de onde você bootou.</p>
+    {% include terminal.html commands="write_memstick" %}
+  </div>
+</section>
+
+<section class="split page">
+  <h2>Licença</h2>
+  <div class="body">
+    <p>O trabalho do Renux está sob a <a href="https://github.com/renuxproject/renux/blob/main/LICENSES/MPL-2.0.txt">Mozilla Public License 2.0</a>; o código do FreeBSD está sob as licenças BSD. O módulo e as ferramentas do ZFS estão sob a CDDL (veja <a href="https://github.com/renuxproject/renux/blob/main/cddl/COPYRIGHT">cddl/COPYRIGHT</a>).</p>
+  </div>
+</section>
