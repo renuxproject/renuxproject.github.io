@@ -10,3 +10,7 @@ build:
 verify:
   - sha256sum -c SHA256
   - unxz renux-nightly-amd64-*-installer.iso.xz
+
+verify_release:
+  - sha256sum -c SHA256
+  - unxz renux-0.1.0-amd64-installer.iso.xz

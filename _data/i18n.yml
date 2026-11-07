@@ -15,6 +15,7 @@ en:
     home: Home
     screenshots: Screenshots
     download: Download
+    "release-0.1": Release notes
     source: Source
   links_label: Links
   links:
@@ -44,6 +45,7 @@ pt:
     home: Início
     screenshots: Capturas de tela
     download: Download
+    "release-0.1": Notas da versão
     source: Código-fonte
   links_label: Links
   links:
@@ -73,6 +75,7 @@ es:
     home: Inicio
     screenshots: Capturas
     download: Descargar
+    "release-0.1": Notas de la versión
     source: Código fuente
   links_label: Enlaces
   links:

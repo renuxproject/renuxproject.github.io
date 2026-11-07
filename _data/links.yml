@@ -7,6 +7,7 @@ readme: https://github.com/renuxproject/renux#readme
 changes: https://github.com/renuxproject/renux/commits/main
 builds: https://github.com/renuxproject/renux/actions
 releases: https://github.com/renuxproject/renux/releases
+release_0_1: https://github.com/renuxproject/renux/releases/tag/v0.1.0
 snapshots: https://github.com/renuxproject/renux/actions/workflows/snapshot.yml
 site_source: https://github.com/renuxproject/renuxproject.github.io
 zig: https://ziglang.org/download/

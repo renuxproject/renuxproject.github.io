@@ -1,6 +1,6 @@
 # Renux Website
 
-The website of the [Renux Project](https://renuxproject.github.io): three
+The website of the [Renux Project](https://renuxproject.github.io): the
 pages, with a menu, in English, Portuguese and Spanish.
 
 GitHub Pages builds it with Jekyll, so every part of a page is written
@@ -10,6 +10,7 @@ once and shared by all the pages in all the languages.
 index.html          Home: what Renux is, how to build it, its principles
 screenshots.html    Screenshots, with a gallery that opens each one larger
 download.html       Download: the nightly build, and Renux 0.1 "Aurora"
+releases/0.1.html   Release notes for Renux 0.1 "Aurora"
 404.html            The page for an address that is not here
 pt/  es/            the same pages in Portuguese and in Spanish
 

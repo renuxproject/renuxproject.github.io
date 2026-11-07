@@ -1,0 +1,73 @@
+---
+# SPDX-License-Identifier: MPL-2.0
+layout: default
+lang: es
+ref: release-0.1
+title: Notas de la versión de Renux 0.1 "Aurora"
+heading: Renux 0.1 &ldquo;Aurora&rdquo;
+eyebrow: Notas de la versión &middot; 7 de noviembre de 2026
+about: "Notas de la versión de Renux 0.1 Aurora."
+---
+<section class="release-block page">
+  <img class="banner" src="{{ '/banners/aurora.png' | relative_url }}" alt="Renux 0.1 Aurora" width="1280" height="360">
+  <div class="release-text">
+    <h2 class="release">Renux 0.1 &ldquo;Aurora&rdquo; <span class="badge">Experimental</span></h2>
+    <p class="note">La primera versión de Renux, la 0.1 &ldquo;Aurora&rdquo;, ya salió. Es experimental: no la instale en un equipo con datos importantes. Es solo amd64 y UEFI.</p>
+    <p class="actions"><a class="btn btn-primary" href="{{ site.data.links.release_0_1 }}">Descargar<span class="btn-arrow" aria-hidden="true">&rarr;</span></a> <a class="btn" href="{{ site.data.links.source }}">Código fuente</a></p>
+  </div>
+</section>
+
+<section class="split page">
+  <h2>Qué incluye</h2>
+  <div class="body">
+    <ul>
+      <li>El kernel, el cargador EFI y todos los programas del sistema se compilan con <code>zig build</code> desde el código fuente de Renux, con Zig 0.17 como compilador.</li>
+      <li>Renux se basa en FreeBSD 15.1 y sigue su desarrollo.</li>
+      <li>854 módulos del kernel se instalan en <code>/boot/modules</code>, incluidos ZFS y los controladores que FreeBSD distribuye como módulos.</li>
+      <li>El instalador ofrece <strong>Automático (UFS)</strong> y <strong>Automático (ZFS)</strong>. ZFS incluye el módulo del kernel, <code>zpool</code>/<code>zfs</code> y el soporte del cargador.</li>
+      <li>El instalador está en inglés, español y portugués. Configura la red y puede instalar el gestor de paquetes (<code>pkg</code>) por Internet.</li>
+      <li>La consola y el inicio de sesión, como en las nightlies: cursor subrayado, programas de pantalla completa y la bienvenida de Renux.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="split page">
+  <h2>Limitaciones conocidas</h2>
+  <div class="body">
+    <ul>
+      <li>Solo amd64 y UEFI: Renux no arranca por BIOS (CSM, Legacy).</li>
+      <li>El menú de ZFS configura el pool, los datasets y el cifrado opcional; los diseños avanzados son manuales.</li>
+      <li>En español y portugués, los nombres de los teclados y de la mayoría de las zonas horarias siguen en inglés.</li>
+      <li>El compilador del sistema, Zig 0.17, es la versión de ziglang.org para FreeBSD; aún no se compila desde el código fuente de Renux.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="split page">
+  <h2>Archivos</h2>
+  <div class="body">
+    <dl class="specs">
+      <div><dt><code>renux-0.1.0-amd64-installer.iso.xz</code></dt><dd>El instalador: arranca en el instalador de Renux, que prepara el disco y la red e instala el sistema, con UFS o ZFS.</dd></div>
+      <div><dt><code>renux-0.1.0-amd64.img.xz</code></dt><dd>Un disco con el sistema listo, para una máquina virtual o para grabar en un disco.</dd></div>
+      <div><dt><code>SHA256</code></dt><dd>El sha256 de ambos archivos.</dd></div>
+    </dl>
+  </div>
+  <div class="check">
+    <p>Verifique y descomprima:</p>
+    {% include terminal.html commands="verify_release" %}
+  </div>
+</section>
+
+<section class="split page">
+  <h2>Instalar</h2>
+  <div class="body">
+    <p>Grabe la ISO del instalador en un USB, arranque la máquina en modo UEFI y elija <strong>Automático (UFS)</strong> o <strong>Automático (ZFS)</strong>. El instalador prepara el disco y la red e instala el sistema.</p>
+  </div>
+</section>
+
+<section class="split page">
+  <h2>Licencia</h2>
+  <div class="body">
+    <p>El trabajo de Renux está bajo la <a href="https://github.com/renuxproject/renux/blob/main/LICENSES/MPL-2.0.txt">Mozilla Public License 2.0</a>; el código de FreeBSD, bajo las licencias BSD. El módulo y las herramientas de ZFS están bajo la CDDL (vea <a href="https://github.com/renuxproject/renux/blob/main/cddl/COPYRIGHT">cddl/COPYRIGHT</a>).</p>
+  </div>
+</section>

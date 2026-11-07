@@ -5,8 +5,8 @@ lang: es
 ref: download
 title: Descargar Renux
 heading: Descargar Renux
-eyebrow: Nightly &middot; Renux 0.1 &ldquo;Aurora&rdquo;
-about: "Renux es experimental. Funciona en máquinas amd64 con firmware UEFI."
+eyebrow: Descargar &middot; Renux 0.1 &ldquo;Aurora&rdquo;
+about: "Renux es experimental. Funciona en máquinas amd64 con firmware UEFI, y el instalador ofrece UFS y ZFS."
 ---
 <section id="nightly" class="release-block page">
   <img class="banner" src="{{ '/banners/nightly.png' | relative_url }}" alt="Renux Nightly builds" width="1280" height="360">
@@ -19,7 +19,7 @@ about: "Renux es experimental. Funciona en máquinas amd64 con firmware UEFI."
     <dl class="specs">
       <div><dt>Archivos</dt><dd>ISO del instalador &middot; imagen de disco &middot; SHA256</dd></div>
       <div><dt>Máquina</dt><dd>amd64 &middot; UEFI</dd></div>
-      <div><dt>Sistema de archivos</dt><dd>UFS (ZFS aún no se compila)</dd></div>
+      <div><dt>Sistema de archivos</dt><dd>UFS o ZFS (instalador)</dd></div>
     </dl>
   </div>
   <div class="check">
@@ -30,10 +30,18 @@ about: "Renux es experimental. Funciona en máquinas amd64 con firmware UEFI."
 
 <section id="aurora" class="release-block page">
   <img class="banner" src="{{ '/banners/aurora.png' | relative_url }}" alt="Renux 0.1 Aurora" width="1280" height="360">
-  <div class="release-text">
-    <h2 class="release">Renux 0.1 &ldquo;Aurora&rdquo; <span class="badge">En desarrollo</span></h2>
-    <p>La primera versión de Renux. Aurora está en desarrollo, y todavía no hay nada para descargar. Hasta que salga, las nightly builds son su adelanto.</p>
-    <p><a class="more" href="{{ site.data.links.changes }}">Siga los cambios <span aria-hidden="true">&rarr;</span></a></p>
+  <div class="release-grid">
+    <div class="release-text">
+      <h2 class="release">Renux 0.1 &ldquo;Aurora&rdquo; <span class="badge">Experimental</span></h2>
+      <p>La primera versión de Renux, la 0.1 &ldquo;Aurora&rdquo;, ya salió. Es experimental: lea las notas de la versión antes de instalar.</p>
+      <p class="actions"><a class="btn btn-primary" href="{{ site.data.links.release_0_1 }}">Descargar 0.1 Aurora<span class="btn-arrow" aria-hidden="true">&rarr;</span></a> <a class="btn" href="{{ '/es/releases/0.1.html' | relative_url }}">Notas de la versión</a></p>
+    </div>
+    <dl class="specs">
+      <div><dt>Archivos</dt><dd>ISO del instalador &middot; imagen de disco &middot; SHA256</dd></div>
+      <div><dt>Máquina</dt><dd>amd64 &middot; UEFI</dd></div>
+      <div><dt>Sistema de archivos</dt><dd>UFS o ZFS (instalador)</dd></div>
+      <div><dt>Licencia</dt><dd>MPL 2.0 &middot; BSD &middot; CDDL (ZFS)</dd></div>
+    </dl>
   </div>
 </section>
 
