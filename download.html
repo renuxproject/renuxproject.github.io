@@ -5,7 +5,7 @@ lang: en
 ref: download
 title: Download Renux
 heading: Download Renux
-eyebrow: Download &middot; Renux 0.1 &ldquo;Aurora&rdquo;
+eyebrow: Download &middot; Renux 0.1.1 &ldquo;Aurora&rdquo;
 about: "Renux is experimental. It runs on amd64 machines with UEFI firmware, and the installer offers UFS and ZFS."
 ---
 <section id="nightly" class="release-block page">
@@ -17,13 +17,13 @@ about: "Renux is experimental. It runs on amd64 machines with UEFI firmware, and
       <p class="actions"><a class="btn btn-primary" href="{{ site.data.links.releases }}">Snapshots on GitHub<span class="btn-arrow" aria-hidden="true">&rarr;</span></a> <a class="btn" href="{{ site.data.links.snapshots }}">All builds</a></p>
     </div>
     <dl class="specs">
-      <div><dt>Files</dt><dd>Installer ISO &middot; disk image &middot; SHA256</dd></div>
+      <div><dt>Files</dt><dd>Installer ISO (DVD) &middot; memstick (USB) &middot; disk image &middot; SHA256</dd></div>
       <div><dt>Machine</dt><dd>amd64 &middot; UEFI</dd></div>
       <div><dt>File system</dt><dd>UFS or ZFS (installer)</dd></div>
     </dl>
   </div>
   <div class="check">
-    <p>The installer ISO boots into the Renux installer, which sets up the disk and the network and installs the system. The disk image is a ready system. Check and unpack what you download:</p>
+    <p>The installer ISO boots from a DVD, and the memstick image from a USB stick or an external disk; both start the Renux installer, which sets up the disk and the network and installs the system. The disk image is a ready system. Check and unpack what you download:</p>
     {% include terminal.html commands="verify" %}
   </div>
 </section>
@@ -32,16 +32,24 @@ about: "Renux is experimental. It runs on amd64 machines with UEFI firmware, and
   <img class="banner" src="{{ '/banners/aurora.png' | relative_url }}" alt="Renux 0.1 Aurora" width="1280" height="360">
   <div class="release-grid">
     <div class="release-text">
-      <h2 class="release">Renux 0.1 &ldquo;Aurora&rdquo; <span class="badge">Experimental</span></h2>
-      <p>The first release of Renux, 0.1 &ldquo;Aurora&rdquo;, is out. It is experimental: read the release notes before installing.</p>
-      <p class="actions"><a class="btn btn-primary" href="{{ site.data.links.release_0_1 }}">Download 0.1 Aurora<span class="btn-arrow" aria-hidden="true">&rarr;</span></a> <a class="btn" href="{{ '/releases/0.1.html' | relative_url }}">Release notes</a></p>
+      <h2 class="release">Renux 0.1.1 &ldquo;Aurora&rdquo; <span class="badge">Experimental</span></h2>
+      <p>Renux 0.1.1 &ldquo;Aurora&rdquo;, the first update of 0.1, is out, built with Zig 0.17.1. It adds the installer memstick for a USB stick or an external disk. It is experimental: read the release notes before installing.</p>
+      <p class="actions"><a class="btn btn-primary" href="{{ site.data.links.release_0_1_1 }}">Download 0.1.1 Aurora<span class="btn-arrow" aria-hidden="true">&rarr;</span></a> <a class="btn" href="{{ '/releases/0.1.1.html' | relative_url }}">Release notes</a></p>
     </div>
     <dl class="specs">
-      <div><dt>Files</dt><dd>Installer ISO &middot; disk image &middot; SHA256</dd></div>
+      <div><dt>Files</dt><dd>Installer ISO (DVD) &middot; memstick (USB) &middot; disk image &middot; SHA256</dd></div>
       <div><dt>Machine</dt><dd>amd64 &middot; UEFI</dd></div>
       <div><dt>File system</dt><dd>UFS or ZFS (installer)</dd></div>
       <div><dt>License</dt><dd>MPL 2.0 &middot; BSD &middot; CDDL (ZFS)</dd></div>
     </dl>
+  </div>
+</section>
+
+<section class="split page">
+  <h2>Install</h2>
+  <div class="body">
+    <p>Write the installer ISO to a DVD, or the memstick image to a USB stick or an external disk with <code>dd</code> (it erases the target), then boot the machine in UEFI mode and choose <strong>Auto (UFS)</strong> or <strong>Auto (ZFS)</strong>. Renux does not boot by BIOS (CSM, Legacy).</p>
+    {% include terminal.html commands="write_memstick" %}
   </div>
 </section>
 
